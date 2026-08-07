@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Terminal, Code2, Globe2, Cpu, Sparkles, CheckCircle2, Play, Copy, Check } from 'lucide-react';
+import { Terminal, Code2, Globe2, Cpu, Sparkles, Play, Copy, Check } from 'lucide-react';
 
 interface CodeTab {
   id: string;
@@ -114,37 +114,37 @@ export const HeroComputerIde: React.FC = () => {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto my-8 relative group">
+    <div className="w-full max-w-4xl mx-auto my-6 sm:my-8 relative group px-2 sm:px-0">
       
       {/* Outer Glow Backdrop */}
-      <div className="absolute -inset-1 bg-gradient-to-r from-accent via-accent-cyan to-accent-violet rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition duration-1000 group-hover:duration-200 pointer-events-none" />
+      <div className="absolute -inset-1 bg-gradient-to-r from-accent via-accent-cyan to-accent-violet rounded-3xl blur-xl opacity-35 group-hover:opacity-60 transition duration-1000 group-hover:duration-200 pointer-events-none" />
 
       {/* Main IDE Window Container */}
-      <div className="relative rounded-2xl bg-surface-50/95 border border-white/15 shadow-2xl backdrop-blur-2xl overflow-hidden flex flex-col transform group-hover:scale-[1.01] transition-all duration-300">
+      <div className="relative rounded-2xl bg-surface-50/95 border border-white/15 shadow-2xl backdrop-blur-2xl overflow-hidden flex flex-col transform group-hover:scale-[1.005] transition-all duration-300">
         
         {/* IDE Header Controls */}
-        <div className="bg-surface-100/90 px-4 py-3 border-b border-white/10 flex flex-wrap items-center justify-between gap-3">
+        <div className="bg-surface-100/90 px-3.5 py-2.5 sm:px-4 sm:py-3 border-b border-white/10 flex items-center justify-between gap-2">
           
           {/* macOS Control Dots */}
           <div className="flex items-center gap-2">
-            <span className="w-3 h-3 rounded-full bg-red-500/80 inline-block hover:opacity-100 cursor-pointer" />
-            <span className="w-3 h-3 rounded-full bg-amber-500/80 inline-block hover:opacity-100 cursor-pointer" />
-            <span className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block hover:opacity-100 cursor-pointer" />
-            <span className="ml-2 text-xs font-mono text-text-muted hidden sm:inline-block">
-              neel-patel-workstation — VSCode v1.90
+            <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-500/80 inline-block" />
+            <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-amber-500/80 inline-block" />
+            <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-emerald-500/80 inline-block" />
+            <span className="ml-1 sm:ml-2 text-[10px] sm:text-xs font-mono text-text-muted hidden xs:inline-block truncate max-w-[140px] sm:max-w-none">
+              neel-patel-workstation
             </span>
           </div>
 
           {/* Action Copy & Status */}
           <div className="flex items-center gap-2">
-            <span className="text-[11px] font-mono text-emerald-400 font-semibold px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center gap-1.5">
+            <span className="text-[10px] sm:text-[11px] font-mono text-emerald-400 font-semibold px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center gap-1">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              SYSTEM ACTIVE
+              ACTIVE
             </span>
 
             <button
               onClick={handleCopyCode}
-              className="p-1.5 rounded-lg bg-surface-200 hover:bg-surface-300 text-text-secondary hover:text-white transition-all text-xs font-mono flex items-center gap-1"
+              className="p-1.5 rounded-lg bg-surface-200 hover:bg-surface-300 text-text-secondary hover:text-white transition-all text-xs font-mono flex items-center gap-1 active:scale-95"
               title="Copy Code"
             >
               {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
@@ -152,8 +152,8 @@ export const HeroComputerIde: React.FC = () => {
           </div>
         </div>
 
-        {/* IDE Editor Tabs */}
-        <div className="bg-surface-100/50 px-2 pt-2 border-b border-white/5 flex flex-wrap gap-1 overflow-x-auto no-scrollbar">
+        {/* IDE Editor Tabs (Horizontal scroll swipe on mobile) */}
+        <div className="bg-surface-100/50 px-2 pt-2 border-b border-white/5 flex items-center gap-1 overflow-x-auto no-scrollbar whitespace-nowrap flex-nowrap">
           {CODE_TABS.map((tab) => {
             const Icon = tab.icon;
             const isActive = tab.id === activeTabId;
@@ -161,13 +161,13 @@ export const HeroComputerIde: React.FC = () => {
               <button
                 key={tab.id}
                 onClick={() => setActiveTabId(tab.id)}
-                className={`px-3.5 py-2 rounded-t-xl text-xs font-mono flex items-center gap-2 transition-all border-t border-x ${
+                className={`px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-t-xl text-[11px] sm:text-xs font-mono flex items-center gap-1.5 transition-all border-t border-x shrink-0 ${
                   isActive
                     ? 'bg-surface-50 border-white/10 text-white font-semibold shadow-sm'
                     : 'bg-transparent border-transparent text-text-muted hover:text-text-secondary hover:bg-surface-100/40'
                 }`}
               >
-                <Icon className="w-3.5 h-3.5" style={{ color: tab.color }} />
+                <Icon className="w-3.5 h-3.5 shrink-0" style={{ color: tab.color }} />
                 <span>{tab.filename}</span>
               </button>
             );
@@ -175,31 +175,29 @@ export const HeroComputerIde: React.FC = () => {
         </div>
 
         {/* Code Editor Body */}
-        <div className="p-4 sm:p-6 font-mono text-xs sm:text-sm bg-background/90 text-text-primary overflow-x-auto min-h-[220px] flex flex-col justify-between leading-relaxed">
-          <pre className="text-text-primary">
+        <div className="p-3.5 sm:p-6 font-mono text-[11px] sm:text-xs md:text-sm bg-background/90 text-text-primary overflow-x-auto min-h-[190px] sm:min-h-[220px] flex flex-col justify-between leading-relaxed">
+          <pre className="text-text-primary overflow-x-auto">
             <code>{activeTab.code}</code>
           </pre>
 
           {/* IDE Console Execution Output Bar */}
-          <div className="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-emerald-300 font-mono bg-surface-100/40 p-2.5 rounded-xl">
+          <div className="mt-3 pt-2.5 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 text-[10px] sm:text-xs text-emerald-300 font-mono bg-surface-100/40 p-2 sm:p-2.5 rounded-xl">
             <div className="flex items-center gap-2">
-              <Play className="w-3.5 h-3.5 text-emerald-400 fill-emerald-400 shrink-0" />
-              <span>{activeTab.output}</span>
+              <Play className="w-3 h-3 text-emerald-400 fill-emerald-400 shrink-0" />
+              <span className="truncate">{activeTab.output}</span>
             </div>
-            <span className="text-[10px] text-text-muted hidden md:inline-block">UTF-8 • {activeTab.language}</span>
+            <span className="text-[10px] text-text-muted shrink-0 hidden sm:inline-block">UTF-8 • {activeTab.language}</span>
           </div>
         </div>
 
         {/* IDE Footer Bar */}
-        <div className="bg-surface-100 px-4 py-2 border-t border-white/5 flex flex-wrap items-center justify-between text-[11px] font-mono text-text-muted">
-          <div className="flex items-center gap-4">
-            <span className="text-accent-cyan font-semibold">NEEL PATEL CODEBASE</span>
-            <span>Ln 24, Col 18</span>
-            <span>Spaces: 4</span>
-          </div>
+        <div className="bg-surface-100 px-3 py-1.5 sm:px-4 sm:py-2 border-t border-white/5 flex items-center justify-between text-[10px] sm:text-[11px] font-mono text-text-muted">
           <div className="flex items-center gap-3">
-            <span className="text-emerald-400 font-semibold">● 0 Errors, 0 Warnings</span>
-            <span>Ready</span>
+            <span className="text-accent-cyan font-semibold truncate max-w-[120px] sm:max-w-none">NEEL PATEL CODEBASE</span>
+            <span className="hidden xs:inline">Ln 24, Col 18</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="text-emerald-400 font-semibold">● 0 Errors</span>
           </div>
         </div>
 

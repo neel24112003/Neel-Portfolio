@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
-import { Layers, Wind, Building, Droplets, MapPin } from 'lucide-react';
+import { Layers, Wind, Building, Droplets } from 'lucide-react';
 
 export const GisGlobeScene: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -19,7 +19,7 @@ export const GisGlobeScene: React.FC = () => {
       0.1,
       1000
     );
-    camera.position.set(0, 0, 14);
+    camera.position.set(0, 0, window.innerWidth < 640 ? 16 : 14);
 
     // Renderer
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -28,7 +28,7 @@ export const GisGlobeScene: React.FC = () => {
     containerRef.current.appendChild(renderer.domElement);
 
     // Globe Mesh (Wireframe + Glow)
-    const globeGeo = new THREE.SphereGeometry(4, 36, 36);
+    const globeGeo = new THREE.SphereGeometry(4, 32, 32);
     const globeMat = new THREE.MeshBasicMaterial({
       color: 0x10b981,
       wireframe: true,
@@ -39,7 +39,7 @@ export const GisGlobeScene: React.FC = () => {
     scene.add(globe);
 
     // Inner Atmosphere Core
-    const innerGeo = new THREE.SphereGeometry(3.9, 32, 32);
+    const innerGeo = new THREE.SphereGeometry(3.9, 28, 28);
     const innerMat = new THREE.MeshBasicMaterial({
       color: 0x052e16,
       transparent: true,
@@ -49,7 +49,7 @@ export const GisGlobeScene: React.FC = () => {
     scene.add(innerCore);
 
     // Satellite Orbit Ring
-    const orbitGeo = new THREE.TorusGeometry(5.8, 0.04, 16, 100);
+    const orbitGeo = new THREE.TorusGeometry(5.8, 0.04, 16, 80);
     const orbitMat = new THREE.MeshBasicMaterial({
       color: 0x38bdf8,
       transparent: true,
@@ -65,10 +65,8 @@ export const GisGlobeScene: React.FC = () => {
     const satellite = new THREE.Mesh(satGeo, satMat);
     scene.add(satellite);
 
-    // Gujarat Marker Node (Lat/Long mapped to sphere)
+    // Gujarat Marker Node
     const gujaratGroup = new THREE.Group();
-    
-    // Lat ~ 22.25, Long ~ 71.19 -> converted to 3D point on R=4 sphere
     const lat = 22.25 * (Math.PI / 180);
     const lon = 71.19 * (Math.PI / 180);
     const radius = 4.05;
@@ -82,8 +80,8 @@ export const GisGlobeScene: React.FC = () => {
     pin.position.set(x, y, z);
     gujaratGroup.add(pin);
 
-    // Pulse Ring around Gujarat pin
-    const pulseGeo = new THREE.RingGeometry(0.2, 0.4, 32);
+    // Pulse Ring
+    const pulseGeo = new THREE.RingGeometry(0.2, 0.4, 24);
     const pulseMat = new THREE.MeshBasicMaterial({
       color: 0xef4444,
       side: THREE.DoubleSide,
@@ -97,32 +95,29 @@ export const GisGlobeScene: React.FC = () => {
 
     scene.add(gujaratGroup);
 
-    // Layer Feature Points (Wind Turbines, Buildings, Flood Contours)
+    // Layer Points Group
     const layerPointsGroup = new THREE.Group();
     scene.add(layerPointsGroup);
 
-    // Function to generate scatter nodes on sphere based on active layer
     const populateLayerPoints = (layerType: string) => {
-      // Clear existing
       while (layerPointsGroup.children.length > 0) {
         const obj = layerPointsGroup.children[0];
         layerPointsGroup.remove(obj);
       }
 
-      const count = layerType === 'wind' ? 25 : layerType === 'buildings' ? 60 : 40;
+      const count = layerType === 'wind' ? 20 : layerType === 'buildings' ? 45 : 30;
       const layerGeo = new THREE.BufferGeometry();
       const positions = new Float32Array(count * 3);
       const colors = new Float32Array(count * 3);
 
-      let colorHex = 0x10b981; // LULC Green
-      if (layerType === 'wind') colorHex = 0x38bdf8; // Cyan
-      if (layerType === 'buildings') colorHex = 0xf59e0b; // Amber
-      if (layerType === 'flood') colorHex = 0x6366f1; // Blue
+      let colorHex = 0x10b981;
+      if (layerType === 'wind') colorHex = 0x38bdf8;
+      if (layerType === 'buildings') colorHex = 0xf59e0b;
+      if (layerType === 'flood') colorHex = 0x6366f1;
 
       const c = new THREE.Color(colorHex);
 
       for (let i = 0; i < count; i++) {
-        // Distribute points in a region near Gujarat
         const theta = (70 + (Math.random() - 0.5) * 40) * (Math.PI / 180);
         const phi = (90 - (22 + (Math.random() - 0.5) * 30)) * (Math.PI / 180);
         const r = 4.08;
@@ -152,19 +147,24 @@ export const GisGlobeScene: React.FC = () => {
 
     populateLayerPoints(activeLayer);
 
-    // Mouse Controls / Rotation
+    // Mouse & Touch Drag Controls
     let isDragging = false;
-    let previousMousePosition = { x: 0, y: 0 };
+    let previousPosition = { x: 0, y: 0 };
 
-    const handleMouseDown = (e: MouseEvent) => {
+    const handlePointerDown = (e: MouseEvent | TouchEvent) => {
       isDragging = true;
-      previousMousePosition = { x: e.clientX, y: e.clientY };
+      const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+      const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
+      previousPosition = { x: clientX, y: clientY };
     };
 
-    const handleMouseMove = (e: MouseEvent) => {
+    const handlePointerMove = (e: MouseEvent | TouchEvent) => {
       if (!isDragging) return;
-      const deltaX = e.clientX - previousMousePosition.x;
-      const deltaY = e.clientY - previousMousePosition.y;
+      const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+      const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
+
+      const deltaX = clientX - previousPosition.x;
+      const deltaY = clientY - previousPosition.y;
 
       globe.rotation.y += deltaX * 0.008;
       globe.rotation.x += deltaY * 0.008;
@@ -172,17 +172,20 @@ export const GisGlobeScene: React.FC = () => {
       gujaratGroup.rotation.y += deltaX * 0.008;
       layerPointsGroup.rotation.y += deltaX * 0.008;
 
-      previousMousePosition = { x: e.clientX, y: e.clientY };
+      previousPosition = { x: clientX, y: clientY };
     };
 
-    const handleMouseUp = () => {
+    const handlePointerUp = () => {
       isDragging = false;
     };
 
     const domElem = renderer.domElement;
-    domElem.addEventListener('mousedown', handleMouseDown);
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('mouseup', handleMouseUp);
+    domElem.addEventListener('mousedown', handlePointerDown);
+    domElem.addEventListener('touchstart', handlePointerDown, { passive: true });
+    window.addEventListener('mousemove', handlePointerMove);
+    window.addEventListener('touchmove', handlePointerMove, { passive: true });
+    window.addEventListener('mouseup', handlePointerUp);
+    window.addEventListener('touchend', handlePointerUp);
 
     // Resize
     const handleResize = () => {
@@ -228,9 +231,12 @@ export const GisGlobeScene: React.FC = () => {
     animate();
 
     return () => {
-      domElem.removeEventListener('mousedown', handleMouseDown);
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('mouseup', handleMouseUp);
+      domElem.removeEventListener('mousedown', handlePointerDown);
+      domElem.removeEventListener('touchstart', handlePointerDown);
+      window.removeEventListener('mousemove', handlePointerMove);
+      window.removeEventListener('touchmove', handlePointerMove);
+      window.removeEventListener('mouseup', handlePointerUp);
+      window.removeEventListener('touchend', handlePointerUp);
       window.removeEventListener('resize', handleResize);
       cancelAnimationFrame(animId);
 
@@ -253,70 +259,70 @@ export const GisGlobeScene: React.FC = () => {
   }, [activeLayer]);
 
   return (
-    <div className="relative w-full h-[450px] rounded-2xl glass-panel overflow-hidden border border-white/10 flex flex-col justify-between p-4">
+    <div className="relative w-full h-[380px] sm:h-[450px] rounded-2xl glass-panel overflow-hidden border border-white/10 flex flex-col justify-between p-3 sm:p-4">
       {/* Top Header Overlay */}
-      <div className="z-10 flex flex-wrap items-center justify-between gap-2 bg-surface-50/80 backdrop-blur-md p-3 rounded-xl border border-white/10">
+      <div className="z-10 flex items-center justify-between gap-2 bg-surface-50/80 backdrop-blur-md p-2.5 sm:p-3 rounded-xl border border-white/10">
         <div className="flex items-center gap-2">
-          <div className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
-          <span className="text-xs font-mono text-emerald-400 uppercase tracking-widest">
-            GEOSPATIAL SPATIAL ENGINE • GUJARAT FOCUS
+          <div className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping shrink-0" />
+          <span className="text-[10px] sm:text-xs font-mono text-emerald-400 uppercase tracking-widest truncate">
+            GEOSPATIAL ENGINE • GUJARAT
           </span>
         </div>
-        <div className="text-xs text-text-secondary font-mono">
-          [DRAG TO ROTATE 3D GLOBE]
+        <div className="text-[10px] text-text-secondary font-mono shrink-0 hidden xs:inline-block">
+          [TOUCH/DRAG GLOBE]
         </div>
       </div>
 
       {/* 3D Canvas */}
-      <div ref={containerRef} className="absolute inset-0 w-full h-full cursor-grab active:cursor-grabbing" />
+      <div ref={containerRef} className="absolute inset-0 w-full h-full cursor-grab active:cursor-grabbing touch-none" />
 
       {/* Bottom Interactive Layer Controls */}
-      <div className="z-10 bg-surface-50/90 backdrop-blur-md p-3 rounded-xl border border-white/10 flex flex-wrap items-center justify-between gap-3">
-        <span className="text-xs font-mono text-text-muted">ACTIVE SPATIAL LAYER:</span>
-        <div className="flex flex-wrap gap-2">
+      <div className="z-10 bg-surface-50/90 backdrop-blur-md p-2.5 sm:p-3 rounded-xl border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-3">
+        <span className="text-[10px] sm:text-xs font-mono text-text-muted hidden sm:inline-block">LAYER:</span>
+        <div className="flex flex-wrap gap-1.5 sm:gap-2 w-full sm:w-auto justify-center sm:justify-start">
           <button
             onClick={() => setActiveLayer('lulc')}
-            className={`px-3 py-1.5 rounded-lg text-xs font-mono flex items-center gap-1.5 transition-all ${
+            className={`px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg text-[10px] sm:text-xs font-mono flex items-center gap-1 transition-all ${
               activeLayer === 'lulc'
                 ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 shadow-glow-sm'
-                : 'bg-surface-100 text-text-secondary hover:text-white border border-white/5'
+                : 'bg-surface-100 text-text-secondary border border-white/5'
             }`}
           >
-            <Layers className="w-3.5 h-3.5" />
-            LULC Classification
+            <Layers className="w-3 h-3" />
+            LULC
           </button>
           <button
             onClick={() => setActiveLayer('wind')}
-            className={`px-3 py-1.5 rounded-lg text-xs font-mono flex items-center gap-1.5 transition-all ${
+            className={`px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg text-[10px] sm:text-xs font-mono flex items-center gap-1 transition-all ${
               activeLayer === 'wind'
                 ? 'bg-sky-500/20 text-sky-300 border border-sky-500/40 shadow-glow-sm'
-                : 'bg-surface-100 text-text-secondary hover:text-white border border-white/5'
+                : 'bg-surface-100 text-text-secondary border border-white/5'
             }`}
           >
-            <Wind className="w-3.5 h-3.5" />
+            <Wind className="w-3 h-3" />
             Wind Turbines
           </button>
           <button
             onClick={() => setActiveLayer('buildings')}
-            className={`px-3 py-1.5 rounded-lg text-xs font-mono flex items-center gap-1.5 transition-all ${
+            className={`px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg text-[10px] sm:text-xs font-mono flex items-center gap-1 transition-all ${
               activeLayer === 'buildings'
                 ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40 shadow-glow-sm'
-                : 'bg-surface-100 text-text-secondary hover:text-white border border-white/5'
+                : 'bg-surface-100 text-text-secondary border border-white/5'
             }`}
           >
-            <Building className="w-3.5 h-3.5" />
-            Building Segmentation
+            <Building className="w-3 h-3" />
+            Buildings
           </button>
           <button
             onClick={() => setActiveLayer('flood')}
-            className={`px-3 py-1.5 rounded-lg text-xs font-mono flex items-center gap-1.5 transition-all ${
+            className={`px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg text-[10px] sm:text-xs font-mono flex items-center gap-1 transition-all ${
               activeLayer === 'flood'
                 ? 'bg-indigo-500/20 text-indigo-300 border border-indigo-500/40 shadow-glow-sm'
-                : 'bg-surface-100 text-text-secondary hover:text-white border border-white/5'
+                : 'bg-surface-100 text-text-secondary border border-white/5'
             }`}
           >
-            <Droplets className="w-3.5 h-3.5" />
-            Flood Simulation
+            <Droplets className="w-3 h-3" />
+            Flood Sim
           </button>
         </div>
       </div>
