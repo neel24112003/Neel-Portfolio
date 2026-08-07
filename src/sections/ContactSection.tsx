@@ -30,6 +30,17 @@ export const ContactSection: React.FC = () => {
     return Object.keys(errs).length === 0;
   };
 
+  const handleSuccess = () => {
+    setIsSubmitted(true);
+    setFormData({ name: '', email: '', message: '' });
+    setErrors({});
+    
+    // Auto-hide success banner after 3 seconds (3000ms)
+    setTimeout(() => {
+      setIsSubmitted(false);
+    }, 3000);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
@@ -49,8 +60,7 @@ export const ContactSection: React.FC = () => {
       const data = await response.json();
 
       if (response.ok && data.success) {
-        setIsSubmitted(true);
-        setFormData({ name: '', email: '', message: '' });
+        handleSuccess();
       } else {
         setApiError(data.error || 'Failed to send message.');
       }
@@ -62,8 +72,8 @@ export const ContactSection: React.FC = () => {
       const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`);
       window.location.href = `mailto:${PERSONAL_INFO.email}?subject=${subject}&body=${body}`;
       
-      setIsSubmitted(true);
-    } finally {
+      handleSuccess();
+    } fontally: {
       setIsSubmitting(false);
     }
   };
@@ -178,7 +188,7 @@ export const ContactSection: React.FC = () => {
               </h3>
 
               {isSubmitted && (
-                <div className="p-4 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-mono flex items-center gap-3">
+                <div className="p-4 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-mono flex items-center gap-3 animate-in fade-in slide-in-from-top-2">
                   <CheckCircle2 className="w-5 h-5 shrink-0" />
                   <div>
                     <strong className="block text-white text-sm">Message Sent Successfully!</strong>
