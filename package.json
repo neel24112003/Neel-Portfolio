@@ -8,6 +8,7 @@
     "server": "node server.js",
     "dev:full": "concurrently \"node server.js\" \"vite\"",
     "build": "tsc && vite build",
+    "push": "git add . && git commit -m \"Update portfolio\" && git push origin main",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
