@@ -25,7 +25,7 @@ export const App: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
 
   return (
-    <div className="relative min-h-screen bg-background text-text-primary font-sans selection:bg-accent/30 selection:text-white">
+    <div className="relative min-h-screen bg-background text-text-primary font-sans selection:bg-accent/30 selection:text-white w-full max-w-full overflow-x-hidden">
       {/* Scroll Progress Bar */}
       <ScrollProgress />
 
@@ -39,7 +39,7 @@ export const App: React.FC = () => {
       />
 
       {/* Main Content Flow */}
-      <main className="relative z-10 space-y-0">
+      <main className="relative z-10 space-y-0 w-full max-w-full overflow-x-hidden">
         <HeroSection onOpenResume={() => setResumeOpen(true)} />
         <AboutSection />
         <TimelineSection />
