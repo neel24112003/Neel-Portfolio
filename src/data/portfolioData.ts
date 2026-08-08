@@ -2,14 +2,14 @@ import { ExperienceItem, ProjectItem, CertificationItem, EducationItem } from '.
 
 export const PERSONAL_INFO = {
   name: "NEEL PATEL",
-  title: "Computer Science Engineer & Data Analyst",
-  headline: "Building Web Platforms, Data Analytics Solutions, Geospatial Systems & Intelligent Automation.",
-  tagline: "Computer Science Engineer focused on Web Development, Data Analytics, GIS Analysis, Python Automation, and AI-Assisted Systems.",
+  title: "Computer Science Engineer (Specialization in Cloud Computing) & Data Analyst",
+  headline: "Building Web Platforms, Data Analytics Solutions, Cloud Computing Infrastructure & Intelligent Automation.",
+  tagline: "Computer Science Engineer with Specialization in Cloud Computing, focused on Web Development, Data Analytics, GIS Analysis, Python Automation, and AI-Assisted Systems.",
   phone: "+91 9601911100",
   email: "neelnp2411@gmail.com",
   location: "Surat, Gujarat, India",
   languages: ["English", "Hindi", "Gujarati"],
-  summary: "Computer Science Engineer with hands-on experience across web development, data analytics & visualization, GIS analysis, Python automation, and AI-assisted software engineering. Experienced in building responsive web platforms (such as Saral Health Care), analyzing complex datasets with Power BI/Python/SQL, spatial data modeling, and automated ETL pipelines."
+  summary: "Computer Science Engineer (Specialization in Cloud Computing) with hands-on experience across web development, data analytics & visualization, GIS analysis, Python automation, and AI-assisted software engineering. Experienced in building responsive web platforms (such as Saral Health Care), analyzing complex datasets with Power BI/Python/SQL, spatial data modeling, and cloud-automated ETL pipelines."
 };
 
 export const CORE_PULSE_KEYWORDS = [
@@ -335,7 +335,7 @@ export const EDUCATION: EducationItem[] = [
   {
     id: "edu-1",
     institution: "UKA Tarsadia University",
-    degree: "B.Tech in Computer Science and Engineering",
+    degree: "B.Tech in Computer Science & Engineering (Specialization in Cloud Computing)",
     period: "2021 – 2025"
   },
   {

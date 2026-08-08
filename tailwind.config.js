@@ -29,7 +29,7 @@ export default {
       },
       fontFamily: {
         sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
-        display: ['Space Grotesk', 'Syne', 'sans-serif'],
+        display: ['Outfit', 'Space Grotesk', 'Syne', 'sans-serif'],
         mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
       },
       backgroundImage: {

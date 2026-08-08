@@ -57,18 +57,26 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
         </div>
 
         {/* Primary Name & Sub-headline */}
-        <div className="space-y-1.5 sm:space-y-3 w-full max-w-full px-1">
-          <div className="inline-block px-3 py-1 rounded-full bg-surface-100/80 border border-white/10 text-[9px] sm:text-xs font-mono text-text-secondary max-w-full truncate">
-            SURAT, GUJARAT, INDIA • CS & ENGINEERING
+        <div className="space-y-2 sm:space-y-4 w-full max-w-full px-1">
+          <div className="inline-block px-3.5 py-1 rounded-full bg-surface-100/90 border border-accent-cyan/30 text-[10px] sm:text-xs font-mono font-bold text-accent-cyan tracking-widest uppercase">
+            SURAT, GUJARAT, INDIA • B.TECH CSE (CLOUD COMPUTING)
           </div>
 
-          <h1 className="text-3xl xs:text-4xl sm:text-6xl lg:text-7xl font-display font-extrabold text-white tracking-tight leading-tight break-words">
+          <h1 className="text-4xl xs:text-5xl sm:text-7xl lg:text-8xl font-display font-extrabold text-white tracking-tight leading-none uppercase drop-shadow-md">
             NEEL PATEL
           </h1>
 
-          <p className="text-sm sm:text-2xl font-display font-semibold text-accent-cyan tracking-wide break-words">
-            {PERSONAL_INFO.title}
-          </p>
+          <div className="flex flex-wrap items-center justify-center gap-2 pt-1">
+            <span className="text-base sm:text-2xl font-display font-bold text-accent-cyan tracking-wide">
+              Computer Science Engineer
+            </span>
+            <span className="px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-xs sm:text-sm font-mono font-bold text-emerald-400 shadow-glow-sm">
+              Specialization in Cloud Computing
+            </span>
+            <span className="text-base sm:text-2xl font-display font-bold text-white tracking-wide">
+              & Data Analyst
+            </span>
+          </div>
         </div>
 
         {/* Main Statement */}
