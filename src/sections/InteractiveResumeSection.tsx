@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Download, Printer, FileText, Check, Copy, Mail, Phone, MapPin, ExternalLink, Briefcase, GraduationCap, Award, Code, Globe2, Cloud, Sparkles, Server } from 'lucide-react';
+import { X, Download, Printer, FileText, Check, Copy, Mail, Phone, MapPin, ExternalLink, Briefcase, GraduationCap, Award, Code, Globe2, Sparkles, Server } from 'lucide-react';
 import { PERSONAL_INFO, EXPERIENCES, PROJECTS, SKILL_CATEGORIES, CERTIFICATIONS, EDUCATION } from '../data/portfolioData';
 import { generatePdfResume } from '../utils/generatePdfResume';
 
@@ -67,7 +67,7 @@ export const InteractiveResumeSection: React.FC<InteractiveResumeModalProps> = (
               title="Download Neel Patel Resume in PDF format"
             >
               <Download className="w-4 h-4" />
-              {isDownloading ? 'GENERATING PDF...' : 'DOWNLOAD RESUME (PDF)'}
+              {isDownloading ? 'GENERATING SHARP PDF...' : 'DOWNLOAD RESUME (PDF)'}
             </button>
 
             <button
@@ -81,46 +81,46 @@ export const InteractiveResumeSection: React.FC<InteractiveResumeModalProps> = (
         </div>
 
         {/* Executive Document Container Area */}
-        <div className="p-3 sm:p-8 overflow-y-auto flex-1 bg-[#07090e] text-white">
+        <div className="p-2 sm:p-6 overflow-y-auto flex-1 bg-[#05070c] text-white flex justify-center">
           
-          {/* A4 Executive Resume Canvas (Captured directly for 1-to-1 PDF Download) */}
+          {/* A4 Executive Resume Canvas (Fixed 794px width for exact A4 proportions and 0 blurriness) */}
           <div 
             id="resume-a4-document"
-            className="w-full max-w-[840px] mx-auto bg-[#0d111d] border-2 border-accent-cyan/40 rounded-3xl p-5 sm:p-10 shadow-2xl text-white space-y-8 font-sans relative overflow-hidden"
+            className="w-[794px] min-h-[1123px] bg-[#0d111d] border-2 border-accent-cyan/40 rounded-2xl p-8 shadow-2xl text-white space-y-6 font-sans relative overflow-hidden shrink-0"
+            style={{
+              boxShadow: '0 0 40px rgba(56, 189, 248, 0.25), 0 0 80px rgba(16, 185, 129, 0.15)'
+            }}
           >
-            {/* Background Ambient Glow Accents */}
+            {/* Background Ambient Lighting */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-accent-cyan/5 rounded-full blur-3xl pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
 
-            {/* Header Block: Profile Image + Name & Contact Matrix */}
-            <div className="border-b border-white/10 pb-6 flex flex-col sm:flex-row items-center sm:items-start justify-between gap-6 relative z-10">
+            {/* Header Section: Headshot Photo + Name & Specialization */}
+            <div className="border-b border-white/10 pb-5 flex items-center justify-between gap-6 relative z-10">
               
-              {/* Executive Headshot & Titles */}
-              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-left">
-                
-                {/* Profile Photo */}
+              {/* Profile Photo & Name Block */}
+              <div className="flex items-center gap-5">
                 <div className="relative shrink-0">
                   <img
                     src="/profile.jpg"
                     alt="Neel Patel"
-                    className="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl border-2 border-accent-cyan object-cover shadow-2xl"
+                    className="w-28 h-28 rounded-2xl border-2 border-accent-cyan object-cover shadow-2xl"
                     style={{
-                      boxShadow: '0 0 25px rgba(56, 189, 248, 0.4), inset 0 0 10px rgba(56, 189, 248, 0.2)'
+                      boxShadow: '0 0 20px rgba(56, 189, 248, 0.5), inset 0 0 10px rgba(56, 189, 248, 0.2)'
                     }}
                   />
-                  <div className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-emerald-500 border-2 border-[#0d111d] flex items-center justify-center text-[10px] font-bold text-black" title="Verified Professional">
+                  <div className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-emerald-500 border-2 border-[#0d111d] flex items-center justify-center text-[9px] font-bold text-black" title="Verified Professional">
                     ✓
                   </div>
                 </div>
 
-                {/* Name & Titles */}
-                <div className="space-y-2">
-                  <h1 className="text-3xl sm:text-4xl font-display font-extrabold text-white tracking-tight leading-none uppercase">
+                <div className="space-y-1.5">
+                  <h1 className="text-3xl font-display font-extrabold text-white tracking-tight leading-none uppercase">
                     NEEL PATEL
                   </h1>
 
-                  <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 pt-0.5">
-                    <span className="text-sm sm:text-base font-display font-bold text-accent-cyan tracking-wide">
+                  <div className="flex flex-wrap items-center gap-2 pt-0.5">
+                    <span className="text-sm font-display font-bold text-accent-cyan tracking-wide">
                       Computer Science Engineer
                     </span>
                     <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/20 border border-emerald-500/50 text-[11px] font-mono font-bold text-emerald-400">
@@ -128,40 +128,39 @@ export const InteractiveResumeSection: React.FC<InteractiveResumeModalProps> = (
                     </span>
                   </div>
 
-                  <p className="text-xs text-text-secondary leading-relaxed max-w-md font-sans">
+                  <p className="text-xs text-text-secondary leading-normal font-sans">
                     Building Web Platforms, Cloud Infrastructure, Data Analytics Pipelines & GIS Systems.
                   </p>
                 </div>
-
               </div>
 
-              {/* Contact Information Cards Grid */}
-              <div className="w-full sm:w-auto grid grid-cols-1 sm:grid-cols-1 gap-2 font-mono text-xs text-text-secondary shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-white/10">
-                <div className="flex items-center gap-2.5 p-2 rounded-xl bg-surface-100/80 border border-white/10">
-                  <Mail className="w-4 h-4 text-accent-cyan shrink-0" />
-                  <span className="text-white select-all text-[11px]">{PERSONAL_INFO.email}</span>
+              {/* Contact Information Matrix */}
+              <div className="grid grid-cols-1 gap-1.5 font-mono text-xs shrink-0">
+                <div className="flex items-center gap-2 p-1.5 px-2.5 rounded-xl bg-surface-100/90 border border-white/10 text-[11px]">
+                  <Mail className="w-3.5 h-3.5 text-accent-cyan shrink-0" />
+                  <span className="text-white select-all">{PERSONAL_INFO.email}</span>
                   <button onClick={handleCopyEmail} className="hover:text-accent-cyan ml-auto print:hidden">
-                    {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+                    {copied ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3" />}
                   </button>
                 </div>
 
-                <div className="flex items-center gap-2.5 p-2 rounded-xl bg-surface-100/80 border border-white/10">
-                  <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span className="text-white text-[11px]">{PERSONAL_INFO.phone}</span>
+                <div className="flex items-center gap-2 p-1.5 px-2.5 rounded-xl bg-surface-100/90 border border-white/10 text-[11px]">
+                  <Phone className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                  <span className="text-white">{PERSONAL_INFO.phone}</span>
                 </div>
 
-                <div className="flex items-center gap-2.5 p-2 rounded-xl bg-surface-100/80 border border-white/10">
-                  <MapPin className="w-4 h-4 text-accent-violet shrink-0" />
-                  <span className="text-text-secondary text-[11px]">{PERSONAL_INFO.location}</span>
+                <div className="flex items-center gap-2 p-1.5 px-2.5 rounded-xl bg-surface-100/90 border border-white/10 text-[11px]">
+                  <MapPin className="w-3.5 h-3.5 text-accent-violet shrink-0" />
+                  <span className="text-text-secondary">{PERSONAL_INFO.location}</span>
                 </div>
 
                 <a 
                   href="https://saral-health-care.vercel.app"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2.5 p-2 rounded-xl bg-accent/15 border border-accent/40 text-accent-cyan hover:underline text-[11px]"
+                  className="flex items-center gap-2 p-1.5 px-2.5 rounded-xl bg-accent/15 border border-accent/40 text-accent-cyan hover:underline text-[11px]"
                 >
-                  <Globe2 className="w-4 h-4 text-accent-cyan shrink-0" />
+                  <Globe2 className="w-3.5 h-3.5 text-accent-cyan shrink-0" />
                   <span>saral-health-care.vercel.app</span>
                   <ExternalLink className="w-3 h-3 ml-auto" />
                 </a>
@@ -170,56 +169,56 @@ export const InteractiveResumeSection: React.FC<InteractiveResumeModalProps> = (
             </div>
 
             {/* Executive Summary Statement */}
-            <div className="p-4 rounded-2xl bg-surface-100/60 border border-white/10 space-y-1.5 relative z-10">
+            <div className="p-3.5 rounded-2xl bg-surface-100/70 border border-white/10 space-y-1 relative z-10">
               <h3 className="text-xs font-mono font-bold text-accent-cyan uppercase tracking-wider flex items-center gap-2">
                 <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
                 EXECUTIVE SUMMARY
               </h3>
               <p className="text-xs text-text-secondary font-sans leading-relaxed">
-                Computer Science Engineer with a specialized focus in Cloud Computing, web application engineering, data analytics, GIS spatial modeling, and Python automation. Demonstrated expertise in developing production web applications (such as Saral Health Care), building interactive BI dashboards, executing geospatial data workflows, and engineering automated data ingestion pipelines.
+                Computer Science Engineer with a specialized focus in Cloud Computing, web application engineering, data analytics, GIS spatial modeling, and Python automation. Demonstrated expertise in developing production web applications (such as Saral Health Care), building interactive BI dashboards, executing geospatial data workflows, and engineering automated cloud ETL pipelines.
               </p>
             </div>
 
-            {/* Two-Column Layout Grid (35% Left Sidebar, 65% Right Work History) */}
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 relative z-10">
+            {/* Balanced Two-Column Layout (4 Cols Sidebar, 8 Cols Main Body) */}
+            <div className="grid grid-cols-12 gap-6 relative z-10">
               
-              {/* Left Column (35% Sidebar) */}
-              <div className="md:col-span-5 space-y-6 border-b md:border-b-0 md:border-r border-white/10 pb-6 md:pb-0 md:pr-6">
+              {/* Left Column (4 / 12 Cols = Sidebar) */}
+              <div className="col-span-4 space-y-5 border-r border-white/10 pr-5">
                 
-                {/* Education Section */}
-                <div className="space-y-3">
-                  <h3 className="text-xs font-mono font-bold text-white uppercase tracking-wider flex items-center gap-2 border-b border-white/10 pb-1.5">
-                    <GraduationCap className="w-4 h-4 text-emerald-400" />
+                {/* Education */}
+                <div className="space-y-2">
+                  <h3 className="text-xs font-mono font-bold text-white uppercase tracking-wider flex items-center gap-2 border-b border-white/10 pb-1">
+                    <GraduationCap className="w-3.5 h-3.5 text-emerald-400" />
                     EDUCATION
                   </h3>
                   
                   {EDUCATION.map((edu) => (
-                    <div key={edu.id} className="p-3 rounded-xl bg-surface-100/50 border border-white/10 space-y-1">
+                    <div key={edu.id} className="p-2.5 rounded-xl bg-surface-100/50 border border-white/10 space-y-0.5">
                       <div className="text-xs font-bold text-white font-display">{edu.institution}</div>
-                      <div className="text-[11px] font-mono text-accent-cyan leading-tight">{edu.degree}</div>
+                      <div className="text-[10px] font-mono text-accent-cyan leading-tight">{edu.degree}</div>
                       <div className="text-[10px] font-mono text-text-muted">{edu.period}</div>
                     </div>
                   ))}
                 </div>
 
                 {/* Technical Skills Matrix */}
-                <div className="space-y-3">
-                  <h3 className="text-xs font-mono font-bold text-white uppercase tracking-wider flex items-center gap-2 border-b border-white/10 pb-1.5">
-                    <Code className="w-4 h-4 text-accent-cyan" />
+                <div className="space-y-2">
+                  <h3 className="text-xs font-mono font-bold text-white uppercase tracking-wider flex items-center gap-2 border-b border-white/10 pb-1">
+                    <Code className="w-3.5 h-3.5 text-accent-cyan" />
                     SKILLS MATRIX
                   </h3>
 
-                  <div className="space-y-2.5">
+                  <div className="space-y-2">
                     {SKILL_CATEGORIES.map((cat) => (
-                      <div key={cat.id} className="p-2.5 rounded-xl bg-surface-100/40 border border-white/5 space-y-1">
-                        <span className="text-[11px] font-mono font-bold" style={{ color: cat.color }}>
+                      <div key={cat.id} className="p-2 rounded-xl bg-surface-100/40 border border-white/5 space-y-1">
+                        <span className="text-[10px] font-mono font-bold" style={{ color: cat.color }}>
                           {cat.name}
                         </span>
                         <div className="flex flex-wrap gap-1">
                           {cat.skills.map((s) => (
                             <span 
                               key={s} 
-                              className="px-2 py-0.5 rounded bg-surface-200 text-[10px] font-mono text-text-secondary border border-white/5"
+                              className="px-1.5 py-0.5 rounded bg-surface-200 text-[9px] font-mono text-text-secondary border border-white/5"
                             >
                               {s}
                             </span>
@@ -231,15 +230,15 @@ export const InteractiveResumeSection: React.FC<InteractiveResumeModalProps> = (
                 </div>
 
                 {/* Certifications */}
-                <div className="space-y-3">
-                  <h3 className="text-xs font-mono font-bold text-white uppercase tracking-wider flex items-center gap-2 border-b border-white/10 pb-1.5">
-                    <Award className="w-4 h-4 text-amber-400" />
+                <div className="space-y-2">
+                  <h3 className="text-xs font-mono font-bold text-white uppercase tracking-wider flex items-center gap-2 border-b border-white/10 pb-1">
+                    <Award className="w-3.5 h-3.5 text-amber-400" />
                     CERTIFICATIONS
                   </h3>
 
-                  <div className="space-y-2">
+                  <div className="space-y-1.5">
                     {CERTIFICATIONS.map((c) => (
-                      <div key={c.id} className="p-2.5 rounded-xl bg-surface-100/40 border border-white/5 space-y-0.5">
+                      <div key={c.id} className="p-2 rounded-xl bg-surface-100/40 border border-white/5 space-y-0.5">
                         <div className="text-xs font-bold text-white font-display">{c.title}</div>
                         <div className="text-[10px] font-mono text-emerald-400">{c.issuer}</div>
                       </div>
@@ -248,15 +247,15 @@ export const InteractiveResumeSection: React.FC<InteractiveResumeModalProps> = (
                 </div>
 
                 {/* Languages */}
-                <div className="space-y-2">
-                  <h3 className="text-xs font-mono font-bold text-white uppercase tracking-wider flex items-center gap-2 border-b border-white/10 pb-1.5">
-                    <Globe2 className="w-4 h-4 text-accent-violet" />
+                <div className="space-y-1.5">
+                  <h3 className="text-xs font-mono font-bold text-white uppercase tracking-wider flex items-center gap-2 border-b border-white/10 pb-1">
+                    <Globe2 className="w-3.5 h-3.5 text-accent-violet" />
                     LANGUAGES
                   </h3>
 
-                  <div className="flex flex-wrap gap-1.5">
+                  <div className="flex flex-wrap gap-1">
                     {PERSONAL_INFO.languages.map((lang) => (
-                      <span key={lang} className="px-2.5 py-1 rounded-lg bg-surface-100 border border-white/10 text-xs font-mono text-white">
+                      <span key={lang} className="px-2 py-0.5 rounded-lg bg-surface-100 border border-white/10 text-[10px] font-mono text-white">
                         {lang}
                       </span>
                     ))}
@@ -265,39 +264,39 @@ export const InteractiveResumeSection: React.FC<InteractiveResumeModalProps> = (
 
               </div>
 
-              {/* Right Column (65% Work History & Projects) */}
-              <div className="md:col-span-7 space-y-6">
+              {/* Right Column (8 / 12 Cols = Main Body) */}
+              <div className="col-span-8 space-y-5">
                 
                 {/* Professional Experience Chronology */}
-                <div className="space-y-4">
-                  <h3 className="text-xs font-mono font-bold text-white uppercase tracking-wider flex items-center gap-2 border-b border-white/10 pb-1.5">
-                    <Briefcase className="w-4 h-4 text-accent-cyan" />
+                <div className="space-y-3">
+                  <h3 className="text-xs font-mono font-bold text-white uppercase tracking-wider flex items-center gap-2 border-b border-white/10 pb-1">
+                    <Briefcase className="w-3.5 h-3.5 text-accent-cyan" />
                     PROFESSIONAL EXPERIENCE CHRONOLOGY
                   </h3>
 
-                  <div className="space-y-5">
+                  <div className="space-y-3.5">
                     {EXPERIENCES.map((exp) => (
-                      <div key={exp.id} className="p-3.5 rounded-2xl bg-surface-100/50 border border-white/10 space-y-2">
+                      <div key={exp.id} className="p-3 rounded-2xl bg-surface-100/50 border border-white/10 space-y-1.5">
                         
-                        <div className="flex flex-wrap items-start justify-between gap-1 border-b border-white/5 pb-2">
+                        <div className="flex items-start justify-between gap-1 border-b border-white/5 pb-1">
                           <div>
-                            <div className="text-xs sm:text-sm font-display font-bold text-white">{exp.role}</div>
-                            <div className="text-xs font-mono text-accent-cyan">@ {exp.company}</div>
+                            <div className="text-xs font-display font-bold text-white">{exp.role}</div>
+                            <div className="text-[11px] font-mono text-accent-cyan">@ {exp.company}</div>
                           </div>
-                          <span className="px-2 py-0.5 rounded-md bg-surface-200 text-[10px] font-mono text-emerald-400 font-bold border border-emerald-500/30">
+                          <span className="px-2 py-0.5 rounded bg-surface-200 text-[10px] font-mono text-emerald-400 font-bold border border-emerald-500/30 shrink-0">
                             {exp.period}
                           </span>
                         </div>
 
-                        <ul className="space-y-1 pl-4 list-disc text-xs text-text-secondary font-sans leading-relaxed">
+                        <ul className="space-y-0.5 pl-3.5 list-disc text-[11px] text-text-secondary font-sans leading-relaxed">
                           {exp.description.map((d, i) => (
                             <li key={i}>{d}</li>
                           ))}
                         </ul>
 
-                        <div className="flex flex-wrap gap-1 pt-1">
+                        <div className="flex flex-wrap gap-1 pt-0.5">
                           {exp.skills.map((s) => (
-                            <span key={s} className="px-2 py-0.5 rounded bg-surface-200 text-[9px] font-mono text-text-muted border border-white/5">
+                            <span key={s} className="px-1.5 py-0.5 rounded bg-surface-200 text-[9px] font-mono text-text-muted border border-white/5">
                               {s}
                             </span>
                           ))}
@@ -309,16 +308,16 @@ export const InteractiveResumeSection: React.FC<InteractiveResumeModalProps> = (
                 </div>
 
                 {/* Key Projects */}
-                <div className="space-y-4 pt-2">
-                  <h3 className="text-xs font-mono font-bold text-white uppercase tracking-wider flex items-center gap-2 border-b border-white/10 pb-1.5">
-                    <Server className="w-4 h-4 text-emerald-400" />
+                <div className="space-y-3">
+                  <h3 className="text-xs font-mono font-bold text-white uppercase tracking-wider flex items-center gap-2 border-b border-white/10 pb-1">
+                    <Server className="w-3.5 h-3.5 text-emerald-400" />
                     FEATURED PROJECTS
                   </h3>
 
-                  <div className="space-y-4">
+                  <div className="space-y-3">
                     {PROJECTS.map((proj) => (
-                      <div key={proj.id} className="p-3.5 rounded-2xl bg-surface-100/50 border border-white/10 space-y-2">
-                        <div className="flex items-center justify-between gap-2 border-b border-white/5 pb-1.5">
+                      <div key={proj.id} className="p-3 rounded-2xl bg-surface-100/50 border border-white/10 space-y-1">
+                        <div className="flex items-center justify-between gap-2 border-b border-white/5 pb-1">
                           <span className="text-xs font-display font-bold text-white">{proj.title}</span>
                           {proj.website && (
                             <a href={proj.website} target="_blank" rel="noopener noreferrer" className="text-[10px] font-mono text-accent-cyan flex items-center gap-1 hover:underline">
@@ -327,11 +326,11 @@ export const InteractiveResumeSection: React.FC<InteractiveResumeModalProps> = (
                           )}
                         </div>
 
-                        <p className="text-xs text-text-secondary leading-relaxed font-sans">{proj.description}</p>
+                        <p className="text-[11px] text-text-secondary leading-relaxed font-sans">{proj.description}</p>
 
                         <div className="flex flex-wrap gap-1">
                           {proj.technologies.map((t) => (
-                            <span key={t} className="px-2 py-0.5 rounded bg-surface-200 text-[9px] font-mono text-text-muted">
+                            <span key={t} className="px-1.5 py-0.5 rounded bg-surface-200 text-[9px] font-mono text-text-muted">
                               {t}
                             </span>
                           ))}
@@ -346,7 +345,7 @@ export const InteractiveResumeSection: React.FC<InteractiveResumeModalProps> = (
             </div>
 
             {/* Document Footer */}
-            <div className="border-t border-white/10 pt-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-[10px] font-mono text-text-muted relative z-10">
+            <div className="border-t border-white/10 pt-3 flex items-center justify-between text-[10px] font-mono text-text-muted relative z-10">
               <span>Neel Patel — Computer Science Engineer (Specialization in Cloud Computing)</span>
               <span>Portfolio: https://saral-health-care.vercel.app</span>
             </div>
