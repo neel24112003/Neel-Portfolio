@@ -21,6 +21,9 @@ export const SkillsSection: React.FC = () => {
     }
   };
 
+  const leftCategories = SKILL_CATEGORIES.slice(0, 4);
+  const rightCategories = SKILL_CATEGORIES.slice(4, 8);
+
   return (
     <section id="skills" className="py-20 sm:py-24 relative z-10 bg-background border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -44,55 +47,55 @@ export const SkillsSection: React.FC = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
           
-          {/* Left Interactive Network Graph Visualization */}
-          <div className="lg:col-span-7 bg-surface-50/80 rounded-3xl p-4 sm:p-8 border-2 border-accent/40 relative overflow-hidden flex flex-col items-center justify-center min-h-[380px] sm:min-h-[440px] neon-border-cyber shadow-2xl">
+          {/* Left Interactive Symmetrical Radar Visualization */}
+          <div className="lg:col-span-7 bg-surface-50/80 rounded-3xl p-4 sm:p-6 border-2 border-accent/40 relative overflow-hidden flex flex-col sm:flex-row items-center justify-between min-h-[460px] sm:min-h-[500px] neon-border-cyber shadow-2xl gap-4">
             
-            {/* Background SVG Connection Lines (Desktop) */}
+            {/* Background SVG Laser Beam Connecting Lines (Desktop) */}
             <svg className="hidden sm:block absolute inset-0 w-full h-full pointer-events-none z-0">
-              {SKILL_CATEGORIES.map((cat, idx) => {
-                const total = SKILL_CATEGORIES.length;
-                const angle = (idx / total) * Math.PI * 2 - Math.PI / 2;
-                const rx = 140;
-                const ry = 140;
-                const cx = 50;
-                const cy = 50;
-                const x2 = 50 + (rx / 350) * 100 * Math.cos(angle);
-                const y2 = 50 + (ry / 350) * 100 * Math.sin(angle);
+              {/* Left 4 Connecting Lines */}
+              {leftCategories.map((cat, idx) => {
                 const isSelected = cat.id === selectedCategoryId;
-
+                const y2Pos = 12.5 + idx * 25; // 12.5%, 37.5%, 62.5%, 87.5%
                 return (
                   <line
                     key={cat.id}
-                    x1={`${cx}%`}
-                    y1={`${cy}%`}
-                    x2={`${x2}%`}
-                    y2={`${y2}%`}
+                    x1="50%"
+                    y1="50%"
+                    x2="24%"
+                    y2={`${y2Pos}%`}
                     stroke={cat.color}
-                    strokeWidth={isSelected ? '2.5' : '1.2'}
+                    strokeWidth={isSelected ? '3' : '1.5'}
                     strokeDasharray={isSelected ? 'none' : '4 4'}
-                    strokeOpacity={isSelected ? '0.9' : '0.4'}
+                    strokeOpacity={isSelected ? '1' : '0.45'}
+                    className="transition-all duration-500"
+                  />
+                );
+              })}
+
+              {/* Right 4 Connecting Lines */}
+              {rightCategories.map((cat, idx) => {
+                const isSelected = cat.id === selectedCategoryId;
+                const y2Pos = 12.5 + idx * 25; // 12.5%, 37.5%, 62.5%, 87.5%
+                return (
+                  <line
+                    key={cat.id}
+                    x1="50%"
+                    y1="50%"
+                    x2="76%"
+                    y2={`${y2Pos}%`}
+                    stroke={cat.color}
+                    strokeWidth={isSelected ? '3' : '1.5'}
+                    strokeDasharray={isSelected ? 'none' : '4 4'}
+                    strokeOpacity={isSelected ? '1' : '0.45'}
                     className="transition-all duration-500"
                   />
                 );
               })}
             </svg>
 
-            {/* Central Node: NEEL */}
-            <div 
-              className="relative z-10 w-20 h-20 sm:w-28 sm:h-28 rounded-full bg-surface-100 border-2 border-accent-cyan flex flex-col items-center justify-center text-center cursor-pointer transform hover:scale-105 transition-all mb-4 sm:mb-0"
-              style={{
-                boxShadow: '0 0 30px rgba(56, 189, 248, 0.6), inset 0 0 15px rgba(56, 189, 248, 0.3)',
-                borderColor: '#38bdf8'
-              }}
-            >
-              <span className="text-[10px] sm:text-xs font-mono font-bold text-accent-cyan tracking-widest">ENGINEER</span>
-              <span className="text-lg sm:text-xl font-display font-extrabold text-white">NEEL</span>
-              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-400 animate-ping mt-1" />
-            </div>
-
-            {/* Color-Coded Satellite Category Nodes */}
-            <div className="w-full max-w-lg grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 sm:mt-8 relative z-10">
-              {SKILL_CATEGORIES.map((cat) => {
+            {/* Left Tower Nodes (4 Categories) */}
+            <div className="w-full sm:w-[42%] flex flex-col gap-3 relative z-10">
+              {leftCategories.map((cat) => {
                 const Icon = getCategoryIcon(cat.id);
                 const isSelected = cat.id === selectedCategoryId;
 
@@ -100,44 +103,116 @@ export const SkillsSection: React.FC = () => {
                   <button
                     key={cat.id}
                     onClick={() => setSelectedCategoryId(cat.id)}
-                    className={`p-2.5 sm:p-3 rounded-2xl border-2 transition-all duration-300 text-left flex flex-col sm:flex-row items-start sm:items-center gap-2 active:scale-95 ${
+                    className={`p-3 rounded-2xl border-2 transition-all duration-300 text-left flex items-center gap-3 active:scale-95 w-full ${
                       isSelected
-                        ? 'scale-105 font-bold z-20'
+                        ? 'scale-105 font-bold z-20 shadow-2xl'
                         : 'hover:scale-102 opacity-90 hover:opacity-100'
                     }`}
                     style={{
                       borderColor: cat.color,
-                      backgroundColor: isSelected ? `${cat.color}25` : `${cat.color}10`,
+                      backgroundColor: isSelected ? `${cat.color}25` : `${cat.color}12`,
                       boxShadow: isSelected
                         ? `0 0 25px ${cat.color}90, 0 0 45px ${cat.color}40, inset 0 0 12px ${cat.color}30`
                         : `0 0 14px ${cat.color}45, inset 0 0 6px ${cat.color}15`,
                     }}
                   >
                     <div
-                      className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl flex items-center justify-center shrink-0 border"
+                      className="w-8 h-8 rounded-xl flex items-center justify-center shrink-0 border"
                       style={{ 
                         backgroundColor: `${cat.color}30`, 
                         borderColor: `${cat.color}80`,
                         color: cat.color 
                       }}
                     >
-                      <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                      <Icon className="w-4 h-4" />
                     </div>
-                    <div className="truncate w-full">
+                    <div className="truncate w-full min-w-0">
                       <div 
-                        className="text-[11px] sm:text-xs font-mono font-bold leading-tight truncate"
+                        className="text-xs font-mono font-bold leading-tight truncate"
                         style={{ color: isSelected ? '#ffffff' : cat.color }}
                       >
                         {cat.name}
                       </div>
-                      <div className="text-[9px] sm:text-[10px] font-mono text-text-muted">
-                        {cat.skills.length} Techs
+                      <div className="text-[10px] font-mono text-text-muted">
+                        {cat.skills.length} Tech Stack Items
                       </div>
                     </div>
                   </button>
                 );
               })}
             </div>
+
+            {/* Central Node: ENGINEER NEEL CORE HUB */}
+            <div className="w-full sm:w-[16%] flex items-center justify-center py-4 sm:py-0 relative z-10">
+              <div 
+                className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-surface-100/95 border-2 border-accent-cyan flex flex-col items-center justify-center text-center cursor-pointer transform hover:scale-110 transition-all duration-300 relative shadow-2xl"
+                style={{
+                  boxShadow: '0 0 35px rgba(56, 189, 248, 0.7), 0 0 60px rgba(99, 102, 241, 0.4), inset 0 0 18px rgba(56, 189, 248, 0.4)',
+                  borderColor: '#38bdf8'
+                }}
+              >
+                {/* Radar Ring Pulses */}
+                <div className="absolute inset-0 rounded-full border border-accent-cyan/40 animate-ping pointer-events-none" />
+                <div className="absolute -inset-2 rounded-full border border-accent/20 animate-pulse pointer-events-none" />
+
+                <span className="text-[9px] sm:text-[10px] font-mono font-bold text-accent-cyan tracking-widest uppercase">CORE HUB</span>
+                <span className="text-base sm:text-lg font-display font-extrabold text-white leading-tight">NEEL</span>
+                <span className="text-[9px] font-mono text-emerald-400 font-semibold flex items-center gap-1 mt-0.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+                  ONLINE
+                </span>
+              </div>
+            </div>
+
+            {/* Right Tower Nodes (4 Categories) */}
+            <div className="w-full sm:w-[42%] flex flex-col gap-3 relative z-10">
+              {rightCategories.map((cat) => {
+                const Icon = getCategoryIcon(cat.id);
+                const isSelected = cat.id === selectedCategoryId;
+
+                return (
+                  <button
+                    key={cat.id}
+                    onClick={() => setSelectedCategoryId(cat.id)}
+                    className={`p-3 rounded-2xl border-2 transition-all duration-300 text-left flex items-center gap-3 active:scale-95 w-full ${
+                      isSelected
+                        ? 'scale-105 font-bold z-20 shadow-2xl'
+                        : 'hover:scale-102 opacity-90 hover:opacity-100'
+                    }`}
+                    style={{
+                      borderColor: cat.color,
+                      backgroundColor: isSelected ? `${cat.color}25` : `${cat.color}12`,
+                      boxShadow: isSelected
+                        ? `0 0 25px ${cat.color}90, 0 0 45px ${cat.color}40, inset 0 0 12px ${cat.color}30`
+                        : `0 0 14px ${cat.color}45, inset 0 0 6px ${cat.color}15`,
+                    }}
+                  >
+                    <div
+                      className="w-8 h-8 rounded-xl flex items-center justify-center shrink-0 border"
+                      style={{ 
+                        backgroundColor: `${cat.color}30`, 
+                        borderColor: `${cat.color}80`,
+                        color: cat.color 
+                      }}
+                    >
+                      <Icon className="w-4 h-4" />
+                    </div>
+                    <div className="truncate w-full min-w-0">
+                      <div 
+                        className="text-xs font-mono font-bold leading-tight truncate"
+                        style={{ color: isSelected ? '#ffffff' : cat.color }}
+                      >
+                        {cat.name}
+                      </div>
+                      <div className="text-[10px] font-mono text-text-muted">
+                        {cat.skills.length} Tech Stack Items
+                      </div>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+
           </div>
 
           {/* Right Selected Category Technology Detail Card */}
