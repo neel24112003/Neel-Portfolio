@@ -87,7 +87,7 @@ export const EXPERIENCES: ExperienceItem[] = [
     id: "exp-7",
     period: "Jul 2026 – Present",
     company: "Saral Health Care",
-    role: "Full Stack Developer & Data Analyst",
+    role: "Web Developer",
     description: [
       "Architected and deployed an ongoing digital healthcare application (saral-health-care.vercel.app) featuring a live vitals monitoring simulation dashboard and appointment booking engine.",
       "Analyzed patient appointment booking trends, vital sign metric streams (ECG, SpO2, HR, BP), and user workflow interactions to optimize healthcare portal UX.",

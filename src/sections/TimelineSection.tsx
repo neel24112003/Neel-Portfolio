@@ -3,23 +3,23 @@ import { EXPERIENCES } from '../data/portfolioData';
 import { 
   Briefcase, ChevronRight, Building2, CheckCircle2, 
   Activity, BookOpen, Users, Globe2, Terminal, ShoppingCart, 
-  Sparkles, ExternalLink, Layers, Maximize2, Minimize2, Award, ArrowUpRight
+  Sparkles, ExternalLink, Maximize2, Minimize2, Award
 } from 'lucide-react';
 
 const COMPANY_META: Record<string, { icon: React.ElementType; color: string; tag: string; link?: string; linkText?: string }> = {
   "Saral Health Care": { 
     icon: Activity, 
     color: "from-emerald-500 to-cyan-500", 
-    tag: "HEALTHCARE & DATA ANALYTICS",
+    tag: "HEALTHCARE WEB PLATFORM",
     link: "https://saral-health-care.vercel.app",
-    linkText: "VISIT SARAL HEALTH CARE"
+    linkText: "VISIT WEBSITE"
   },
   "Sahitya Sangam": { 
     icon: BookOpen, 
     color: "from-sky-500 to-blue-600", 
     tag: "WEB & E-COMMERCE APP",
     link: "https://sahityasangam.net/",
-    linkText: "VISIT SAHITYA SANGAM"
+    linkText: "VISIT WEBSITE"
   },
   "Guide Placement": { 
     icon: Users, 
@@ -34,7 +34,7 @@ const COMPANY_META: Record<string, { icon: React.ElementType; color: string; tag
   "Yogya Capital": { 
     icon: Terminal, 
     color: "from-amber-500 to-orange-500", 
-    tag: "PYTHON & DATA ANALYTICS" 
+    tag: "PYTHON & ETL PIPELINES" 
   },
   "Spectrarc Solution": { 
     icon: Globe2, 
@@ -62,7 +62,7 @@ export const TimelineSection: React.FC = () => {
     if (activeFilter === 'all') return true;
     if (activeFilter === 'web') return exp.company === 'Saral Health Care' || exp.company === 'Sahitya Sangam' || exp.company === 'Shreeji Krupa Farsan';
     if (activeFilter === 'gis') return exp.company === 'JIO' || exp.company === 'Spectrarc Solution';
-    if (activeFilter === 'python') return exp.company === 'Yogya Capital' || exp.company === 'Saral Health Care';
+    if (activeFilter === 'python') return exp.company === 'Yogya Capital';
     return true;
   });
 
@@ -167,7 +167,7 @@ export const TimelineSection: React.FC = () => {
           </div>
         </div>
 
-        {/* LEFT-ALIGNED TIMELINE CONTAINER */}
+        {/* TIMELINE CONTAINER */}
         <div className="relative pl-6 sm:pl-10 max-w-5xl">
           
           {/* Vertical Laser Connecting Line */}
@@ -197,7 +197,7 @@ export const TimelineSection: React.FC = () => {
                     <Icon className={`w-3.5 h-3.5 ${isOngoing ? 'text-emerald-400 animate-pulse' : 'text-accent-cyan'}`} />
                   </div>
 
-                  {/* Experience Card (Left-Aligned Structure) */}
+                  {/* Experience Glass Card */}
                   <div
                     onClick={() => toggleExpand(exp.id)}
                     className={`p-6 sm:p-8 rounded-3xl glass-panel-interactive border transition-all duration-300 cursor-pointer overflow-hidden relative ${
@@ -206,8 +206,6 @@ export const TimelineSection: React.FC = () => {
                         : 'border-white/10 hover:border-white/25 bg-surface-50/70 hover:bg-surface-100/80'
                     }`}
                   >
-                    {/* Left Colored Accent Stripe */}
-                    <div className={`absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b ${meta.color}`} />
                     
                     {/* Top Highlight Bar */}
                     <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-white/10">
