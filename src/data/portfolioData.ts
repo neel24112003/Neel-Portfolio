@@ -86,28 +86,15 @@ export const SKILL_CATEGORIES = [
 
 export const EXPERIENCES: ExperienceItem[] = [
   {
-    id: "exp-7",
-    period: "Jul 2026 – Present",
-    company: "Saral Health Care",
-    role: "Web Developer",
+    id: "exp-freelance",
+    period: "Jul 2025 – Present",
+    company: "Freelance Projects",
+    role: "Freelance Web Developer",
     description: [
-      "Architected and deployed an ongoing digital healthcare application (saral-health-care.vercel.app) featuring a live vitals monitoring simulation dashboard and appointment booking engine.",
-      "Analyzed patient appointment booking trends, vital sign metric streams (ECG, SpO2, HR, BP), and user workflow interactions to optimize healthcare portal UX.",
-      "Integrated an intelligent AI health assistant chatbot widget, emergency response portal, and glassmorphic responsive interface."
+      "Saral Health Care Project: Architected and deployed an ongoing digital healthcare application (saral-health-care.vercel.app) featuring a live vitals monitoring simulation dashboard (ECG, SpO2, HR, BP), doctor appointment booking engine, and AI health assistant chatbot widget.",
+      "Sahitya Sangam Project: Led web development and application integration for a major publishing and bookstore platform, architecting catalog systems housing 1800+ books across 30+ distinct categories, multi-checkbox filtering, cart functionality, and automated PDF invoice generation."
     ],
-    skills: ["Data Analytics", "JavaScript", "HTML5/CSS3", "Live Vitals Simulation", "AI Chatbot", "Vercel"]
-  },
-  {
-    id: "exp-6",
-    period: "Jul 2025 – Jun 2026",
-    company: "Sahitya Sangam",
-    role: "Web Developer",
-    description: [
-      "Leading web development and application integration for a major publishing and bookstore platform.",
-      "Architected and maintained catalog systems housing 1800+ books across 30+ distinct categories.",
-      "Implemented seamless search, multi-checkbox filtering, cart functionality, and automated PDF invoice/receipt generation."
-    ],
-    skills: ["PHP", "MySQL", "Flutter", "JavaScript", "HTML/CSS"]
+    skills: ["JavaScript", "HTML5/CSS3", "PHP", "MySQL", "Flutter", "AI Chatbot", "Vercel", "E-commerce UI"]
   },
   {
     id: "exp-5",
@@ -248,31 +235,6 @@ export const PROJECTS: ProjectItem[] = [
       { label: "Satellites", value: "Landsat & Sentinel" },
       { label: "Data Formats", value: "CAD, KML, GeoJSON, SHP" },
       { label: "Region Focus", value: "Gujarat LULC & Coastal" }
-    ]
-  },
-  {
-    id: "python-automation",
-    title: "PYTHON DATA AUTOMATION",
-    category: "Python / Automation / Data Processing",
-    subtitle: "PDF Text Extraction & ETL Pipeline",
-    description: "An automated data processing pipeline that extracts unstructured text from PDF documents, executes keyword-based filtering, and transforms data into clean JSON format.",
-    type: "pipeline",
-    technologies: ["Python", "Jupyter Notebook", "BeautifulSoup", "PDF Extraction", "JSON Pipeline", "Regex Parsing"],
-    features: [
-      "Automated PDF Ingestion & Text Parsing Engine",
-      "Keyword-based Pattern Recognition & Regex Search",
-      "Structured JSON Payload Generation & Formatting",
-      "Web Scraping with BeautifulSoup for Data Enrichment",
-      "Jupyter Notebook Data Transformation & Verification",
-      "Zero-touch Automated Execution Workflow"
-    ],
-    problem: "Extracting specific target information from hundreds of unstructured PDF files manually was error-prone and time-consuming.",
-    approach: "Designed a modular Python ETL script using PDF text extraction libraries coupled with regex string parsing to isolate key data points and output structured JSON files.",
-    outcome: "Streamlined data workflow from PDF documents into structured JSON payloads with automated validation in Jupyter Notebook environments.",
-    metrics: [
-      { label: "Input Format", value: "Unstructured PDF" },
-      { label: "Output Format", value: "Structured JSON" },
-      { label: "Processing", value: "Automated Scripting" }
     ]
   },
   {

@@ -316,33 +316,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProjec
           </div>
         )}
 
-        {/* PROJECT 04: PYTHON DATA AUTOMATION (WITH ANIMATED PIPELINE CANVAS) */}
-        {(activeTab === 'all' || activeTab === 'pipeline') && (
-          <div className="space-y-6">
-            <div className="flex items-center justify-between">
-              <div className="space-y-1">
-                <span className="text-xs font-mono font-bold text-accent-cyan uppercase tracking-widest">
-                  PROJECT 04 • ETL & DATA AUTOMATION PIPELINE
-                </span>
-                <h3 className="text-2xl sm:text-3xl font-display font-bold text-white">
-                  Python PDF Text Extraction & JSON Processing Pipeline
-                </h3>
-              </div>
-              <button
-                onClick={() => onSelectProject(getProject('python-automation'))}
-                className="px-4 py-2 rounded-xl bg-surface-100 hover:bg-surface-200 border border-white/15 text-xs font-mono text-white flex items-center gap-2"
-              >
-                FULL CASE STUDY
-                <ArrowUpRight className="w-4 h-4 text-accent-cyan" />
-              </button>
-            </div>
-
-            {/* Interactive Pipeline Canvas Embedded */}
-            <PipelineCanvas />
-          </div>
-        )}
-
-        {/* PROJECT 05: SHREEJI KRUPA FARSAN (RETAIL E-COMMERCE SOLUTION) */}
+        {/* PROJECT 04: SHREEJI KRUPA FARSAN (RETAIL E-COMMERCE SOLUTION) */}
         {(activeTab === 'all' || activeTab === 'web') && (
           <div className="p-8 rounded-3xl glass-panel-interactive neon-border-web grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8 space-y-4">
