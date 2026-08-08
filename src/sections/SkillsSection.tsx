@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { SKILL_CATEGORIES } from '../data/portfolioData';
-import { Cpu, Code2, Globe2, Terminal, Brain, Wrench, Briefcase, Palette } from 'lucide-react';
+import { Cpu, Code2, Globe2, Terminal, Brain, Wrench, Briefcase, Palette, BarChart3 } from 'lucide-react';
 
 export const SkillsSection: React.FC = () => {
   const [selectedCategoryId, setSelectedCategoryId] = useState<string>('web');
@@ -10,6 +10,7 @@ export const SkillsSection: React.FC = () => {
   const getCategoryIcon = (id: string) => {
     switch (id) {
       case 'web': return Globe2;
+      case 'analytics': return BarChart3;
       case 'gis': return Cpu;
       case 'python': return Terminal;
       case 'ai': return Brain;
@@ -37,14 +38,14 @@ export const SkillsSection: React.FC = () => {
             Multi-Disciplinary Skill Ecosystem
           </h2>
           <p className="text-xs sm:text-sm text-text-secondary font-mono">
-            [TAP ANY CATEGORY NODE TO INSPECT PROFICIENCIES]
+            [TAP ANY COLOR-CODED CATEGORY NODE TO INSPECT PROFICIENCIES]
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
           
           {/* Left Interactive Network Graph Visualization */}
-          <div className="lg:col-span-7 bg-surface-50/60 rounded-3xl p-4 sm:p-8 border border-white/10 relative overflow-hidden flex flex-col items-center justify-center min-h-[360px] sm:min-h-[420px]">
+          <div className="lg:col-span-7 bg-surface-50/80 rounded-3xl p-4 sm:p-8 border-2 border-accent/40 relative overflow-hidden flex flex-col items-center justify-center min-h-[380px] sm:min-h-[440px] neon-border-cyber shadow-2xl">
             
             {/* Background SVG Connection Lines (Desktop) */}
             <svg className="hidden sm:block absolute inset-0 w-full h-full pointer-events-none z-0">
@@ -66,9 +67,10 @@ export const SkillsSection: React.FC = () => {
                     y1={`${cy}%`}
                     x2={`${x2}%`}
                     y2={`${y2}%`}
-                    stroke={isSelected ? cat.color : '#334155'}
-                    strokeWidth={isSelected ? '2.5' : '1'}
+                    stroke={cat.color}
+                    strokeWidth={isSelected ? '2.5' : '1.2'}
                     strokeDasharray={isSelected ? 'none' : '4 4'}
+                    strokeOpacity={isSelected ? '0.9' : '0.4'}
                     className="transition-all duration-500"
                   />
                 );
@@ -76,14 +78,20 @@ export const SkillsSection: React.FC = () => {
             </svg>
 
             {/* Central Node: NEEL */}
-            <div className="relative z-10 w-20 h-20 sm:w-28 sm:h-28 rounded-full bg-surface-100 border-2 border-accent flex flex-col items-center justify-center text-center shadow-glow-md cursor-pointer transform hover:scale-105 transition-all mb-4 sm:mb-0">
+            <div 
+              className="relative z-10 w-20 h-20 sm:w-28 sm:h-28 rounded-full bg-surface-100 border-2 border-accent-cyan flex flex-col items-center justify-center text-center cursor-pointer transform hover:scale-105 transition-all mb-4 sm:mb-0"
+              style={{
+                boxShadow: '0 0 30px rgba(56, 189, 248, 0.6), inset 0 0 15px rgba(56, 189, 248, 0.3)',
+                borderColor: '#38bdf8'
+              }}
+            >
               <span className="text-[10px] sm:text-xs font-mono font-bold text-accent-cyan tracking-widest">ENGINEER</span>
               <span className="text-lg sm:text-xl font-display font-extrabold text-white">NEEL</span>
               <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-400 animate-ping mt-1" />
             </div>
 
-            {/* Satellite Category Nodes */}
-            <div className="w-full max-w-lg grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 sm:mt-8 relative z-10">
+            {/* Color-Coded Satellite Category Nodes */}
+            <div className="w-full max-w-lg grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 sm:mt-8 relative z-10">
               {SKILL_CATEGORIES.map((cat) => {
                 const Icon = getCategoryIcon(cat.id);
                 const isSelected = cat.id === selectedCategoryId;
@@ -92,20 +100,34 @@ export const SkillsSection: React.FC = () => {
                   <button
                     key={cat.id}
                     onClick={() => setSelectedCategoryId(cat.id)}
-                    className={`p-2.5 sm:p-3 rounded-2xl border transition-all text-left flex items-center gap-2.5 active:scale-95 ${
+                    className={`p-2.5 sm:p-3 rounded-2xl border-2 transition-all duration-300 text-left flex flex-col sm:flex-row items-start sm:items-center gap-2 active:scale-95 ${
                       isSelected
-                        ? 'bg-surface-100 border-accent shadow-glow-sm scale-102 ring-1 ring-accent'
-                        : 'bg-surface-100/40 border-white/10 hover:border-white/30 hover:bg-surface-100/80'
+                        ? 'scale-105 font-bold z-20'
+                        : 'hover:scale-102 opacity-90 hover:opacity-100'
                     }`}
+                    style={{
+                      borderColor: cat.color,
+                      backgroundColor: isSelected ? `${cat.color}25` : `${cat.color}10`,
+                      boxShadow: isSelected
+                        ? `0 0 25px ${cat.color}90, 0 0 45px ${cat.color}40, inset 0 0 12px ${cat.color}30`
+                        : `0 0 14px ${cat.color}45, inset 0 0 6px ${cat.color}15`,
+                    }}
                   >
                     <div
-                      className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl flex items-center justify-center shrink-0"
-                      style={{ backgroundColor: `${cat.color}20`, color: cat.color }}
+                      className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl flex items-center justify-center shrink-0 border"
+                      style={{ 
+                        backgroundColor: `${cat.color}30`, 
+                        borderColor: `${cat.color}80`,
+                        color: cat.color 
+                      }}
                     >
                       <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     </div>
-                    <div className="truncate">
-                      <div className="text-[11px] sm:text-xs font-mono font-bold text-white leading-tight truncate">
+                    <div className="truncate w-full">
+                      <div 
+                        className="text-[11px] sm:text-xs font-mono font-bold leading-tight truncate"
+                        style={{ color: isSelected ? '#ffffff' : cat.color }}
+                      >
                         {cat.name}
                       </div>
                       <div className="text-[9px] sm:text-[10px] font-mono text-text-muted">
@@ -120,19 +142,14 @@ export const SkillsSection: React.FC = () => {
 
           {/* Right Selected Category Technology Detail Card */}
           <div className="lg:col-span-5 space-y-6">
-            <div className={`p-5 sm:p-8 rounded-3xl glass-panel space-y-4 sm:space-y-6 ${
-              selectedCategory.id === 'web' || selectedCategory.id === 'analytics'
-                ? 'neon-border-web'
-                : selectedCategory.id === 'gis'
-                ? 'neon-border-gis'
-                : selectedCategory.id === 'python'
-                ? 'neon-border-python'
-                : selectedCategory.id === 'ai'
-                ? 'neon-border-ai'
-                : selectedCategory.id === 'operations'
-                ? 'neon-border-ops'
-                : 'neon-border-cyber'
-            }`}>
+            <div 
+              className="p-5 sm:p-8 rounded-3xl glass-panel space-y-4 sm:space-y-6 transition-all duration-500 border-2"
+              style={{
+                borderColor: selectedCategory.color,
+                boxShadow: `0 0 35px ${selectedCategory.color}70, inset 0 0 15px ${selectedCategory.color}25`,
+                backgroundColor: 'rgba(17, 21, 34, 0.85)'
+              }}
+            >
               
               <div className="flex items-center justify-between border-b border-white/10 pb-3 sm:pb-4">
                 <div className="flex items-center gap-3">
@@ -151,9 +168,10 @@ export const SkillsSection: React.FC = () => {
                 <span
                   className="px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-[10px] sm:text-xs font-mono font-bold border"
                   style={{
-                    backgroundColor: `${selectedCategory.color}15`,
-                    borderColor: `${selectedCategory.color}40`,
+                    backgroundColor: `${selectedCategory.color}20`,
+                    borderColor: selectedCategory.color,
                     color: selectedCategory.color,
+                    boxShadow: `0 0 12px ${selectedCategory.color}50`
                   }}
                 >
                   ACTIVE
@@ -173,7 +191,11 @@ export const SkillsSection: React.FC = () => {
                   {selectedCategory.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-surface-100 border border-white/10 text-[11px] sm:text-xs font-mono font-medium text-white flex items-center gap-2 shadow-sm"
+                      className="px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-surface-100 border text-[11px] sm:text-xs font-mono font-medium text-white flex items-center gap-2 shadow-sm"
+                      style={{
+                        borderColor: `${selectedCategory.color}60`,
+                        boxShadow: `0 0 8px ${selectedCategory.color}30`
+                      }}
                     >
                       <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: selectedCategory.color }} />
                       {skill}
