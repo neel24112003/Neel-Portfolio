@@ -159,17 +159,6 @@ export const InteractiveResumeSection: React.FC<InteractiveResumeModalProps> = (
                   <span className="text-text-secondary">{PERSONAL_INFO.location}</span>
                 </div>
 
-                <a 
-                  href="https://saral-health-care.vercel.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2.5 p-2 px-3 rounded-xl bg-accent/20 border border-accent-cyan/50 text-accent-cyan hover:underline text-xs shadow-glow-sm"
-                >
-                  <Globe2 className="w-4 h-4 text-accent-cyan shrink-0" />
-                  <span>saral-health-care.vercel.app</span>
-                  <ExternalLink className="w-3.5 h-3.5 ml-auto" />
-                </a>
-
               </div>
 
             </div>
@@ -353,7 +342,7 @@ export const InteractiveResumeSection: React.FC<InteractiveResumeModalProps> = (
             {/* Document Footer */}
             <div className="border-t border-white/10 pt-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-[10px] font-mono text-text-muted relative z-10">
               <span>Neel Patel — Computer Science Engineer (Specialization in Cloud Computing)</span>
-              <span>Portfolio: https://saral-health-care.vercel.app</span>
+              <span>Professional Resume Document</span>
             </div>
 
           </div>
