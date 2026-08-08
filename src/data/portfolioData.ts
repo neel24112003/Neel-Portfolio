@@ -97,7 +97,7 @@ export const EXPERIENCES: ExperienceItem[] = [
   },
   {
     id: "exp-6",
-    period: "2025 – 2026",
+    period: "Jul 2025 – Jun 2026",
     company: "Sahitya Sangam",
     role: "Web Developer",
     description: [
@@ -109,7 +109,7 @@ export const EXPERIENCES: ExperienceItem[] = [
   },
   {
     id: "exp-5",
-    period: "2025 – 2026",
+    period: "Jul 2025 – Jun 2026",
     company: "Guide Placement",
     role: "Job Consultant",
     description: [
@@ -121,7 +121,7 @@ export const EXPERIENCES: ExperienceItem[] = [
   },
   {
     id: "exp-4",
-    period: "2024 – 2025",
+    period: "Oct 2024 – Mar 2025",
     company: "JIO",
     role: "GIS Analyst",
     description: [
@@ -133,7 +133,7 @@ export const EXPERIENCES: ExperienceItem[] = [
   },
   {
     id: "exp-3",
-    period: "2023 – 2024",
+    period: "Dec 2023 – Mar 2024",
     company: "Yogya Capital",
     role: "Python Developer & Data Analyst",
     description: [
@@ -145,7 +145,7 @@ export const EXPERIENCES: ExperienceItem[] = [
   },
   {
     id: "exp-2",
-    period: "2022 – 2023",
+    period: "Nov 2022 – Nov 2023",
     company: "Spectrarc Solution",
     role: "GIS Analyst",
     description: [
@@ -157,7 +157,7 @@ export const EXPERIENCES: ExperienceItem[] = [
   },
   {
     id: "exp-1",
-    period: "2021 – 2022",
+    period: "May 2022 – Oct 2022",
     company: "Shreeji Krupa Farsan",
     role: "Web Developer",
     description: [
@@ -355,7 +355,7 @@ export const EDUCATION: EducationItem[] = [
 export const BEYOND_CODE_DATA = {
   company: "Guide Placement",
   role: "Job Consultant",
-  period: "2025 – 2026",
+  period: "Jul 2025 – Jun 2026",
   headline: "Talent Operations, Recruitment & Hiring Logistics",
   description: "Leveraging technical problem-solving to drive human capital acquisition, candidate evaluation, and operational recruitment pipelines.",
   responsibilities: [
