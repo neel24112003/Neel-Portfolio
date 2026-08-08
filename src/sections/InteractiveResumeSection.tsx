@@ -25,7 +25,7 @@ export const InteractiveResumeSection: React.FC<InteractiveResumeModalProps> = (
 
   return (
     <div className="fixed inset-0 z-[130] bg-black/90 backdrop-blur-2xl flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
-      <div className="w-full max-w-5xl bg-surface-50 border border-white/20 rounded-3xl shadow-2xl overflow-hidden my-auto flex flex-col max-h-[92vh] animate-in fade-in zoom-in-95">
+      <div className="w-full max-w-5xl bg-surface-50 border border-white/20 rounded-3xl shadow-2xl overflow-hidden my-auto flex flex-col max-h-[92vh] animate-in fade-in zoom-in-95 neon-blue-box">
         
         {/* Top Control Bar */}
         <div className="bg-surface-100/90 px-6 py-4 border-b border-white/10 flex flex-wrap items-center justify-between gap-4 sticky top-0 z-20">

@@ -27,26 +27,35 @@
   }
 }
 
-/* Glassmorphism & Cyber card effects */
-.glass-panel {
-  background: rgba(17, 21, 34, 0.65);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+/* Continuous Pulsing Glowing Blue Neon Border for All Boxes, Cards & Shapes */
+@keyframes blueNeonPulse {
+  0%, 100% {
+    border-color: #38bdf8 !important;
+    box-shadow: 0 0 14px rgba(56, 189, 248, 0.65), 0 0 28px rgba(56, 189, 248, 0.25), inset 0 0 8px rgba(56, 189, 248, 0.2);
+  }
+  50% {
+    border-color: #6366f1 !important;
+    box-shadow: 0 0 26px rgba(56, 189, 248, 0.9), 0 0 50px rgba(99, 102, 241, 0.6), inset 0 0 16px rgba(56, 189, 248, 0.35);
+  }
+}
+
+.glass-panel,
+.glass-panel-interactive,
+.neon-blue-box {
+  border: 1.5px solid #38bdf8 !important;
+  animation: blueNeonPulse 3.5s ease-in-out infinite !important;
 }
 
 .glass-panel-interactive {
-  background: rgba(17, 21, 34, 0.6);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.07);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.glass-panel-interactive:hover {
+.glass-panel:hover,
+.glass-panel-interactive:hover,
+.neon-blue-box:hover {
   background: rgba(24, 29, 46, 0.85);
-  border-color: rgba(99, 102, 241, 0.4);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(99, 102, 241, 0.2);
+  border-color: #38bdf8 !important;
+  box-shadow: 0 0 35px rgba(56, 189, 248, 1), 0 0 70px rgba(99, 102, 241, 0.7), inset 0 0 22px rgba(56, 189, 248, 0.4) !important;
 }
 
 .glow-pill {
