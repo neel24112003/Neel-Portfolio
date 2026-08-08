@@ -213,7 +213,10 @@ export const InteractiveResumeSection: React.FC<InteractiveResumeModalProps> = (
                           {cat.skills.map((s) => (
                             <span 
                               key={s} 
-                              className="px-2 py-0.5 rounded-md bg-surface-200 text-[10px] font-mono text-white border border-accent-cyan/40 shadow-glow-sm"
+                              className="px-2 py-0.5 rounded-md bg-surface-200/90 text-[10px] font-mono font-bold text-white border border-accent-cyan/60 shadow-glow-sm hover:border-accent-cyan transition-all"
+                              style={{
+                                boxShadow: '0 0 8px rgba(56, 189, 248, 0.3)'
+                              }}
                             >
                               {s}
                             </span>
@@ -289,9 +292,15 @@ export const InteractiveResumeSection: React.FC<InteractiveResumeModalProps> = (
                           ))}
                         </ul>
 
-                        <div className="flex flex-wrap gap-1 pt-1">
+                        <div className="flex flex-wrap gap-1.5 pt-1.5">
                           {exp.skills.map((s) => (
-                            <span key={s} className="px-2 py-0.5 rounded bg-surface-200 text-[10px] font-mono text-text-secondary border border-white/10">
+                            <span 
+                              key={s} 
+                              className="px-2.5 py-1 rounded-lg bg-surface-200/90 border border-accent-cyan/60 text-accent-cyan font-mono text-[10px] font-bold shadow-glow-sm hover:border-accent-cyan hover:bg-accent-cyan/20 transition-all"
+                              style={{
+                                boxShadow: '0 0 10px rgba(56, 189, 248, 0.35)'
+                              }}
+                            >
                               {s}
                             </span>
                           ))}
@@ -323,9 +332,15 @@ export const InteractiveResumeSection: React.FC<InteractiveResumeModalProps> = (
 
                         <p className="text-xs text-text-secondary leading-relaxed font-sans">{proj.description}</p>
 
-                        <div className="flex flex-wrap gap-1 pt-0.5">
+                        <div className="flex flex-wrap gap-1.5 pt-1">
                           {proj.technologies.map((t) => (
-                            <span key={t} className="px-2 py-0.5 rounded bg-surface-200 text-[10px] font-mono text-emerald-300 border border-emerald-500/30">
+                            <span 
+                              key={t} 
+                              className="px-2.5 py-1 rounded-lg bg-surface-200/90 border border-emerald-500/60 text-emerald-300 font-mono text-[10px] font-bold shadow-glow-sm hover:border-emerald-400 hover:bg-emerald-500/20 transition-all"
+                              style={{
+                                boxShadow: '0 0 10px rgba(16, 185, 129, 0.35)'
+                              }}
+                            >
                               {t}
                             </span>
                           ))}
