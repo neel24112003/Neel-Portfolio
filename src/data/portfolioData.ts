@@ -8,6 +8,8 @@ export const PERSONAL_INFO = {
   phone: "+91 9601911100",
   email: "neelnp2411@gmail.com",
   location: "Surat, Gujarat, India",
+  linkedin: "https://www.linkedin.com/in/neel-patel-8834b936b",
+  github: "https://github.com/neel24112003",
   languages: ["English", "Hindi", "Gujarati"],
   summary: "Computer Science Engineer (Specialization in Cloud Computing) with hands-on experience across web development, data analytics & visualization, GIS analysis, Python automation, and AI-assisted software engineering. Experienced in building responsive web platforms (such as Saral Health Care), analyzing complex datasets with Power BI/Python/SQL, spatial data modeling, and cloud-automated ETL pipelines."
 };

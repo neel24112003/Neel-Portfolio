@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Download, Printer, FileText, Check, Copy, Mail, Phone, MapPin, ExternalLink, Briefcase, GraduationCap, Award, Code, Globe2, Sparkles, Server } from 'lucide-react';
+import { X, Download, Printer, FileText, Check, Copy, Mail, Phone, MapPin, ExternalLink, Briefcase, GraduationCap, Award, Code, Globe2, Sparkles, Server, Linkedin, Github } from 'lucide-react';
 import { PERSONAL_INFO, EXPERIENCES, PROJECTS, SKILL_CATEGORIES, CERTIFICATIONS, EDUCATION } from '../data/portfolioData';
 import { generatePdfResume } from '../utils/generatePdfResume';
 
@@ -158,6 +158,28 @@ export const InteractiveResumeSection: React.FC<InteractiveResumeModalProps> = (
                   <MapPin className="w-4 h-4 text-accent-violet shrink-0" />
                   <span className="text-text-secondary">{PERSONAL_INFO.location}</span>
                 </div>
+
+                <a 
+                  href={PERSONAL_INFO.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2.5 p-2 px-3 rounded-xl bg-sky-500/10 border border-sky-400/50 text-sky-300 hover:text-white hover:border-sky-300 transition-all text-xs shadow-glow-sm"
+                >
+                  <Linkedin className="w-4 h-4 text-sky-400 shrink-0" />
+                  <span className="truncate">linkedin.com/in/neel-patel-8834b936b</span>
+                  <ExternalLink className="w-3.5 h-3.5 ml-auto text-sky-400 shrink-0" />
+                </a>
+
+                <a 
+                  href={PERSONAL_INFO.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2.5 p-2 px-3 rounded-xl bg-purple-500/10 border border-purple-400/50 text-purple-300 hover:text-white hover:border-purple-300 transition-all text-xs shadow-glow-sm"
+                >
+                  <Github className="w-4 h-4 text-purple-400 shrink-0" />
+                  <span className="truncate">github.com/neel24112003</span>
+                  <ExternalLink className="w-3.5 h-3.5 ml-auto text-purple-400 shrink-0" />
+                </a>
 
               </div>
 

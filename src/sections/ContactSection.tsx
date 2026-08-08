@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle2, AlertCircle, Copy, Check, RefreshCw } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle2, AlertCircle, Copy, Check, RefreshCw, Linkedin, Github, ExternalLink } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 export const ContactSection: React.FC = () => {
@@ -163,6 +163,48 @@ export const ContactSection: React.FC = () => {
                     </div>
                   </div>
                 </div>
+
+                {/* LinkedIn Card */}
+                <a 
+                  href={PERSONAL_INFO.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-4 rounded-2xl bg-surface-100/70 neon-border-web flex items-center justify-between group transition-all hover:scale-102"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-sky-500/20 border border-sky-400/40 flex items-center justify-center text-sky-400">
+                      <Linkedin className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <div className="text-[10px] text-text-muted">LINKEDIN PROFILE</div>
+                      <div className="text-xs sm:text-sm text-sky-300 font-semibold truncate max-w-[200px] sm:max-w-[240px]">
+                        neel-patel-8834b936b
+                      </div>
+                    </div>
+                  </div>
+                  <ExternalLink className="w-4 h-4 text-sky-400 group-hover:translate-x-0.5 transition-transform" />
+                </a>
+
+                {/* GitHub Card */}
+                <a 
+                  href={PERSONAL_INFO.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-4 rounded-2xl bg-surface-100/70 neon-border-cyber flex items-center justify-between group transition-all hover:scale-102"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-purple-500/20 border border-purple-400/40 flex items-center justify-center text-purple-400">
+                      <Github className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <div className="text-[10px] text-text-muted">GITHUB REPOSITORIES</div>
+                      <div className="text-xs sm:text-sm text-purple-300 font-semibold truncate max-w-[200px] sm:max-w-[240px]">
+                        neel24112003
+                      </div>
+                    </div>
+                  </div>
+                  <ExternalLink className="w-4 h-4 text-purple-400 group-hover:translate-x-0.5 transition-transform" />
+                </a>
 
               </div>
             </div>
