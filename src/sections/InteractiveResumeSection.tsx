@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Printer, FileText, Check, Copy, Mail, Phone, MapPin, ExternalLink, Briefcase, GraduationCap, Award, Code, Globe2, Sparkles, Server, Linkedin, Github } from 'lucide-react';
+import { X, FileText, Check, Copy, Mail, Phone, MapPin, ExternalLink, Briefcase, GraduationCap, Award, Code, Globe2, Sparkles, Server, Linkedin, Github } from 'lucide-react';
 import { PERSONAL_INFO, EXPERIENCES, PROJECTS, SKILL_CATEGORIES, CERTIFICATIONS, EDUCATION } from '../data/portfolioData';
 
 interface InteractiveResumeModalProps {
@@ -16,10 +16,6 @@ export const InteractiveResumeSection: React.FC<InteractiveResumeModalProps> = (
     navigator.clipboard.writeText(PERSONAL_INFO.email);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
-  };
-
-  const handlePrint = () => {
-    window.print();
   };
 
   return (
@@ -43,15 +39,6 @@ export const InteractiveResumeSection: React.FC<InteractiveResumeModalProps> = (
           </div>
 
           <div className="flex items-center gap-2">
-            <button
-              onClick={handlePrint}
-              className="px-3.5 py-2 rounded-xl bg-surface-200 hover:bg-surface-300 border border-white/15 text-xs font-mono text-white flex items-center gap-1.5 transition-all active:scale-95"
-              title="Print Resume"
-            >
-              <Printer className="w-4 h-4 text-text-secondary" />
-              <span className="hidden sm:inline">PRINT</span>
-            </button>
-
             <button
               onClick={onClose}
               className="p-2 rounded-xl bg-surface-200/80 hover:bg-surface-300 text-text-secondary hover:text-white transition-all ml-1"
