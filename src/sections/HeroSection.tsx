@@ -66,15 +66,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
             NEEL PATEL
           </h1>
 
-          <div className="flex flex-wrap items-center justify-center gap-2 pt-1">
-            <span className="text-base sm:text-2xl font-display font-bold text-accent-cyan tracking-wide">
+          <div className="flex flex-wrap items-center justify-center gap-2.5 pt-1">
+            <span className="text-lg sm:text-2xl lg:text-3xl font-display font-bold text-accent-cyan tracking-wide">
               Computer Science Engineer
             </span>
-            <span className="px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-xs sm:text-sm font-mono font-bold text-emerald-400 shadow-glow-sm">
+            <span className="px-3.5 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-500/50 text-xs sm:text-sm lg:text-base font-mono font-bold text-emerald-400 shadow-glow-sm">
               Specialization in Cloud Computing
-            </span>
-            <span className="text-base sm:text-2xl font-display font-bold text-white tracking-wide">
-              & Data Analyst
             </span>
           </div>
         </div>

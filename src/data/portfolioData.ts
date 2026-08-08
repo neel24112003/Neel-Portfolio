@@ -2,7 +2,7 @@ import { ExperienceItem, ProjectItem, CertificationItem, EducationItem } from '.
 
 export const PERSONAL_INFO = {
   name: "NEEL PATEL",
-  title: "Computer Science Engineer (Specialization in Cloud Computing) & Data Analyst",
+  title: "Computer Science Engineer — Specialization in Cloud Computing",
   headline: "Building Web Platforms, Data Analytics Solutions, Cloud Computing Infrastructure & Intelligent Automation.",
   tagline: "Computer Science Engineer with Specialization in Cloud Computing, focused on Web Development, Data Analytics, GIS Analysis, Python Automation, and AI-Assisted Systems.",
   phone: "+91 9601911100",
