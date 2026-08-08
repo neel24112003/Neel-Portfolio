@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { X, Download, Printer, FileText, Check, Copy, Mail, Phone, MapPin, ExternalLink, Briefcase, GraduationCap, Award, Code, Globe2, Sparkles, Server, Linkedin, Github } from 'lucide-react';
+import { X, Printer, FileText, Check, Copy, Mail, Phone, MapPin, ExternalLink, Briefcase, GraduationCap, Award, Code, Globe2, Sparkles, Server, Linkedin, Github } from 'lucide-react';
 import { PERSONAL_INFO, EXPERIENCES, PROJECTS, SKILL_CATEGORIES, CERTIFICATIONS, EDUCATION } from '../data/portfolioData';
-import { generatePdfResume } from '../utils/generatePdfResume';
 
 interface InteractiveResumeModalProps {
   isOpen: boolean;
@@ -10,7 +9,6 @@ interface InteractiveResumeModalProps {
 
 export const InteractiveResumeSection: React.FC<InteractiveResumeModalProps> = ({ isOpen, onClose }) => {
   const [copied, setCopied] = useState<boolean>(false);
-  const [isDownloading, setIsDownloading] = useState<boolean>(false);
 
   if (!isOpen) return null;
 
@@ -22,12 +20,6 @@ export const InteractiveResumeSection: React.FC<InteractiveResumeModalProps> = (
 
   const handlePrint = () => {
     window.print();
-  };
-
-  const handleDownloadPdf = async () => {
-    setIsDownloading(true);
-    await generatePdfResume('resume-a4-document');
-    setIsDownloading(false);
   };
 
   return (
@@ -58,16 +50,6 @@ export const InteractiveResumeSection: React.FC<InteractiveResumeModalProps> = (
             >
               <Printer className="w-4 h-4 text-text-secondary" />
               <span className="hidden sm:inline">PRINT</span>
-            </button>
-
-            <button
-              onClick={handleDownloadPdf}
-              disabled={isDownloading}
-              className="px-4 py-2 rounded-xl bg-accent hover:bg-accent/90 text-white font-mono text-xs font-bold flex items-center gap-2 shadow-glow-sm transition-all active:scale-95 disabled:opacity-50"
-              title="Download Neel Patel Resume in PDF format"
-            >
-              <Download className="w-4 h-4" />
-              {isDownloading ? 'GENERATING 1-TO-1 PDF...' : 'DOWNLOAD RESUME (PDF)'}
             </button>
 
             <button
