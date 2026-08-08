@@ -114,7 +114,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProjec
                     className="px-5 py-2.5 rounded-xl bg-accent hover:bg-accent/90 text-white font-mono text-xs font-bold flex items-center gap-2 shadow-glow-sm transition-all"
                   >
                     <ExternalLink className="w-4 h-4" />
-                    LIVE WEBSITE (VERCEL)
+                    VISIT WEBSITE
                   </a>
                   <button
                     onClick={() => onSelectProject(getProject('saral-health-care'))}
