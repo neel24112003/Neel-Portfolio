@@ -17,33 +17,58 @@ export const generatePdfResume = async (elementId: string = 'resume-a4-document'
       allowTaint: true,
       backgroundColor: '#0d111d',
       logging: false,
-      windowWidth: 1024,
+      windowWidth: 1200,
       onclone: (clonedDoc) => {
         const clonedEl = clonedDoc.getElementById(elementId);
         if (clonedEl) {
-          clonedEl.style.width = '840px';
-          clonedEl.style.maxWidth = '840px';
-          clonedEl.style.minWidth = '840px';
+          // Lock exact 900px A4 proportion container so image spans 100% of A4 PDF page with 0 right margin
+          clonedEl.style.width = '900px';
+          clonedEl.style.maxWidth = '900px';
+          clonedEl.style.minWidth = '900px';
           clonedEl.style.transform = 'none';
           clonedEl.style.margin = '0 auto';
-          clonedEl.style.padding = '36px';
+          clonedEl.style.padding = '32px';
           clonedEl.style.borderRadius = '0px';
           clonedEl.style.boxSizing = 'border-box';
           clonedEl.style.backgroundColor = '#0d111d';
 
-          // Force explicit 2-column grid layout during PDF generation
-          const gridCols = clonedEl.querySelectorAll('.resume-two-col-grid');
-          gridCols.forEach((grid: any) => {
-            grid.style.display = 'grid';
-            grid.style.gridTemplateColumns = '280px 1fr';
-            grid.style.gap = '24px';
-          });
+          // Force Header Layout to stay horizontal in PDF clone
+          const headerBlock = clonedEl.querySelector('.resume-header-block') as HTMLElement;
+          if (headerBlock) {
+            headerBlock.style.display = 'flex';
+            headerBlock.style.flexDirection = 'row';
+            headerBlock.style.alignItems = 'center';
+            headerBlock.style.justifyContent = 'space-between';
+            headerBlock.style.gap = '24px';
+          }
 
-          // Force profile headshot image sizing
+          // Force 2-Column Sidebar & Main Content layout to stay horizontal in PDF clone
+          const flexRow = clonedEl.querySelector('.resume-flex-row') as HTMLElement;
+          const sidebar = clonedEl.querySelector('.resume-sidebar') as HTMLElement;
+          const mainContent = clonedEl.querySelector('.resume-main-content') as HTMLElement;
+
+          if (flexRow) {
+            flexRow.style.display = 'flex';
+            flexRow.style.flexDirection = 'row';
+            flexRow.style.gap = '24px';
+            flexRow.style.alignItems = 'flex-start';
+          }
+          if (sidebar) {
+            sidebar.style.width = '280px';
+            sidebar.style.minWidth = '280px';
+            sidebar.style.maxWidth = '280px';
+            sidebar.style.flexShrink = '0';
+          }
+          if (mainContent) {
+            mainContent.style.width = '530px';
+            mainContent.style.flex = '1';
+          }
+
+          // Force headshot image size
           const headshotImg = clonedEl.querySelector('.resume-headshot-img') as HTMLElement;
           if (headshotImg) {
-            headshotImg.style.width = '115px';
-            headshotImg.style.height = '115px';
+            headshotImg.style.width = '110px';
+            headshotImg.style.height = '110px';
             headshotImg.style.borderRadius = '16px';
             headshotImg.style.objectFit = 'cover';
           }

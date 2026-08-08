@@ -83,7 +83,7 @@ export const InteractiveResumeSection: React.FC<InteractiveResumeModalProps> = (
         {/* Executive Document Container Area (100% Full Width Utilization, Zero Side Margins) */}
         <div className="p-3 sm:p-8 overflow-y-auto flex-1 bg-[#05070c] text-white w-full">
           
-          {/* Executive Resume Canvas (Fills 100% width of modal on screen, locked to 820px during PDF download) */}
+          {/* Executive Resume Canvas (Fills 100% width on screen, locked to 900px 2-column layout in PDF download) */}
           <div 
             id="resume-a4-document"
             className="w-full bg-[#0d111d] border-2 border-accent-cyan/40 rounded-2xl p-4 sm:p-8 shadow-2xl text-white space-y-6 font-sans relative overflow-hidden"
@@ -96,7 +96,7 @@ export const InteractiveResumeSection: React.FC<InteractiveResumeModalProps> = (
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
 
             {/* Header Block: Profile Image + Name & Contact Matrix */}
-            <div className="border-b border-white/10 pb-5 flex flex-col sm:flex-row items-center sm:items-start justify-between gap-6 relative z-10">
+            <div className="resume-header-block border-b border-white/10 pb-5 flex flex-col sm:flex-row items-center sm:items-start justify-between gap-6 relative z-10">
               
               {/* Profile Photo & Name Titles */}
               <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-left w-full sm:w-auto">
@@ -174,11 +174,11 @@ export const InteractiveResumeSection: React.FC<InteractiveResumeModalProps> = (
               </p>
             </div>
 
-            {/* Balanced Two-Column Layout Grid (100% Horizontal Fill, Locked to 270px + 1fr during PDF download) */}
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-6 resume-two-col-grid relative z-10">
+            {/* 2-Column Sidebar & Main Content Layout (Flex-based for 100% reliability in PDF clone) */}
+            <div className="resume-flex-row flex flex-col md:flex-row gap-6 items-start relative z-10">
               
-              {/* Left Column (4 / 12 Cols = Sidebar) */}
-              <div className="md:col-span-4 space-y-6 border-b md:border-b-0 md:border-r border-white/10 pb-6 md:pb-0 md:pr-6">
+              {/* Left Sidebar (280px Fixed Width in PDF clone) */}
+              <div className="resume-sidebar w-full md:w-[280px] shrink-0 space-y-6 border-b md:border-b-0 md:border-r border-white/10 pb-6 md:pb-0 md:pr-6">
                 
                 {/* Education Cards */}
                 <div className="space-y-3">
@@ -262,8 +262,8 @@ export const InteractiveResumeSection: React.FC<InteractiveResumeModalProps> = (
 
               </div>
 
-              {/* Right Column (8 / 12 Cols = Main Content Body) */}
-              <div className="md:col-span-8 space-y-6">
+              {/* Right Main Content (530px Width in PDF clone) */}
+              <div className="resume-main-content w-full md:flex-1 min-w-0 space-y-6">
                 
                 {/* Professional Experience Chronology */}
                 <div className="space-y-4">
