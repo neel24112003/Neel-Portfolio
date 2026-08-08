@@ -10,58 +10,23 @@ export const generatePdfResume = async (elementId: string = 'resume-a4-document'
   }
 
   try {
-    // 2.5x scale capture for ultra-sharp, high-contrast, crystal-clear text readability
+    // 1. Measure the exact screen dimensions of the element as currently rendered in the browser
+    const exactWidth = element.offsetWidth;
+    const exactHeight = element.offsetHeight;
+
+    // 2. Capture html2canvas directly from the actual active DOM tree
     const canvas = await html2canvas(element, {
-      scale: 2.5,
+      scale: 3, // 300 DPI vector-sharp quality
       useCORS: true,
       allowTaint: true,
-      backgroundColor: '#07090e',
+      backgroundColor: '#0d111d',
       logging: false,
-      windowWidth: 960,
-      onclone: (clonedDoc) => {
-        const clonedEl = clonedDoc.getElementById(elementId);
-        if (clonedEl) {
-          clonedEl.style.width = '960px';
-          clonedEl.style.maxWidth = '960px';
-          clonedEl.style.minWidth = '960px';
-          clonedEl.style.margin = '0 auto';
-          clonedEl.style.padding = '36px';
-          clonedEl.style.boxSizing = 'border-box';
-          clonedEl.style.backgroundColor = '#07090e';
-          clonedEl.style.color = '#ffffff';
-
-          // Force 2-Column Sidebar & Main Content layout
-          const flexRow = clonedEl.querySelector('.resume-flex-row') as HTMLElement;
-          const sidebar = clonedEl.querySelector('.resume-sidebar') as HTMLElement;
-          const mainContent = clonedEl.querySelector('.resume-main-content') as HTMLElement;
-
-          if (flexRow) {
-            flexRow.style.display = 'flex';
-            flexRow.style.flexDirection = 'row';
-            flexRow.style.gap = '28px';
-            flexRow.style.alignItems = 'flex-start';
-          }
-          if (sidebar) {
-            sidebar.style.width = '300px';
-            sidebar.style.minWidth = '300px';
-            sidebar.style.maxWidth = '300px';
-            sidebar.style.flexShrink = '0';
-          }
-          if (mainContent) {
-            mainContent.style.width = '580px';
-            mainContent.style.flex = '1';
-          }
-
-          // Force Headshot image dimensions
-          const headshotImg = clonedEl.querySelector('.resume-headshot-img') as HTMLElement;
-          if (headshotImg) {
-            headshotImg.style.width = '120px';
-            headshotImg.style.height = '120px';
-            headshotImg.style.borderRadius = '18px';
-            headshotImg.style.objectFit = 'cover';
-          }
-        }
-      }
+      width: exactWidth,
+      height: exactHeight,
+      windowWidth: document.documentElement.clientWidth,
+      windowHeight: document.documentElement.clientHeight,
+      scrollX: 0,
+      scrollY: -window.scrollY,
     });
 
     const imgData = canvas.toDataURL('image/png', 1.0);
@@ -87,8 +52,8 @@ export const generatePdfResume = async (elementId: string = 'resume-a4-document'
     heightLeft -= pdfHeight;
     pageIndex++;
 
-    // Render Page 2, Page 3 etc. with high clarity
-    while (heightLeft > 4) { // 4mm buffer
+    // Render Page 2, Page 3 etc. matching screen 1-to-1
+    while (heightLeft > 3) {
       position = -(pageIndex * pdfHeight);
       pdf.addPage();
       pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight, undefined, 'FAST');
@@ -98,6 +63,6 @@ export const generatePdfResume = async (elementId: string = 'resume-a4-document'
 
     pdf.save('Neel_Patel_Resume.pdf');
   } catch (error) {
-    console.error('Error generating readable PDF:', error);
+    console.error('Error generating 1-to-1 matching PDF:', error);
   }
 };

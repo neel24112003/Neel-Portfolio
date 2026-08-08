@@ -67,7 +67,7 @@ export const InteractiveResumeSection: React.FC<InteractiveResumeModalProps> = (
               title="Download Neel Patel Resume in PDF format"
             >
               <Download className="w-4 h-4" />
-              {isDownloading ? 'GENERATING HIGH-RES PDF...' : 'DOWNLOAD RESUME (PDF)'}
+              {isDownloading ? 'GENERATING 1-TO-1 PDF...' : 'DOWNLOAD RESUME (PDF)'}
             </button>
 
             <button
@@ -83,10 +83,10 @@ export const InteractiveResumeSection: React.FC<InteractiveResumeModalProps> = (
         {/* Executive Document Container Area */}
         <div className="p-3 sm:p-8 overflow-y-auto flex-1 bg-[#05070c] text-white w-full">
           
-          {/* Main Printable Document Canvas */}
+          {/* Main Printable Document Canvas (Single continuous executive layout matching screen 1-to-1) */}
           <div 
             id="resume-a4-document"
-            className="w-full bg-[#0d111d] border-2 border-accent-cyan/40 rounded-2xl p-5 sm:p-9 shadow-2xl text-white space-y-7 font-sans relative overflow-hidden"
+            className="w-full max-w-5xl mx-auto bg-[#0d111d] border-2 border-accent-cyan/40 rounded-3xl p-6 sm:p-10 shadow-2xl text-white space-y-7 font-sans relative overflow-hidden"
             style={{
               boxShadow: '0 0 50px rgba(56, 189, 248, 0.3), inset 0 0 25px rgba(16, 185, 129, 0.15)'
             }}
@@ -96,7 +96,7 @@ export const InteractiveResumeSection: React.FC<InteractiveResumeModalProps> = (
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
 
             {/* Header Block: Profile Photo, Name, Specialization & Contact Information Matrix */}
-            <div className="resume-header-block border-b border-white/15 pb-6 flex flex-col md:flex-row items-center md:items-start justify-between gap-6 relative z-10">
+            <div className="border-b border-white/15 pb-6 flex flex-col md:flex-row items-center md:items-start justify-between gap-6 relative z-10">
               
               {/* Profile Photo & Titles */}
               <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5 text-center sm:text-left w-full md:w-auto">
@@ -104,7 +104,7 @@ export const InteractiveResumeSection: React.FC<InteractiveResumeModalProps> = (
                   <img
                     src="/profile.jpg"
                     alt="Neel Patel"
-                    className="resume-headshot-img w-32 h-32 sm:w-36 sm:h-36 rounded-2xl border-2 border-accent-cyan object-cover shadow-2xl"
+                    className="w-32 h-32 sm:w-36 sm:h-36 rounded-2xl border-2 border-accent-cyan object-cover shadow-2xl"
                     style={{
                       boxShadow: '0 0 25px rgba(56, 189, 248, 0.5), inset 0 0 10px rgba(56, 189, 248, 0.2)'
                     }}
@@ -135,7 +135,7 @@ export const InteractiveResumeSection: React.FC<InteractiveResumeModalProps> = (
               </div>
 
               {/* Contact Information Matrix Cards */}
-              <div className="w-full md:w-auto grid grid-cols-1 gap-2 font-mono text-xs text-slate-200 shrink-0">
+              <div className="w-full md:w-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-2 font-mono text-xs text-slate-200 shrink-0">
                 <div className="flex items-center gap-3 p-2.5 px-3.5 rounded-xl bg-surface-100/90 border border-accent-cyan/50 shadow-glow-sm text-xs font-semibold">
                   <Mail className="w-4 h-4 text-accent-cyan shrink-0" />
                   <span className="text-white select-all">{PERSONAL_INFO.email}</span>
@@ -179,7 +179,7 @@ export const InteractiveResumeSection: React.FC<InteractiveResumeModalProps> = (
 
             </div>
 
-            {/* Executive Summary Box */}
+            {/* Executive Summary Statement Box */}
             <div className="p-4 sm:p-5 rounded-2xl bg-surface-100/90 border border-accent-cyan/50 shadow-glow-sm space-y-2 relative z-10">
               <h3 className="text-xs font-mono font-bold text-accent-cyan uppercase tracking-wider flex items-center gap-2">
                 <Sparkles className="w-4 h-4 text-emerald-400" />
@@ -191,10 +191,10 @@ export const InteractiveResumeSection: React.FC<InteractiveResumeModalProps> = (
             </div>
 
             {/* 2-Column Sidebar & Main Content Layout */}
-            <div className="resume-flex-row flex flex-col md:flex-row gap-7 items-start relative z-10">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 relative z-10">
               
-              {/* Left Sidebar (300px Fixed Width in PDF clone) */}
-              <div className="resume-sidebar w-full md:w-[300px] shrink-0 space-y-6 border-b md:border-b-0 md:border-r border-white/10 pb-6 md:pb-0 md:pr-6">
+              {/* Left Sidebar (4 Columns out of 12) */}
+              <div className="md:col-span-4 space-y-6 border-b md:border-b-0 md:border-r border-white/15 pb-6 md:pb-0 md:pr-6">
                 
                 {/* Education Section */}
                 <div className="space-y-3">
@@ -229,7 +229,7 @@ export const InteractiveResumeSection: React.FC<InteractiveResumeModalProps> = (
                           {cat.skills.map((s) => (
                             <span 
                               key={s} 
-                              className="px-2.5 py-1 rounded-md bg-surface-200 text-xs font-mono font-bold text-white border border-accent-cyan/60 shadow-glow-sm"
+                              className="px-2.5 py-1 rounded-md bg-surface-200 text-xs font-mono font-bold text-white border border-accent-cyan/60 shadow-glow-sm hover:border-accent-cyan transition-all"
                               style={{ boxShadow: '0 0 8px rgba(56, 189, 248, 0.3)' }}
                             >
                               {s}
@@ -276,8 +276,8 @@ export const InteractiveResumeSection: React.FC<InteractiveResumeModalProps> = (
 
               </div>
 
-              {/* Right Main Content (580px Width in PDF clone) */}
-              <div className="resume-main-content w-full md:flex-1 min-w-0 space-y-6">
+              {/* Right Main Content (8 Columns out of 12) */}
+              <div className="md:col-span-8 space-y-6">
                 
                 {/* Professional Experience Chronology */}
                 <div className="space-y-4">
@@ -310,7 +310,7 @@ export const InteractiveResumeSection: React.FC<InteractiveResumeModalProps> = (
                           {exp.skills.map((s) => (
                             <span 
                               key={s} 
-                              className="px-3 py-1 rounded-lg bg-surface-200/90 border border-accent-cyan/60 text-accent-cyan font-mono text-xs font-bold shadow-glow-sm"
+                              className="px-3 py-1 rounded-lg bg-surface-200/90 border border-accent-cyan/60 text-accent-cyan font-mono text-xs font-bold shadow-glow-sm hover:border-accent-cyan transition-all"
                               style={{ boxShadow: '0 0 10px rgba(56, 189, 248, 0.35)' }}
                             >
                               {s}
@@ -348,7 +348,7 @@ export const InteractiveResumeSection: React.FC<InteractiveResumeModalProps> = (
                           {proj.technologies.map((t) => (
                             <span 
                               key={t} 
-                              className="px-3 py-1 rounded-lg bg-surface-200/90 border border-emerald-500/60 text-emerald-300 font-mono text-xs font-bold shadow-glow-sm"
+                              className="px-3 py-1 rounded-lg bg-surface-200/90 border border-emerald-500/60 text-emerald-300 font-mono text-xs font-bold shadow-glow-sm hover:border-emerald-400 transition-all"
                               style={{ boxShadow: '0 0 10px rgba(16, 185, 129, 0.35)' }}
                             >
                               {t}
