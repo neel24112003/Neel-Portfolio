@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { X, Download, Printer, FileText, Check, Copy, Mail, Phone, MapPin, ExternalLink, Briefcase, GraduationCap, Award, Code, Globe2 } from 'lucide-react';
 import { PERSONAL_INFO, EXPERIENCES, PROJECTS, SKILL_CATEGORIES, CERTIFICATIONS, EDUCATION } from '../data/portfolioData';
+import { generatePdfResume } from '../utils/generatePdfResume';
 
 interface InteractiveResumeModalProps {
   isOpen: boolean;
@@ -53,13 +54,14 @@ export const InteractiveResumeSection: React.FC<InteractiveResumeModalProps> = (
               <span className="hidden sm:inline">PRINT</span>
             </button>
 
-            <a
-              href={`mailto:${PERSONAL_INFO.email}?subject=Resume%20Inquiry%20-%20Neel%20Patel`}
+            <button
+              onClick={generatePdfResume}
               className="px-4 py-2 rounded-xl bg-accent hover:bg-accent/90 text-white font-mono text-xs font-bold flex items-center gap-2 shadow-glow-sm transition-all"
+              title="Download Neel Patel Resume in PDF format"
             >
               <Download className="w-4 h-4" />
-              DOWNLOAD RESUME
-            </a>
+              DOWNLOAD RESUME (PDF)
+            </button>
 
             <button
               onClick={onClose}

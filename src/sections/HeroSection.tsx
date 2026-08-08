@@ -3,6 +3,7 @@ import { HeroScene } from '../3d/HeroScene';
 import { HeroComputerIde } from '../components/HeroComputerIde';
 import { ArrowRight, Download, Sparkles, Send, Globe2, Code, Terminal, Brain, BarChart3 } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
+import { generatePdfResume } from '../utils/generatePdfResume';
 
 interface HeroSectionProps {
   onOpenResume: () => void;
@@ -91,11 +92,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
           </button>
 
           <button
-            onClick={onOpenResume}
+            onClick={generatePdfResume}
             className="w-full sm:w-auto px-5 py-3 rounded-xl bg-surface-100 hover:bg-surface-200 border border-white/15 text-white font-mono text-xs font-bold tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all active:scale-95"
+            title="Download Neel Patel Resume in PDF format"
           >
             <Download className="w-3.5 h-3.5 text-accent-cyan" />
-            DOWNLOAD RESUME
+            DOWNLOAD RESUME (PDF)
           </button>
 
           <button
