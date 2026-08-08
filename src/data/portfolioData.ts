@@ -97,7 +97,7 @@ export const EXPERIENCES: ExperienceItem[] = [
   },
   {
     id: "exp-6",
-    period: "2025 – Present",
+    period: "2025 – 2026",
     company: "Sahitya Sangam",
     role: "Web Developer",
     description: [
@@ -109,7 +109,7 @@ export const EXPERIENCES: ExperienceItem[] = [
   },
   {
     id: "exp-5",
-    period: "2025 – Present",
+    period: "2025 – 2026",
     company: "Guide Placement",
     role: "Job Consultant",
     description: [
@@ -355,7 +355,7 @@ export const EDUCATION: EducationItem[] = [
 export const BEYOND_CODE_DATA = {
   company: "Guide Placement",
   role: "Job Consultant",
-  period: "2025 – Present",
+  period: "2025 – 2026",
   headline: "Talent Operations, Recruitment & Hiring Logistics",
   description: "Leveraging technical problem-solving to drive human capital acquisition, candidate evaluation, and operational recruitment pipelines.",
   responsibilities: [
