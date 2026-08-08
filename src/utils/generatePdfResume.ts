@@ -10,24 +10,24 @@ export const generatePdfResume = async (elementId: string = 'resume-a4-document'
   }
 
   try {
-    // Ultra-crisp 3x resolution capture for 300 DPI vector rendering
+    // Exact 800px window capture matching canvas width so PDF image spans 100% edge-to-edge with 0 right margin
     const canvas = await html2canvas(element, {
-      scale: 3,
+      scale: 3, // 300 DPI vector crisp rendering
       useCORS: true,
       allowTaint: true,
       backgroundColor: '#0d111d',
       logging: false,
-      windowWidth: 1200,
+      windowWidth: 800,
       onclone: (clonedDoc) => {
         const clonedEl = clonedDoc.getElementById(elementId);
         if (clonedEl) {
-          // Lock exact 900px A4 proportion container so image spans 100% of A4 PDF page with 0 right margin
-          clonedEl.style.width = '900px';
-          clonedEl.style.maxWidth = '900px';
-          clonedEl.style.minWidth = '900px';
+          // Lock exact 800px A4 proportion container so image spans 100% of A4 PDF page with 0 right margin
+          clonedEl.style.width = '800px';
+          clonedEl.style.maxWidth = '800px';
+          clonedEl.style.minWidth = '800px';
           clonedEl.style.transform = 'none';
           clonedEl.style.margin = '0 auto';
-          clonedEl.style.padding = '32px';
+          clonedEl.style.padding = '28px';
           clonedEl.style.borderRadius = '0px';
           clonedEl.style.boxSizing = 'border-box';
           clonedEl.style.backgroundColor = '#0d111d';
@@ -39,7 +39,7 @@ export const generatePdfResume = async (elementId: string = 'resume-a4-document'
             headerBlock.style.flexDirection = 'row';
             headerBlock.style.alignItems = 'center';
             headerBlock.style.justifyContent = 'space-between';
-            headerBlock.style.gap = '24px';
+            headerBlock.style.gap = '20px';
           }
 
           // Force 2-Column Sidebar & Main Content layout to stay horizontal in PDF clone
@@ -50,25 +50,25 @@ export const generatePdfResume = async (elementId: string = 'resume-a4-document'
           if (flexRow) {
             flexRow.style.display = 'flex';
             flexRow.style.flexDirection = 'row';
-            flexRow.style.gap = '24px';
+            flexRow.style.gap = '20px';
             flexRow.style.alignItems = 'flex-start';
           }
           if (sidebar) {
-            sidebar.style.width = '280px';
-            sidebar.style.minWidth = '280px';
-            sidebar.style.maxWidth = '280px';
+            sidebar.style.width = '260px';
+            sidebar.style.minWidth = '260px';
+            sidebar.style.maxWidth = '260px';
             sidebar.style.flexShrink = '0';
           }
           if (mainContent) {
-            mainContent.style.width = '530px';
+            mainContent.style.width = '484px';
             mainContent.style.flex = '1';
           }
 
           // Force headshot image size
           const headshotImg = clonedEl.querySelector('.resume-headshot-img') as HTMLElement;
           if (headshotImg) {
-            headshotImg.style.width = '110px';
-            headshotImg.style.height = '110px';
+            headshotImg.style.width = '105px';
+            headshotImg.style.height = '105px';
             headshotImg.style.borderRadius = '16px';
             headshotImg.style.objectFit = 'cover';
           }
@@ -99,8 +99,8 @@ export const generatePdfResume = async (elementId: string = 'resume-a4-document'
     heightLeft -= pdfHeight;
     pageIndex++;
 
-    // Render Page 2, Page 3 etc. without any cutoffs or missing details
-    while (heightLeft > 0) {
+    // Render Page 2, Page 3 etc. without empty tail pages
+    while (heightLeft > 3) {
       position = -(pageIndex * pdfHeight);
       pdf.addPage();
       pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight, undefined, 'FAST');
@@ -110,6 +110,6 @@ export const generatePdfResume = async (elementId: string = 'resume-a4-document'
 
     pdf.save('Neel_Patel_Resume.pdf');
   } catch (error) {
-    console.error('Error generating sharp multi-page PDF:', error);
+    console.error('Error generating sharp PDF:', error);
   }
 };
