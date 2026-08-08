@@ -10,9 +10,9 @@ export const generatePdfResume = async (elementId: string = 'resume-a4-document'
   }
 
   try {
-    // Render at 3x scale with explicit desktop two-column grid cloning to prevent layout collapse
+    // Ultra-crisp 3x resolution capture for 300 DPI vector rendering
     const canvas = await html2canvas(element, {
-      scale: 3, // 300 DPI vector crisp rendering
+      scale: 3,
       useCORS: true,
       allowTaint: true,
       backgroundColor: '#0d111d',
@@ -21,30 +21,29 @@ export const generatePdfResume = async (elementId: string = 'resume-a4-document'
       onclone: (clonedDoc) => {
         const clonedEl = clonedDoc.getElementById(elementId);
         if (clonedEl) {
-          // Force fixed desktop dimensions for 0 layout shifting or vertical single-column collapse
-          clonedEl.style.width = '820px';
-          clonedEl.style.maxWidth = '820px';
-          clonedEl.style.minWidth = '820px';
+          clonedEl.style.width = '840px';
+          clonedEl.style.maxWidth = '840px';
+          clonedEl.style.minWidth = '840px';
           clonedEl.style.transform = 'none';
           clonedEl.style.margin = '0 auto';
-          clonedEl.style.padding = '32px';
+          clonedEl.style.padding = '36px';
           clonedEl.style.borderRadius = '0px';
           clonedEl.style.boxSizing = 'border-box';
           clonedEl.style.backgroundColor = '#0d111d';
 
-          // Force 2-column layout on cloned element
+          // Force explicit 2-column grid layout during PDF generation
           const gridCols = clonedEl.querySelectorAll('.resume-two-col-grid');
           gridCols.forEach((grid: any) => {
             grid.style.display = 'grid';
-            grid.style.gridTemplateColumns = '270px 1fr';
+            grid.style.gridTemplateColumns = '280px 1fr';
             grid.style.gap = '24px';
           });
 
-          // Force profile headshot photo size
+          // Force profile headshot image sizing
           const headshotImg = clonedEl.querySelector('.resume-headshot-img') as HTMLElement;
           if (headshotImg) {
-            headshotImg.style.width = '110px';
-            headshotImg.style.height = '110px';
+            headshotImg.style.width = '115px';
+            headshotImg.style.height = '115px';
             headshotImg.style.borderRadius = '16px';
             headshotImg.style.objectFit = 'cover';
           }
@@ -68,21 +67,24 @@ export const generatePdfResume = async (elementId: string = 'resume-a4-document'
 
     let heightLeft = imgHeight;
     let position = 0;
+    let pageIndex = 0;
 
-    // First page render
+    // Render Page 1
     pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight, undefined, 'FAST');
     heightLeft -= pdfHeight;
+    pageIndex++;
 
-    // Additional pages if needed
+    // Render Page 2, Page 3 etc. without any cutoffs or missing details
     while (heightLeft > 0) {
-      position = heightLeft - imgHeight;
+      position = -(pageIndex * pdfHeight);
       pdf.addPage();
       pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight, undefined, 'FAST');
       heightLeft -= pdfHeight;
+      pageIndex++;
     }
 
     pdf.save('Neel_Patel_Resume.pdf');
   } catch (error) {
-    console.error('Error generating sharp PDF:', error);
+    console.error('Error generating sharp multi-page PDF:', error);
   }
 };
