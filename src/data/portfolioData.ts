@@ -2,23 +2,25 @@ import { ExperienceItem, ProjectItem, CertificationItem, EducationItem } from '.
 
 export const PERSONAL_INFO = {
   name: "NEEL PATEL",
-  title: "Computer Science Engineer",
-  headline: "Building Digital Experiences, Geospatial Solutions & Intelligent Automation.",
-  tagline: "Computer Science Engineer focused on Web Development, GIS Analysis, Python Automation and AI-Assisted Software Development.",
+  title: "Computer Science Engineer & Data Analyst",
+  headline: "Building Web Platforms, Data Analytics Solutions, Geospatial Systems & Intelligent Automation.",
+  tagline: "Computer Science Engineer focused on Web Development, Data Analytics, GIS Analysis, Python Automation, and AI-Assisted Systems.",
   phone: "+91 9601911100",
   email: "neelnp2411@gmail.com",
   location: "Surat, Gujarat, India",
   languages: ["English", "Hindi", "Gujarati"],
-  summary: "Computer Science Engineer with hands-on experience across web development, GIS analysis, Python automation, e-commerce development and AI-assisted software development. Experienced in building web applications, geospatial solutions, data automation workflows and technology-driven systems."
+  summary: "Computer Science Engineer with hands-on experience across web development, data analytics & visualization, GIS analysis, Python automation, and AI-assisted software engineering. Experienced in building responsive web platforms (such as Saral Health Care), analyzing complex datasets with Power BI/Python/SQL, spatial data modeling, and automated ETL pipelines."
 };
 
 export const CORE_PULSE_KEYWORDS = [
   "WEB DEVELOPMENT",
+  "DATA ANALYTICS",
+  "POWER BI & DASHBOARDS",
   "GIS ANALYSIS",
   "PYTHON AUTOMATION",
-  "DATA",
-  "AI",
-  "PROBLEM SOLVING"
+  "EXPLORATORY DATA ANALYSIS (EDA)",
+  "HEALTHCARE PLATFORMS",
+  "AI & AUTOMATION"
 ];
 
 export const SKILL_CATEGORIES = [
@@ -26,8 +28,15 @@ export const SKILL_CATEGORIES = [
     id: "web",
     name: "Web & Mobile",
     color: "#38bdf8",
-    description: "Full-stack web architecture, e-commerce platforms, and cross-platform apps.",
-    skills: ["HTML", "CSS", "JavaScript", "PHP", "Flutter", "MySQL"]
+    description: "Full-stack web architecture, healthcare platforms, e-commerce applications, and cross-platform apps.",
+    skills: ["HTML5", "CSS3", "JavaScript", "PHP", "Flutter", "MySQL", "Vercel"]
+  },
+  {
+    id: "analytics",
+    name: "Data Analytics & BI",
+    color: "#22c55e",
+    description: "Exploratory Data Analysis (EDA), interactive dashboarding, data visualization, and business intelligence.",
+    skills: ["Data Analytics", "Power BI", "Exploratory Data Analysis (EDA)", "SQL / MySQL", "Pandas & NumPy", "Data Visualization", "Excel / Spreadsheets"]
   },
   {
     id: "gis",
@@ -55,7 +64,7 @@ export const SKILL_CATEGORIES = [
     name: "Core Languages",
     color: "#f59e0b",
     description: "Foundational programming languages and database query languages.",
-    skills: ["Python", "JavaScript", "C", "Java", "PHP", "MySQL", "HTML", "CSS"]
+    skills: ["Python", "JavaScript", "SQL", "C", "Java", "PHP", "MySQL", "HTML", "CSS"]
   },
   {
     id: "operations",
@@ -74,6 +83,18 @@ export const SKILL_CATEGORIES = [
 ];
 
 export const EXPERIENCES: ExperienceItem[] = [
+  {
+    id: "exp-7",
+    period: "Jul 2026 – Present",
+    company: "Saral Health Care",
+    role: "Full Stack Developer & Data Analyst",
+    description: [
+      "Architected and deployed an ongoing digital healthcare application (saral-health-care.vercel.app) featuring a live vitals monitoring simulation dashboard and appointment booking engine.",
+      "Analyzed patient appointment booking trends, vital sign metric streams (ECG, SpO2, HR, BP), and user workflow interactions to optimize healthcare portal UX.",
+      "Integrated an intelligent AI health assistant chatbot widget, emergency response portal, and glassmorphic responsive interface."
+    ],
+    skills: ["Data Analytics", "JavaScript", "HTML5/CSS3", "Live Vitals Simulation", "AI Chatbot", "Vercel"]
+  },
   {
     id: "exp-6",
     period: "2025 – Present",
@@ -114,13 +135,13 @@ export const EXPERIENCES: ExperienceItem[] = [
     id: "exp-3",
     period: "2023 – 2024",
     company: "Yogya Capital",
-    role: "Python Developer",
+    role: "Python Developer & Data Analyst",
     description: [
       "Engineered automated data processing scripts and data extraction pipelines using Python.",
       "Developed web scraping models with BeautifulSoup and created automated PDF text extraction tools outputting structured JSON.",
-      "Utilized Jupyter Notebooks for data transformation, cleaning, and reporting."
+      "Utilized Jupyter Notebooks for data transformation, cleaning, exploratory data analysis, and reporting."
     ],
-    skills: ["Python", "BeautifulSoup", "JSON Parsing", "Automation", "Jupyter Notebook"]
+    skills: ["Python", "BeautifulSoup", "JSON Parsing", "Data Analytics", "Jupyter Notebook"]
   },
   {
     id: "exp-2",
@@ -149,6 +170,32 @@ export const EXPERIENCES: ExperienceItem[] = [
 ];
 
 export const PROJECTS: ProjectItem[] = [
+  {
+    id: "saral-health-care",
+    title: "SARAL HEALTH CARE",
+    category: "Web Development / Healthcare Tech / Live Data Dashboard",
+    subtitle: "Intelligent Hospital Ecosystem & Vitals Monitoring Platform",
+    description: "Developed an ongoing digital healthcare web platform featuring live vital metrics monitoring dashboard, real-time doctor appointment booking engine, AI health assistant chatbot, diagnostic test booking, and interactive event gallery.",
+    type: "web",
+    technologies: ["HTML5", "CSS3 Glassmorphism", "JavaScript (ES6+)", "Canvas 2D", "AI Chatbot", "Vercel"],
+    features: [
+      "Live Vitals Monitoring Simulation (ECG, Heart Rate, SpO2, Blood Pressure)",
+      "Interactive Doctor Appointment Booking System & Real-Time Toast Notifications",
+      "AI Health Assistant Chatbot Widget with Instant Query Chips",
+      "Specialist Doctor Profiles & 24/7 Emergency Care Portal",
+      "Interactive 3D/Canvas Particle Background Animations",
+      "Event Photo Gallery with Custom Lightbox & Slide Navigation"
+    ],
+    website: "https://saral-health-care.vercel.app",
+    problem: "Modern healthcare services require an intuitive, fast, and accessible digital portal for patients to monitor vital indicators, book appointments seamlessly, and engage with AI health assistants without friction.",
+    approach: "Architected a responsive glassmorphic frontend UI with 2D Canvas ambient visualizers, real-time vitals data simulation engine, interactive appointment scheduling form, and an embedded intelligent AI assistant chatbot.",
+    outcome: "Successfully deployed live on Vercel (Jul 2026 – Present, Ongoing) as a next-generation hospital ecosystem.",
+    metrics: [
+      { label: "Status", value: "Jul 2026 – Present" },
+      { label: "UI Design", value: "Glassmorphism & Canvas" },
+      { label: "Live App", value: "Vercel Deployed" }
+    ]
+  },
   {
     id: "sahitya-sangam",
     title: "SAHITYA SANGAM",

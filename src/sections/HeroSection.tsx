@@ -1,7 +1,7 @@
 import React from 'react';
 import { HeroScene } from '../3d/HeroScene';
 import { HeroComputerIde } from '../components/HeroComputerIde';
-import { ArrowRight, Download, Sparkles, Send, Globe2, Code, Terminal, Brain } from 'lucide-react';
+import { ArrowRight, Download, Sparkles, Send, Globe2, Code, Terminal, Brain, BarChart3 } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 interface HeroSectionProps {
@@ -10,10 +10,10 @@ interface HeroSectionProps {
 
 const DOMAIN_BADGES = [
   { label: 'WEB DEVELOPMENT', icon: Code, color: 'border-sky-500/40 text-sky-300 bg-sky-500/10' },
-  { label: 'GIS', icon: Globe2, color: 'border-emerald-500/40 text-emerald-300 bg-emerald-500/10' },
+  { label: 'DATA ANALYTICS', icon: BarChart3, color: 'border-emerald-500/40 text-emerald-300 bg-emerald-500/10' },
+  { label: 'GIS', icon: Globe2, color: 'border-teal-500/40 text-teal-300 bg-teal-500/10' },
   { label: 'PYTHON AUTOMATION', icon: Terminal, color: 'border-indigo-500/40 text-indigo-300 bg-indigo-500/10' },
-  { label: 'DATA', icon: Sparkles, color: 'border-amber-500/40 text-amber-300 bg-amber-500/10' },
-  { label: 'AI-ASSISTED DEVELOPMENT', icon: Brain, color: 'border-violet-500/40 text-violet-300 bg-violet-500/10' },
+  { label: 'AI SYSTEMS', icon: Brain, color: 'border-violet-500/40 text-violet-300 bg-violet-500/10' },
 ];
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
@@ -76,7 +76,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
             "{PERSONAL_INFO.headline}"
           </h2>
           <p className="text-xs sm:text-base text-text-secondary font-sans leading-relaxed max-w-2xl mx-auto break-words">
-            Web Development • GIS • Python Automation • AI-Assisted Development
+            Web Development • Data Analytics • GIS Analysis • Python Automation • AI Systems
           </p>
         </div>
 
