@@ -120,7 +120,15 @@ export const HeroComputerIde: React.FC = () => {
       <div className="absolute -inset-1 bg-gradient-to-r from-accent via-accent-cyan to-accent-violet rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition duration-1000 group-hover:duration-200 pointer-events-none" />
 
       {/* Main IDE Window Container */}
-      <div className="relative rounded-2xl bg-surface-50/95 border border-white/15 shadow-2xl backdrop-blur-2xl overflow-hidden flex flex-col w-full max-w-full neon-blue-box">
+      <div className={`relative rounded-2xl bg-surface-50/95 shadow-2xl backdrop-blur-2xl overflow-hidden flex flex-col w-full max-w-full transition-all duration-500 ${
+        activeTabId === 'web'
+          ? 'neon-border-web'
+          : activeTabId === 'gis'
+          ? 'neon-border-gis'
+          : activeTabId === 'automation'
+          ? 'neon-border-python'
+          : 'neon-border-ai'
+      }`}>
         
         {/* IDE Header Controls */}
         <div className="bg-surface-100/90 px-3 py-2.5 sm:px-4 sm:py-3 border-b border-white/10 flex items-center justify-between gap-2 w-full overflow-hidden">

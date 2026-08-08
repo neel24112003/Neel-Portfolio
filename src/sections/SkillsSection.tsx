@@ -120,7 +120,19 @@ export const SkillsSection: React.FC = () => {
 
           {/* Right Selected Category Technology Detail Card */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="p-5 sm:p-8 rounded-3xl glass-panel border border-white/15 space-y-4 sm:space-y-6">
+            <div className={`p-5 sm:p-8 rounded-3xl glass-panel space-y-4 sm:space-y-6 ${
+              selectedCategory.id === 'web' || selectedCategory.id === 'analytics'
+                ? 'neon-border-web'
+                : selectedCategory.id === 'gis'
+                ? 'neon-border-gis'
+                : selectedCategory.id === 'python'
+                ? 'neon-border-python'
+                : selectedCategory.id === 'ai'
+                ? 'neon-border-ai'
+                : selectedCategory.id === 'operations'
+                ? 'neon-border-ops'
+                : 'neon-border-cyber'
+            }`}>
               
               <div className="flex items-center justify-between border-b border-white/10 pb-3 sm:pb-4">
                 <div className="flex items-center gap-3">

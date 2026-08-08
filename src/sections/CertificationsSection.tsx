@@ -28,7 +28,9 @@ export const CertificationsSection: React.FC = () => {
           {CERTIFICATIONS.map((cert) => (
             <div
               key={cert.id}
-              className="p-6 rounded-3xl glass-panel-interactive border border-white/10 space-y-4 relative overflow-hidden group"
+              className={`p-6 rounded-3xl glass-panel-interactive space-y-4 relative overflow-hidden group ${
+                cert.id === 'cert-1' || cert.id === 'cert-2' ? 'neon-border-ai' : 'neon-border-cyber'
+              }`}
             >
               <div className="flex items-start justify-between gap-4">
                 <div className="flex items-center gap-3">

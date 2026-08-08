@@ -25,7 +25,7 @@ export const BeyondCodeSection: React.FC = () => {
         </div>
 
         {/* Operational Overview Card */}
-        <div className="p-6 sm:p-8 rounded-3xl glass-panel border border-white/10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className="p-6 sm:p-8 rounded-3xl glass-panel neon-border-ops grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
           <div className="lg:col-span-5 space-y-4">
             <div className="flex items-center gap-3">

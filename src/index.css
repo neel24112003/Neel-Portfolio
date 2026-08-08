@@ -27,35 +27,111 @@
   }
 }
 
-/* Continuous Pulsing Glowing Purple Neon Border for ALL Boxes, Cards, Containers & Shapes */
-@keyframes purpleNeonPulse {
+/* DOMAIN-MATCHED NEON BORDER COLOR ENGINE */
+
+/* 1. Cyber Indigo/Violet (Default / Hero / Navbar / Education) */
+@keyframes neonCyberPulse {
   0%, 100% {
-    border-color: #a855f7 !important;
-    box-shadow: 0 0 14px rgba(168, 85, 247, 0.7), 0 0 28px rgba(139, 92, 246, 0.35), inset 0 0 10px rgba(168, 85, 247, 0.2);
+    border-color: #6366f1 !important;
+    box-shadow: 0 0 14px rgba(99, 102, 241, 0.65), inset 0 0 8px rgba(99, 102, 241, 0.2);
   }
   50% {
-    border-color: #c084fc !important;
-    box-shadow: 0 0 28px rgba(192, 132, 252, 0.95), 0 0 55px rgba(168, 85, 247, 0.7), 0 0 85px rgba(139, 92, 246, 0.45), inset 0 0 18px rgba(192, 132, 252, 0.35);
+    border-color: #818cf8 !important;
+    box-shadow: 0 0 28px rgba(99, 102, 241, 0.9), 0 0 50px rgba(129, 140, 248, 0.5), inset 0 0 16px rgba(99, 102, 241, 0.35);
   }
 }
 
-/* Universal selector for all glass panels, interactive panels, cards, containers, boxes & shapes */
-.glass-panel,
-.glass-panel-interactive,
-.neon-purple-box,
-.neon-blue-box,
-.neon-box,
-.neon-card,
-nav,
-form,
-div.border,
-div.rounded-2xl.border,
-div.rounded-3xl.border,
-div.rounded-xl.border,
-input,
-textarea {
+/* 2. Emerald Green (GIS & Remote Sensing) */
+@keyframes neonGisPulse {
+  0%, 100% {
+    border-color: #10b981 !important;
+    box-shadow: 0 0 14px rgba(16, 185, 129, 0.7), inset 0 0 8px rgba(16, 185, 129, 0.2);
+  }
+  50% {
+    border-color: #34d399 !important;
+    box-shadow: 0 0 28px rgba(52, 211, 153, 0.95), 0 0 50px rgba(16, 185, 129, 0.6), inset 0 0 16px rgba(52, 211, 153, 0.35);
+  }
+}
+
+/* 3. Electric Cyan (Web & Healthcare Apps) */
+@keyframes neonWebPulse {
+  0%, 100% {
+    border-color: #38bdf8 !important;
+    box-shadow: 0 0 14px rgba(56, 189, 248, 0.7), inset 0 0 8px rgba(56, 189, 248, 0.2);
+  }
+  50% {
+    border-color: #06b6d4 !important;
+    box-shadow: 0 0 28px rgba(56, 189, 248, 0.95), 0 0 50px rgba(6, 182, 212, 0.6), inset 0 0 16px rgba(56, 189, 248, 0.35);
+  }
+}
+
+/* 4. Amber Gold (Python & Data Automation) */
+@keyframes neonPythonPulse {
+  0%, 100% {
+    border-color: #f59e0b !important;
+    box-shadow: 0 0 14px rgba(245, 158, 11, 0.7), inset 0 0 8px rgba(245, 158, 11, 0.2);
+  }
+  50% {
+    border-color: #fbbf24 !important;
+    box-shadow: 0 0 28px rgba(251, 191, 36, 0.95), 0 0 50px rgba(245, 158, 11, 0.6), inset 0 0 16px rgba(251, 191, 36, 0.35);
+  }
+}
+
+/* 5. Rose Pink (Business & Talent Operations) */
+@keyframes neonOpsPulse {
+  0%, 100% {
+    border-color: #f43f5e !important;
+    box-shadow: 0 0 14px rgba(244, 63, 94, 0.7), inset 0 0 8px rgba(244, 63, 94, 0.2);
+  }
+  50% {
+    border-color: #fb7185 !important;
+    box-shadow: 0 0 28px rgba(251, 113, 133, 0.95), 0 0 50px rgba(244, 63, 94, 0.6), inset 0 0 16px rgba(251, 113, 133, 0.35);
+  }
+}
+
+/* 6. Electric Violet (AI & Machine Learning) */
+@keyframes neonAiPulse {
+  0%, 100% {
+    border-color: #a855f7 !important;
+    box-shadow: 0 0 14px rgba(168, 85, 247, 0.7), inset 0 0 8px rgba(168, 85, 247, 0.2);
+  }
+  50% {
+    border-color: #c084fc !important;
+    box-shadow: 0 0 28px rgba(192, 132, 252, 0.95), 0 0 50px rgba(168, 85, 247, 0.6), inset 0 0 16px rgba(192, 132, 252, 0.35);
+  }
+}
+
+/* DOMAIN UTILITY CLASSES */
+.neon-border-gis {
+  border: 1.5px solid #10b981 !important;
+  animation: neonGisPulse 3.5s ease-in-out infinite !important;
+}
+
+.neon-border-web {
+  border: 1.5px solid #38bdf8 !important;
+  animation: neonWebPulse 3.5s ease-in-out infinite !important;
+}
+
+.neon-border-python {
+  border: 1.5px solid #f59e0b !important;
+  animation: neonPythonPulse 3.5s ease-in-out infinite !important;
+}
+
+.neon-border-ops {
+  border: 1.5px solid #f43f5e !important;
+  animation: neonOpsPulse 3.5s ease-in-out infinite !important;
+}
+
+.neon-border-ai {
   border: 1.5px solid #a855f7 !important;
-  animation: purpleNeonPulse 3.5s ease-in-out infinite !important;
+  animation: neonAiPulse 3.5s ease-in-out infinite !important;
+}
+
+.neon-border-cyber,
+.glass-panel,
+.glass-panel-interactive {
+  border: 1.5px solid #6366f1 !important;
+  animation: neonCyberPulse 3.5s ease-in-out infinite !important;
 }
 
 .glass-panel-interactive {

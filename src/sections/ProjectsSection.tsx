@@ -53,7 +53,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProjec
         {/* PROJECT 01: SARAL HEALTH CARE (FEATURED ONGOING HERO CARD) */}
         {(activeTab === 'all' || activeTab === 'web') && (
           <div className="relative group">
-            <div className="p-8 sm:p-12 rounded-3xl glass-panel-interactive border border-accent/40 bg-gradient-to-br from-surface-100/90 via-surface-50/80 to-surface-100/90 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="p-8 sm:p-12 rounded-3xl glass-panel-interactive neon-border-web bg-gradient-to-br from-surface-100/90 via-surface-50/80 to-surface-100/90 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               
               <div className="lg:col-span-7 space-y-6">
                 <div className="flex flex-wrap items-center gap-3">
@@ -163,7 +163,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProjec
         {/* PROJECT 02: SAHITYA SANGAM */}
         {(activeTab === 'all' || activeTab === 'web') && (
           <div className="relative group">
-            <div className="p-8 sm:p-12 rounded-3xl glass-panel-interactive border border-white/10 bg-surface-50/80 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="p-8 sm:p-12 rounded-3xl glass-panel-interactive neon-border-web bg-surface-50/80 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               
               <div className="lg:col-span-7 space-y-6">
                 <div className="flex items-center gap-3">
@@ -293,7 +293,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProjec
             {/* Interactive 3D Globe Component Embedded */}
             <GisGlobeScene />
 
-            <div className="p-6 rounded-2xl glass-panel border border-white/10 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="p-6 rounded-2xl glass-panel neon-border-gis grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="space-y-2">
                 <h4 className="text-xs font-mono font-bold text-emerald-400 uppercase">SAT-DATA & REMOTE SENSING</h4>
                 <p className="text-xs text-text-secondary">
@@ -344,7 +344,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProjec
 
         {/* PROJECT 05: SHREEJI KRUPA FARSAN (RETAIL E-COMMERCE SOLUTION) */}
         {(activeTab === 'all' || activeTab === 'web') && (
-          <div className="p-8 rounded-3xl glass-panel-interactive border border-white/10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="p-8 rounded-3xl glass-panel-interactive neon-border-web grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8 space-y-4">
               <span className="px-3.5 py-1 rounded-full bg-surface-200 border border-white/10 text-amber-400 text-xs font-mono font-bold">
                 PROJECT 05 • RETAIL E-COMMERCE PLATFORM

@@ -6,45 +6,52 @@ import {
   Sparkles, ExternalLink, Maximize2, Minimize2, Award
 } from 'lucide-react';
 
-const COMPANY_META: Record<string, { icon: React.ElementType; color: string; tag: string; link?: string; linkText?: string }> = {
+const COMPANY_META: Record<string, { icon: React.ElementType; color: string; tag: string; link?: string; linkText?: string; neonClass: string }> = {
   "Saral Health Care": { 
     icon: Activity, 
     color: "from-emerald-500 to-cyan-500", 
     tag: "HEALTHCARE WEB PLATFORM",
     link: "https://saral-health-care.vercel.app",
-    linkText: "VISIT WEBSITE"
+    linkText: "VISIT WEBSITE",
+    neonClass: "neon-border-web"
   },
   "Sahitya Sangam": { 
     icon: BookOpen, 
     color: "from-sky-500 to-blue-600", 
     tag: "WEB & E-COMMERCE APP",
     link: "https://sahityasangam.net/",
-    linkText: "VISIT WEBSITE"
+    linkText: "VISIT WEBSITE",
+    neonClass: "neon-border-web"
   },
   "Guide Placement": { 
     icon: Users, 
     color: "from-pink-500 to-rose-500", 
-    tag: "RECRUITMENT OPERATIONS" 
+    tag: "RECRUITMENT OPERATIONS",
+    neonClass: "neon-border-ops"
   },
   "JIO": { 
     icon: Globe2, 
     color: "from-indigo-500 to-violet-600", 
-    tag: "GIS & INFRASTRUCTURE MAPPING" 
+    tag: "GIS & INFRASTRUCTURE MAPPING",
+    neonClass: "neon-border-gis"
   },
   "Yogya Capital": { 
     icon: Terminal, 
     color: "from-amber-500 to-orange-500", 
-    tag: "PYTHON & ETL PIPELINES" 
+    tag: "PYTHON & ETL PIPELINES",
+    neonClass: "neon-border-python"
   },
   "Spectrarc Solution": { 
     icon: Globe2, 
     color: "from-teal-500 to-emerald-600", 
-    tag: "SATELLITE REMOTE SENSING" 
+    tag: "SATELLITE REMOTE SENSING",
+    neonClass: "neon-border-gis"
   },
   "Shreeji Krupa Farsan": { 
     icon: ShoppingCart, 
     color: "from-amber-400 to-yellow-500", 
-    tag: "RETAIL E-COMMERCE" 
+    tag: "RETAIL E-COMMERCE",
+    neonClass: "neon-border-web"
   }
 };
 
@@ -200,10 +207,10 @@ export const TimelineSection: React.FC = () => {
                   {/* Experience Glass Card */}
                   <div
                     onClick={() => toggleExpand(exp.id)}
-                    className={`p-6 sm:p-8 rounded-3xl glass-panel-interactive border transition-all duration-300 cursor-pointer overflow-hidden relative ${
+                    className={`p-6 sm:p-8 rounded-3xl glass-panel-interactive transition-all duration-300 cursor-pointer overflow-hidden relative ${meta.neonClass} ${
                       isExpanded
-                        ? 'border-accent-cyan/50 bg-gradient-to-br from-surface-100/95 via-surface-50/90 to-surface-100/95 shadow-2xl shadow-accent-cyan/10'
-                        : 'border-white/10 hover:border-white/25 bg-surface-50/70 hover:bg-surface-100/80'
+                        ? 'bg-gradient-to-br from-surface-100/95 via-surface-50/90 to-surface-100/95 shadow-2xl'
+                        : 'bg-surface-50/70 hover:bg-surface-100/80'
                     }`}
                   >
                     
