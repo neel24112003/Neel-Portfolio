@@ -144,28 +144,28 @@ export const TimelineSection: React.FC = () => {
 
         {/* Quick Highlights Strip */}
         <div className="mb-10 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-4xl">
-          <div className="p-3.5 rounded-2xl bg-surface-100/60 border border-white/10 flex items-center gap-3">
+          <div className="p-3.5 rounded-2xl bg-surface-100/60 neon-border-cyber flex items-center gap-3">
             <Briefcase className="w-5 h-5 text-accent-cyan shrink-0" />
             <div>
               <div className="text-base font-display font-bold text-white leading-tight">7 ROLES</div>
               <div className="text-[10px] font-mono text-text-muted">CHRONOLOGY</div>
             </div>
           </div>
-          <div className="p-3.5 rounded-2xl bg-surface-100/60 border border-white/10 flex items-center gap-3">
+          <div className="p-3.5 rounded-2xl bg-surface-100/60 neon-border-web flex items-center gap-3">
             <Activity className="w-5 h-5 text-emerald-400 shrink-0" />
             <div>
               <div className="text-base font-display font-bold text-emerald-400 leading-tight">ACTIVE ROLE</div>
               <div className="text-[10px] font-mono text-text-muted">SARAL HEALTH CARE</div>
             </div>
           </div>
-          <div className="p-3.5 rounded-2xl bg-surface-100/60 border border-white/10 flex items-center gap-3">
+          <div className="p-3.5 rounded-2xl bg-surface-100/60 neon-border-gis flex items-center gap-3">
             <Globe2 className="w-5 h-5 text-sky-400 shrink-0" />
             <div>
               <div className="text-base font-display font-bold text-sky-400 leading-tight">GIS & WEB</div>
               <div className="text-[10px] font-mono text-text-muted">FULL STACK & SPATIAL</div>
             </div>
           </div>
-          <div className="p-3.5 rounded-2xl bg-surface-100/60 border border-white/10 flex items-center gap-3">
+          <div className="p-3.5 rounded-2xl bg-surface-100/60 neon-border-python flex items-center gap-3">
             <Terminal className="w-5 h-5 text-amber-400 shrink-0" />
             <div>
               <div className="text-base font-display font-bold text-amber-400 leading-tight">PYTHON ETL</div>

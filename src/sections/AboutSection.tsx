@@ -24,7 +24,7 @@ export const AboutSection: React.FC = () => {
             </h2>
 
             {/* Core Statement Box */}
-            <div className="p-6 rounded-2xl glass-panel border border-white/10 space-y-4">
+            <div className="p-6 rounded-2xl glass-panel neon-border-web space-y-4">
               <p className="text-base text-text-primary leading-relaxed">
                 "{PERSONAL_INFO.summary}"
               </p>
@@ -50,7 +50,9 @@ export const AboutSection: React.FC = () => {
                 {CORE_PULSE_KEYWORDS.map((kw, i) => (
                   <div
                     key={kw}
-                    className="px-4 py-2.5 rounded-xl glass-panel-interactive border border-white/10 text-xs font-mono font-semibold text-white flex items-center gap-2 group hover:border-accent hover:shadow-glow-sm"
+                    className={`px-4 py-2.5 rounded-xl glass-panel-interactive text-xs font-mono font-semibold text-white flex items-center gap-2 group shadow-glow-sm ${
+                      i % 4 === 0 ? 'neon-border-web' : i % 4 === 1 ? 'neon-border-gis' : i % 4 === 2 ? 'neon-border-python' : 'neon-border-ai'
+                    }`}
                   >
                     <span className="w-2 h-2 rounded-full bg-accent-cyan group-hover:scale-125 transition-transform" />
                     <span>{kw}</span>
@@ -64,29 +66,29 @@ export const AboutSection: React.FC = () => {
           <div className="lg:col-span-5 space-y-6">
             
             {/* Quick Fact Matrix Card */}
-            <div className="p-6 rounded-2xl glass-panel border border-white/10 space-y-6">
+            <div className="p-6 rounded-2xl glass-panel neon-border-gis space-y-6">
               <h3 className="text-lg font-display font-bold text-white flex items-center gap-2">
                 <ShieldCheck className="w-5 h-5 text-emerald-400" />
                 ENGINEERING PROFILE
               </h3>
 
               <div className="space-y-4 text-xs font-mono">
-                <div className="p-3.5 rounded-xl bg-surface-100/60 border border-white/5 flex items-center justify-between">
+                <div className="p-3.5 rounded-xl bg-surface-100/60 neon-border-cyber flex items-center justify-between">
                   <span className="text-text-muted">FULL NAME</span>
                   <span className="text-white font-semibold">NEEL PATEL</span>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-surface-100/60 border border-white/5 flex items-center justify-between">
+                <div className="p-3.5 rounded-xl bg-surface-100/60 neon-border-web flex items-center justify-between">
                   <span className="text-text-muted">DEGREE</span>
                   <span className="text-accent-cyan font-semibold">B.Tech in CSE</span>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-surface-100/60 border border-white/5 flex items-center justify-between">
+                <div className="p-3.5 rounded-xl bg-surface-100/60 neon-border-gis flex items-center justify-between">
                   <span className="text-text-muted">UNIVERSITY</span>
                   <span className="text-white font-semibold">UKA Tarsadia University</span>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-surface-100/60 border border-white/5 flex items-center justify-between">
+                <div className="p-3.5 rounded-xl bg-surface-100/60 neon-border-ai flex items-center justify-between">
                   <span className="text-text-muted">LANGUAGES</span>
                   <span className="text-emerald-400 font-semibold">English • Hindi • Gujarati</span>
                 </div>
@@ -94,7 +96,7 @@ export const AboutSection: React.FC = () => {
             </div>
 
             {/* AI-Assisted Philosophy Box */}
-            <div className="p-6 rounded-2xl bg-gradient-to-br from-surface-100 to-surface-200 border border-accent/30 space-y-3">
+            <div className="p-6 rounded-2xl bg-surface-100/90 neon-border-ai space-y-3">
               <div className="flex items-center gap-2 text-accent font-mono text-xs font-bold">
                 <Sparkles className="w-4 h-4 text-accent-cyan" />
                 MODERN WORKFLOW ADVANTAGE

@@ -117,7 +117,7 @@ export const ContactSection: React.FC = () => {
 
               <div className="space-y-4 font-mono text-xs">
                 {/* Email Card */}
-                <div className="p-4 rounded-2xl bg-surface-100/70 border border-white/10 flex items-center justify-between group hover:border-accent transition-all">
+                <div className="p-4 rounded-2xl bg-surface-100/70 neon-border-web flex items-center justify-between group transition-all">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-xl bg-accent/20 border border-accent/40 flex items-center justify-center text-accent-cyan">
                       <Mail className="w-5 h-5" />
@@ -135,7 +135,7 @@ export const ContactSection: React.FC = () => {
                 </div>
 
                 {/* Phone Card */}
-                <div className="p-4 rounded-2xl bg-surface-100/70 border border-white/10 flex items-center justify-between group hover:border-emerald-500 transition-all">
+                <div className="p-4 rounded-2xl bg-surface-100/70 neon-border-gis flex items-center justify-between group transition-all">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400">
                       <Phone className="w-5 h-5" />
@@ -150,7 +150,7 @@ export const ContactSection: React.FC = () => {
                 </div>
 
                 {/* Location Card */}
-                <div className="p-4 rounded-2xl bg-surface-100/70 border border-white/10 flex items-center justify-between group hover:border-accent-violet transition-all">
+                <div className="p-4 rounded-2xl bg-surface-100/70 neon-border-ai flex items-center justify-between group transition-all">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-xl bg-accent-violet/20 border border-accent-violet/40 flex items-center justify-center text-accent-violet">
                       <MapPin className="w-5 h-5" />
@@ -168,7 +168,7 @@ export const ContactSection: React.FC = () => {
             </div>
 
             {/* Live Email Dispatch Note */}
-            <div className="p-5 rounded-2xl bg-emerald-950/20 border border-emerald-500/30 text-xs font-mono text-emerald-300 leading-relaxed space-y-1">
+            <div className="p-5 rounded-2xl bg-emerald-950/30 neon-border-gis text-xs font-mono text-emerald-300 leading-relaxed space-y-1">
               <span className="font-bold flex items-center gap-1.5 text-emerald-400">
                 <CheckCircle2 className="w-4 h-4" />
                 REAL-TIME GMAIL SMTP INTEGRATION ACTIVE:
