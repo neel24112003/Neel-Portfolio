@@ -143,18 +143,6 @@ export const EXPERIENCES: ExperienceItem[] = [
       "Created vector shapefiles, KML layers, GeoJSON datasets, and technical geospatial documentations."
     ],
     skills: ["GIS Analysis", "Landsat", "Sentinel", "GeoJSON", "KML", "Remote Sensing"]
-  },
-  {
-    id: "exp-1",
-    period: "May 2022 – Oct 2022",
-    company: "Shreeji Krupa Farsan",
-    role: "Web Developer",
-    description: [
-      "Designed and deployed an e-commerce web platform for food retail product operations.",
-      "Implemented interactive product catalog, dynamic price calculation, cart management, and admin inventory control.",
-      "Built automated PDF invoice receipt generation and stock availability tracking."
-    ],
-    skills: ["PHP", "MySQL", "JavaScript", "E-commerce UI", "PDF Generation"]
   }
 ];
 
