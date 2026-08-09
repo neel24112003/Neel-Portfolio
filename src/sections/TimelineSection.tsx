@@ -98,7 +98,7 @@ export const TimelineSection: React.FC = () => {
             <div className="flex items-center gap-3 mb-3">
               <span className="w-8 h-[2px] bg-accent-cyan" />
               <span className="text-xs font-mono font-bold text-accent-cyan tracking-widest uppercase">
-                03. CAREER CHRONOLOGY & ROLES
+                02. CAREER CHRONOLOGY & ROLES
               </span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-display font-bold text-white tracking-tight">

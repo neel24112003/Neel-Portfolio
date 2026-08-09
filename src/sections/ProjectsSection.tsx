@@ -24,7 +24,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProjec
             <div className="flex items-center gap-3 mb-3">
               <span className="w-8 h-[2px] bg-accent" />
               <span className="text-xs font-mono font-bold text-accent tracking-widest uppercase">
-                04. FLAGSHIP PROJECTS
+                03. FLAGSHIP PROJECTS
               </span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-display font-bold text-white tracking-tight">

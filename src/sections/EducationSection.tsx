@@ -11,7 +11,7 @@ export const EducationSection: React.FC = () => {
         <div className="flex items-center gap-3 mb-4">
           <span className="w-8 h-[2px] bg-accent-cyan" />
           <span className="text-xs font-mono font-bold text-accent-cyan tracking-widest uppercase">
-            07. EDUCATION & ACADEMIC BACKGROUND
+            06. EDUCATION & ACADEMIC BACKGROUND
           </span>
         </div>
 

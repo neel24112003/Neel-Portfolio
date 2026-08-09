@@ -32,7 +32,7 @@ export const SkillsSection: React.FC = () => {
         <div className="flex items-center gap-3 mb-3 sm:mb-4">
           <span className="w-8 h-[2px] bg-accent" />
           <span className="text-xs font-mono font-bold text-accent tracking-widest uppercase">
-            02. INTERACTIVE TECHNICAL NETWORK
+            04. INTERACTIVE TECHNICAL NETWORK
           </span>
         </div>
 

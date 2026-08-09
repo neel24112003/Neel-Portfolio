@@ -11,7 +11,7 @@ export const CertificationsSection: React.FC = () => {
         <div className="flex items-center gap-3 mb-4">
           <span className="w-8 h-[2px] bg-accent-violet" />
           <span className="text-xs font-mono font-bold text-accent-violet tracking-widest uppercase">
-            06. VERIFIED CERTIFICATIONS
+            05. VERIFIED CERTIFICATIONS
           </span>
         </div>
 

@@ -11,7 +11,7 @@ export const BeyondCodeSection: React.FC = () => {
         <div className="flex items-center gap-3 mb-3">
           <span className="w-8 h-[2px] bg-pink-500" />
           <span className="text-xs font-mono font-bold text-pink-400 tracking-widest uppercase">
-            05. BUSINESS OPERATIONAL EXPERIENCE
+            07. BUSINESS OPERATIONAL EXPERIENCE
           </span>
         </div>
 
