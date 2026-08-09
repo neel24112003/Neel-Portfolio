@@ -271,81 +271,174 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProjec
 
         {/* PROJECT 03: GIS & GEOSPATIAL ANALYSIS (WITH INTERACTIVE 3D GLOBE) */}
         {(activeTab === 'all' || activeTab === 'gis') && (
-          <div className="space-y-6">
-            <div className="flex items-center justify-between">
-              <div className="space-y-1">
-                <span className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-widest">
-                  PROJECT 03 • GEOSPATIAL ENGINE & SATELLITE ANALYSIS
-                </span>
-                <h3 className="text-2xl sm:text-3xl font-display font-bold text-white">
-                  GIS & Geospatial Analysis Suite
+          <div className="relative group">
+            <div className="p-8 sm:p-12 rounded-3xl glass-panel-interactive neon-border-gis bg-surface-50/80 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              
+              <div className="lg:col-span-7 space-y-6">
+                <div className="flex items-center gap-3">
+                  <span className="px-3.5 py-1 rounded-full bg-surface-200 border border-white/10 text-emerald-400 text-xs font-mono font-bold">
+                    PROJECT 03 • GEOSPATIAL ENGINE & SATELLITE ANALYSIS
+                  </span>
+                  <span className="text-xs font-mono text-emerald-400 font-semibold">
+                    REMOTE SENSING & 3D GLOBE
+                  </span>
+                </div>
+
+                <h3 className="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight">
+                  GIS & GEOSPATIAL ANALYSIS SUITE
                 </h3>
-              </div>
-              <button
-                onClick={() => onSelectProject(getProject('gis-analysis'))}
-                className="px-4 py-2 rounded-xl bg-surface-100 hover:bg-surface-200 border border-white/15 text-xs font-mono text-white flex items-center gap-2"
-              >
-                FULL CASE STUDY
-                <ArrowUpRight className="w-4 h-4 text-accent-cyan" />
-              </button>
-            </div>
 
-            {/* Interactive 3D Globe Component Embedded */}
-            <GisGlobeScene />
+                <p className="text-sm sm:text-base text-text-secondary leading-relaxed font-sans">
+                  Advanced geospatial data analysis suite incorporating satellite imagery processing, land cover classification (Gujarat LULC), 3D terrain elevation modeling, flood risk simulations, and spatial topology validation.
+                </p>
 
-            <div className="p-6 rounded-2xl glass-panel neon-border-gis grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="space-y-2">
-                <h4 className="text-xs font-mono font-bold text-emerald-400 uppercase">SAT-DATA & REMOTE SENSING</h4>
-                <p className="text-xs text-text-secondary">
-                  Processed Landsat/Sentinel satellite imagery, executed LULC classification for Gujarat, wind turbine identification, and building footprint segmentation.
-                </p>
+                {/* Metrics Highlights */}
+                <div className="grid grid-cols-3 gap-3 p-4 rounded-2xl bg-surface-200/50 border border-white/10">
+                  <div>
+                    <div className="text-xl sm:text-2xl font-display font-bold text-white">SATELLITE</div>
+                    <div className="text-[10px] font-mono text-text-muted">LANDSAT & SENTINEL</div>
+                  </div>
+                  <div>
+                    <div className="text-xl sm:text-2xl font-display font-bold text-emerald-400">FORMATS</div>
+                    <div className="text-[10px] font-mono text-text-muted">SHP, KML, GEOJSON, CAD</div>
+                  </div>
+                  <div>
+                    <div className="text-xl sm:text-2xl font-display font-bold text-accent-cyan">3D TERRAIN</div>
+                    <div className="text-[10px] font-mono text-text-muted">FLOOD SIMULATION</div>
+                  </div>
+                </div>
+
+                {/* Tech Stack */}
+                <div className="flex flex-wrap gap-2">
+                  {['ArcMap', 'Google Earth Engine', 'Landsat', 'Sentinel', 'Shapefile', 'GeoJSON', 'KML', 'CAD'].map((t) => (
+                    <span key={t} className="px-3 py-1 rounded-lg bg-surface-200 border border-white/10 text-xs font-mono text-white">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Actions */}
+                <div className="flex flex-wrap items-center gap-3 pt-2">
+                  <button
+                    onClick={() => onSelectProject(getProject('gis-analysis'))}
+                    className="px-5 py-2.5 rounded-xl bg-accent hover:bg-accent/90 text-white font-mono text-xs font-bold flex items-center gap-2 shadow-glow-sm transition-all"
+                  >
+                    <Sparkles className="w-4 h-4 text-emerald-400" />
+                    FULL CASE STUDY
+                  </button>
+                </div>
               </div>
-              <div className="space-y-2">
-                <h4 className="text-xs font-mono font-bold text-sky-400 uppercase">SPATIAL TOPOLOGY & OPERATIONS</h4>
-                <p className="text-xs text-text-secondary">
-                  Executed buffering, clipping, spatial joins, topology checks, and CAD to GIS shapefile, KML, and GeoJSON conversions.
-                </p>
+
+              {/* Visual Interactive 3D Globe Box */}
+              <div className="lg:col-span-5 bg-surface-200/60 rounded-2xl p-6 border border-white/10 space-y-4 flex flex-col justify-between">
+                <div className="flex items-center justify-between text-xs font-mono text-text-muted border-b border-white/10 pb-3">
+                  <span>INTERACTIVE 3D SPATIAL GLOBE</span>
+                  <span className="text-emerald-400 font-bold flex items-center gap-1">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+                    LIVE 3D
+                  </span>
+                </div>
+                
+                <div className="relative rounded-xl overflow-hidden min-h-[220px] bg-background/80 border border-white/5">
+                  <GisGlobeScene />
+                </div>
+
+                <div className="p-3.5 rounded-xl bg-accent/10 border border-accent/20 text-xs font-mono text-emerald-400">
+                  "Cloud computing with GEE and ArcMap desktop GIS for land cover indexing, wind turbine mapping, and hydrological risk modeling."
+                </div>
               </div>
-              <div className="space-y-2">
-                <h4 className="text-xs font-mono font-bold text-accent-violet uppercase">FLOOD SIMULATION & 3D TERRAIN</h4>
-                <p className="text-xs text-text-secondary">
-                  Developed 3D spatial terrain models and hydrological flood risk simulations in Google Earth Engine and ArcMap.
-                </p>
-              </div>
+
             </div>
           </div>
         )}
 
         {/* PROJECT 04: SHREEJI KRUPA FARSAN (RETAIL E-COMMERCE SOLUTION) */}
         {(activeTab === 'all' || activeTab === 'web') && (
-          <div className="p-8 rounded-3xl glass-panel-interactive neon-border-web grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-8 space-y-4">
-              <span className="px-3.5 py-1 rounded-full bg-surface-200 border border-white/10 text-amber-400 text-xs font-mono font-bold">
-                PROJECT 04 • RETAIL E-COMMERCE PLATFORM
-              </span>
-              <h3 className="text-2xl sm:text-3xl font-display font-bold text-white">
-                SHREEJI KRUPA FARSAN E-COMMERCE
-              </h3>
-              <p className="text-sm text-text-secondary font-sans leading-relaxed">
-                Custom retail e-commerce platform featuring dynamic product catalogue, client cart management, live subtotal/tax calculations, admin inventory/stock availability management, and automated customer PDF receipt rendering.
-              </p>
-              <div className="flex flex-wrap gap-2 pt-2">
-                {['PHP', 'MySQL', 'JavaScript', 'HTML5', 'CSS3', 'PDF Engine'].map((t) => (
-                  <span key={t} className="px-3 py-1 rounded-lg bg-surface-100 border border-white/10 text-xs font-mono text-text-primary">
-                    {t}
+          <div className="relative group">
+            <div className="p-8 sm:p-12 rounded-3xl glass-panel-interactive neon-border-web bg-surface-50/80 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              
+              <div className="lg:col-span-7 space-y-6">
+                <div className="flex items-center gap-3">
+                  <span className="px-3.5 py-1 rounded-full bg-surface-200 border border-white/10 text-amber-400 text-xs font-mono font-bold">
+                    PROJECT 04 • RETAIL E-COMMERCE PLATFORM
                   </span>
-                ))}
-              </div>
-            </div>
+                  <span className="text-xs font-mono text-amber-400 font-semibold">
+                    LIVE PRODUCTION
+                  </span>
+                </div>
 
-            <div className="lg:col-span-4 flex justify-end">
-              <button
-                onClick={() => onSelectProject(getProject('shreeji-krupa'))}
-                className="w-full sm:w-auto px-6 py-3 rounded-xl bg-surface-100 hover:bg-surface-200 border border-white/15 text-white font-mono text-xs font-bold flex items-center justify-center gap-2 shadow-glow-sm transition-all"
-              >
-                <ShoppingCart className="w-4 h-4 text-amber-400" />
-                VIEW CASE STUDY
-              </button>
+                <h3 className="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight">
+                  SHREEJI KRUPA FARSAN E-COMMERCE
+                </h3>
+
+                <p className="text-sm sm:text-base text-text-secondary leading-relaxed font-sans">
+                  Custom retail e-commerce platform featuring dynamic product catalogue, client cart management, live subtotal/tax calculations, admin inventory/stock availability management, and automated customer PDF receipt rendering.
+                </p>
+
+                {/* Metrics Highlights */}
+                <div className="grid grid-cols-3 gap-3 p-4 rounded-2xl bg-surface-200/50 border border-white/10">
+                  <div>
+                    <div className="text-xl sm:text-2xl font-display font-bold text-white">PHP/MySQL</div>
+                    <div className="text-[10px] font-mono text-text-muted">FULL STACK</div>
+                  </div>
+                  <div>
+                    <div className="text-xl sm:text-2xl font-display font-bold text-amber-400">ADMIN</div>
+                    <div className="text-[10px] font-mono text-text-muted">STOCK CONTROL</div>
+                  </div>
+                  <div>
+                    <div className="text-xl sm:text-2xl font-display font-bold text-emerald-400">RECEIPTS</div>
+                    <div className="text-[10px] font-mono text-text-muted">PDF GENERATION</div>
+                  </div>
+                </div>
+
+                {/* Tech Stack */}
+                <div className="flex flex-wrap gap-2">
+                  {['PHP', 'MySQL', 'JavaScript', 'HTML5', 'CSS3', 'PDF Engine'].map((t) => (
+                    <span key={t} className="px-3 py-1 rounded-lg bg-surface-200 border border-white/10 text-xs font-mono text-white">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Actions */}
+                <div className="flex flex-wrap items-center gap-3 pt-2">
+                  <button
+                    onClick={() => onSelectProject(getProject('shreeji-krupa'))}
+                    className="px-5 py-2.5 rounded-xl bg-accent hover:bg-accent/90 text-white font-mono text-xs font-bold flex items-center gap-2 shadow-glow-sm transition-all"
+                  >
+                    <Sparkles className="w-4 h-4 text-amber-400" />
+                    FULL CASE STUDY
+                  </button>
+                </div>
+              </div>
+
+              {/* Visual Mockup Box */}
+              <div className="lg:col-span-5 bg-surface-200/60 rounded-2xl p-6 border border-white/10 space-y-4 flex flex-col justify-between">
+                <div className="flex items-center justify-between text-xs font-mono text-text-muted border-b border-white/10 pb-3">
+                  <span>RETAIL SYSTEM PREVIEW</span>
+                  <span className="text-amber-400 font-bold">ONLINE ORDERING</span>
+                </div>
+                
+                <div className="space-y-3 font-mono text-xs">
+                  <div className="p-3 rounded-xl bg-surface-100 border border-white/10 flex items-center justify-between">
+                    <span className="text-text-secondary">PRODUCT CATALOG</span>
+                    <span className="text-amber-400">Dynamic Farsan Menu</span>
+                  </div>
+                  <div className="p-3 rounded-xl bg-surface-100 border border-white/10 flex items-center justify-between">
+                    <span className="text-text-secondary">CART CALCULATOR</span>
+                    <span className="text-emerald-400">Live Subtotal & Tax</span>
+                  </div>
+                  <div className="p-3 rounded-xl bg-surface-100 border border-white/10 flex items-center justify-between">
+                    <span className="text-text-secondary">ADMIN PANEL</span>
+                    <span className="text-white">Inventory & Price Updates</span>
+                  </div>
+                </div>
+
+                <div className="p-4 rounded-xl bg-amber-500/10 border border-amber-500/20 text-xs font-mono text-amber-400">
+                  "End-to-end retail order engine backed by MySQL catalog data with instant PDF invoice rendering for customers."
+                </div>
+              </div>
+
             </div>
           </div>
         )}
