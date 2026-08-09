@@ -75,21 +75,21 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProjec
                 </p>
 
                 {/* Metrics Highlights */}
-                <div className="grid grid-cols-3 gap-3 p-4 rounded-2xl bg-surface-200/50 border border-white/10">
-                  <div>
-                    <div className="text-lg sm:text-xl font-display font-bold text-emerald-400 flex items-center gap-1">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 p-3.5 sm:p-4 rounded-2xl bg-surface-200/50 border border-white/10">
+                  <div className="flex flex-row sm:flex-col justify-between sm:justify-start items-center sm:items-start">
+                    <div className="text-sm sm:text-xl font-display font-bold text-emerald-400 flex items-center gap-1">
                       <Activity className="w-4 h-4" /> LIVE VITALS
                     </div>
                     <div className="text-[10px] font-mono text-text-muted">ECG / HR / SpO2 / BP</div>
                   </div>
-                  <div>
-                    <div className="text-lg sm:text-xl font-display font-bold text-accent-cyan flex items-center gap-1">
+                  <div className="flex flex-row sm:flex-col justify-between sm:justify-start items-center sm:items-start">
+                    <div className="text-sm sm:text-xl font-display font-bold text-accent-cyan flex items-center gap-1">
                       <Bot className="w-4 h-4" /> AI ASSISTANT
                     </div>
                     <div className="text-[10px] font-mono text-text-muted">CHATBOT ENGINE</div>
                   </div>
-                  <div>
-                    <div className="text-lg sm:text-xl font-display font-bold text-white flex items-center gap-1">
+                  <div className="flex flex-row sm:flex-col justify-between sm:justify-start items-center sm:items-start">
+                    <div className="text-sm sm:text-xl font-display font-bold text-white flex items-center gap-1">
                       <Calendar className="w-4 h-4" /> BOOKING
                     </div>
                     <div className="text-[10px] font-mono text-text-muted">REAL-TIME SLOTS</div>
@@ -184,17 +184,17 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProjec
                 </p>
 
                 {/* Metrics Highlights */}
-                <div className="grid grid-cols-3 gap-3 p-4 rounded-2xl bg-surface-200/50 border border-white/10">
-                  <div>
-                    <div className="text-xl sm:text-2xl font-display font-bold text-white">1800+</div>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 p-3.5 sm:p-4 rounded-2xl bg-surface-200/50 border border-white/10">
+                  <div className="flex flex-row sm:flex-col justify-between sm:justify-start items-center sm:items-start">
+                    <div className="text-lg sm:text-2xl font-display font-bold text-white">1800+</div>
                     <div className="text-[10px] font-mono text-text-muted">BOOKS CATALOG</div>
                   </div>
-                  <div>
-                    <div className="text-xl sm:text-2xl font-display font-bold text-accent-cyan">30+</div>
+                  <div className="flex flex-row sm:flex-col justify-between sm:justify-start items-center sm:items-start">
+                    <div className="text-lg sm:text-2xl font-display font-bold text-accent-cyan">30+</div>
                     <div className="text-[10px] font-mono text-text-muted">CATEGORIES</div>
                   </div>
-                  <div>
-                    <div className="text-xl sm:text-2xl font-display font-bold text-emerald-400">WEB & APP</div>
+                  <div className="flex flex-row sm:flex-col justify-between sm:justify-start items-center sm:items-start">
+                    <div className="text-lg sm:text-2xl font-display font-bold text-emerald-400">WEB & APP</div>
                     <div className="text-[10px] font-mono text-text-muted">PLAY STORE</div>
                   </div>
                 </div>
@@ -293,17 +293,17 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProjec
                 </p>
 
                 {/* Metrics Highlights */}
-                <div className="grid grid-cols-3 gap-3 p-4 rounded-2xl bg-surface-200/50 border border-white/10">
-                  <div>
-                    <div className="text-xl sm:text-2xl font-display font-bold text-white">SATELLITE</div>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 p-3.5 sm:p-4 rounded-2xl bg-surface-200/50 border border-white/10">
+                  <div className="flex flex-row sm:flex-col justify-between sm:justify-start items-center sm:items-start">
+                    <div className="text-base sm:text-2xl font-display font-bold text-white">SATELLITE</div>
                     <div className="text-[10px] font-mono text-text-muted">LANDSAT & SENTINEL</div>
                   </div>
-                  <div>
-                    <div className="text-xl sm:text-2xl font-display font-bold text-emerald-400">FORMATS</div>
+                  <div className="flex flex-row sm:flex-col justify-between sm:justify-start items-center sm:items-start">
+                    <div className="text-base sm:text-2xl font-display font-bold text-emerald-400">FORMATS</div>
                     <div className="text-[10px] font-mono text-text-muted">SHP, KML, GEOJSON</div>
                   </div>
-                  <div>
-                    <div className="text-xl sm:text-2xl font-display font-bold text-accent-cyan">3D TERRAIN</div>
+                  <div className="flex flex-row sm:flex-col justify-between sm:justify-start items-center sm:items-start">
+                    <div className="text-base sm:text-2xl font-display font-bold text-accent-cyan">3D TERRAIN</div>
                     <div className="text-[10px] font-mono text-text-muted">FLOOD SIMULATION</div>
                   </div>
                 </div>
@@ -376,17 +376,17 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProjec
                 </p>
 
                 {/* Metrics Highlights */}
-                <div className="grid grid-cols-3 gap-3 p-4 rounded-2xl bg-surface-200/50 border border-white/10">
-                  <div>
-                    <div className="text-xl sm:text-2xl font-display font-bold text-white">PHP/MySQL</div>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 p-3.5 sm:p-4 rounded-2xl bg-surface-200/50 border border-white/10">
+                  <div className="flex flex-row sm:flex-col justify-between sm:justify-start items-center sm:items-start">
+                    <div className="text-base sm:text-2xl font-display font-bold text-white">PHP/MySQL</div>
                     <div className="text-[10px] font-mono text-text-muted">FULL STACK</div>
                   </div>
-                  <div>
-                    <div className="text-xl sm:text-2xl font-display font-bold text-amber-400">ADMIN</div>
+                  <div className="flex flex-row sm:flex-col justify-between sm:justify-start items-center sm:items-start">
+                    <div className="text-base sm:text-2xl font-display font-bold text-amber-400">ADMIN</div>
                     <div className="text-[10px] font-mono text-text-muted">STOCK CONTROL</div>
                   </div>
-                  <div>
-                    <div className="text-xl sm:text-2xl font-display font-bold text-emerald-400">RECEIPTS</div>
+                  <div className="flex flex-row sm:flex-col justify-between sm:justify-start items-center sm:items-start">
+                    <div className="text-base sm:text-2xl font-display font-bold text-emerald-400">RECEIPTS</div>
                     <div className="text-[10px] font-mono text-text-muted">PDF GENERATION</div>
                   </div>
                 </div>
