@@ -72,25 +72,25 @@ export const AboutSection: React.FC = () => {
                 ENGINEERING PROFILE
               </h3>
 
-              <div className="space-y-4 text-xs font-mono">
-                <div className="p-3.5 rounded-xl bg-surface-100/60 neon-border-cyber flex items-center justify-between">
-                  <span className="text-text-muted">FULL NAME</span>
-                  <span className="text-white font-semibold">NEEL PATEL</span>
+              <div className="space-y-3 sm:space-y-4 text-xs font-mono">
+                <div className="p-3 sm:p-3.5 rounded-xl bg-surface-100/60 neon-border-cyber flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-3">
+                  <span className="text-text-muted shrink-0">FULL NAME</span>
+                  <span className="text-white font-semibold text-left sm:text-right">NEEL PATEL</span>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-surface-100/60 neon-border-web flex items-center justify-between">
-                  <span className="text-text-muted">DEGREE</span>
-                  <span className="text-accent-cyan font-semibold">B.Tech in CSE</span>
+                <div className="p-3 sm:p-3.5 rounded-xl bg-surface-100/60 neon-border-web flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-3">
+                  <span className="text-text-muted shrink-0">DEGREE</span>
+                  <span className="text-accent-cyan font-semibold text-left sm:text-right">B.Tech in CSE</span>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-surface-100/60 neon-border-gis flex items-center justify-between">
-                  <span className="text-text-muted">UNIVERSITY</span>
-                  <span className="text-white font-semibold">UKA Tarsadia University</span>
+                <div className="p-3 sm:p-3.5 rounded-xl bg-surface-100/60 neon-border-gis flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-3">
+                  <span className="text-text-muted shrink-0">UNIVERSITY</span>
+                  <span className="text-white font-semibold text-left sm:text-right">UKA Tarsadia University</span>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-surface-100/60 neon-border-ai flex items-center justify-between">
-                  <span className="text-text-muted">LANGUAGES</span>
-                  <span className="text-emerald-400 font-semibold">English • Hindi • Gujarati</span>
+                <div className="p-3 sm:p-3.5 rounded-xl bg-surface-100/60 neon-border-ai flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-3">
+                  <span className="text-text-muted shrink-0">LANGUAGES</span>
+                  <span className="text-emerald-400 font-semibold text-left sm:text-right">English • Hindi • Gujarati</span>
                 </div>
               </div>
             </div>

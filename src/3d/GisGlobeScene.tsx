@@ -259,10 +259,10 @@ export const GisGlobeScene: React.FC = () => {
   }, [activeLayer]);
 
   return (
-    <div className="relative w-full h-[380px] sm:h-[450px] rounded-2xl glass-panel overflow-hidden border border-white/10 flex flex-col justify-between p-3 sm:p-4">
+    <div className="relative w-full h-[320px] sm:h-[420px] rounded-2xl glass-panel overflow-hidden border border-white/10 flex flex-col justify-between p-2.5 sm:p-4">
       {/* Top Header Overlay */}
-      <div className="z-10 flex items-center justify-between gap-2 bg-surface-50/80 backdrop-blur-md p-2.5 sm:p-3 rounded-xl border border-white/10">
-        <div className="flex items-center gap-2">
+      <div className="z-10 flex items-center justify-between gap-2 bg-surface-50/80 backdrop-blur-md p-2 sm:p-3 rounded-xl border border-white/10">
+        <div className="flex items-center gap-2 overflow-hidden">
           <div className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping shrink-0" />
           <span className="text-[10px] sm:text-xs font-mono text-emerald-400 uppercase tracking-widest truncate">
             GEOSPATIAL ENGINE • GUJARAT
@@ -277,9 +277,9 @@ export const GisGlobeScene: React.FC = () => {
       <div ref={containerRef} className="absolute inset-0 w-full h-full cursor-grab active:cursor-grabbing touch-none" />
 
       {/* Bottom Interactive Layer Controls */}
-      <div className="z-10 bg-surface-50/90 backdrop-blur-md p-2.5 sm:p-3 rounded-xl border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-3">
+      <div className="z-10 bg-surface-50/90 backdrop-blur-md p-2 sm:p-3 rounded-xl border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-1.5 sm:gap-3">
         <span className="text-[10px] sm:text-xs font-mono text-text-muted hidden sm:inline-block">LAYER:</span>
-        <div className="flex flex-wrap gap-1.5 sm:gap-2 w-full sm:w-auto justify-center sm:justify-start">
+        <div className="flex flex-wrap gap-1 sm:gap-2 w-full sm:w-auto justify-center sm:justify-start">
           <button
             onClick={() => setActiveLayer('lulc')}
             className={`px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg text-[10px] sm:text-xs font-mono flex items-center gap-1 transition-all ${

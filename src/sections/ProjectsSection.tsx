@@ -53,14 +53,14 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProjec
         {/* PROJECT 01: SARAL HEALTH CARE (FEATURED ONGOING HERO CARD) */}
         {(activeTab === 'all' || activeTab === 'web') && (
           <div className="relative group">
-            <div className="p-8 sm:p-12 rounded-3xl glass-panel-interactive neon-border-web bg-gradient-to-br from-surface-100/90 via-surface-50/80 to-surface-100/90 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="p-5 sm:p-8 lg:p-12 rounded-3xl glass-panel-interactive neon-border-web bg-gradient-to-br from-surface-100/90 via-surface-50/80 to-surface-100/90 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
               
               <div className="lg:col-span-7 space-y-6">
-                <div className="flex flex-wrap items-center gap-3">
+                <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                   <span className="px-3.5 py-1 rounded-full bg-accent/20 border border-accent/40 text-accent-cyan text-xs font-mono font-bold">
                     PROJECT 01 • HEALTHCARE TECH & LIVE DATA DASHBOARD
                   </span>
-                  <span className="px-3 py-0.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 text-xs font-mono font-bold flex items-center gap-1.5 animate-pulse">
+                  <span className="px-3 py-0.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 text-xs font-mono font-bold flex items-center gap-1.5 animate-pulse shrink-0 whitespace-nowrap">
                     <span className="w-2 h-2 rounded-full bg-emerald-400" />
                     JUL 2026 – PRESENT (ONGOING)
                   </span>
@@ -127,10 +127,10 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProjec
               </div>
 
               {/* Visual Mockup Box */}
-              <div className="lg:col-span-5 bg-surface-200/60 rounded-2xl p-6 border border-white/10 space-y-4 flex flex-col justify-between">
-                <div className="flex items-center justify-between text-xs font-mono text-text-muted border-b border-white/10 pb-3">
-                  <span>HEALTHCARE SYSTEM PREVIEW</span>
-                  <span className="text-emerald-400 font-bold flex items-center gap-1">
+              <div className="lg:col-span-5 bg-surface-200/60 rounded-2xl p-4 sm:p-6 border border-white/10 space-y-4 flex flex-col justify-between">
+                <div className="flex items-center justify-between gap-2 text-xs font-mono text-text-muted border-b border-white/10 pb-3">
+                  <span className="truncate">HEALTHCARE SYSTEM PREVIEW</span>
+                  <span className="text-emerald-400 font-bold flex items-center gap-1 shrink-0 whitespace-nowrap">
                     <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
                     ACTIVE APP
                   </span>
@@ -163,14 +163,14 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProjec
         {/* PROJECT 02: SAHITYA SANGAM */}
         {(activeTab === 'all' || activeTab === 'web') && (
           <div className="relative group">
-            <div className="p-8 sm:p-12 rounded-3xl glass-panel-interactive neon-border-web bg-surface-50/80 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="p-5 sm:p-8 lg:p-12 rounded-3xl glass-panel-interactive neon-border-web bg-surface-50/80 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
               
               <div className="lg:col-span-7 space-y-6">
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                   <span className="px-3.5 py-1 rounded-full bg-surface-200 border border-white/10 text-accent-cyan text-xs font-mono font-bold">
                     PROJECT 02 • FLAGSHIP E-COMMERCE & MOBILE APP
                   </span>
-                  <span className="text-xs font-mono text-emerald-400 font-semibold">
+                  <span className="text-xs font-mono text-emerald-400 font-semibold shrink-0 whitespace-nowrap">
                     LIVE PRODUCTION
                   </span>
                 </div>
@@ -239,10 +239,10 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProjec
               </div>
 
               {/* Visual Mockup Box */}
-              <div className="lg:col-span-5 bg-surface-200/60 rounded-2xl p-6 border border-white/10 space-y-4 flex flex-col justify-between">
-                <div className="flex items-center justify-between text-xs font-mono text-text-muted border-b border-white/10 pb-3">
-                  <span>SYSTEM INTERFACE PREVIEW</span>
-                  <span className="text-emerald-400 font-bold">1800+ TITLES</span>
+              <div className="lg:col-span-5 bg-surface-200/60 rounded-2xl p-4 sm:p-6 border border-white/10 space-y-4 flex flex-col justify-between">
+                <div className="flex items-center justify-between gap-2 text-xs font-mono text-text-muted border-b border-white/10 pb-3">
+                  <span className="truncate">SYSTEM INTERFACE PREVIEW</span>
+                  <span className="text-emerald-400 font-bold shrink-0 whitespace-nowrap">1800+ TITLES</span>
                 </div>
                 
                 <div className="space-y-3 font-mono text-xs">
@@ -272,14 +272,14 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProjec
         {/* PROJECT 03: GIS & GEOSPATIAL ANALYSIS (WITH INTERACTIVE 3D GLOBE) */}
         {(activeTab === 'all' || activeTab === 'gis') && (
           <div className="relative group">
-            <div className="p-8 sm:p-12 rounded-3xl glass-panel-interactive neon-border-gis bg-surface-50/80 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="p-5 sm:p-8 lg:p-12 rounded-3xl glass-panel-interactive neon-border-gis bg-surface-50/80 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
               
               <div className="lg:col-span-7 space-y-6">
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                   <span className="px-3.5 py-1 rounded-full bg-surface-200 border border-white/10 text-emerald-400 text-xs font-mono font-bold">
                     PROJECT 03 • GEOSPATIAL ENGINE & SATELLITE ANALYSIS
                   </span>
-                  <span className="text-xs font-mono text-emerald-400 font-semibold">
+                  <span className="text-xs font-mono text-emerald-400 font-semibold shrink-0 whitespace-nowrap">
                     REMOTE SENSING & 3D GLOBE
                   </span>
                 </div>
@@ -300,7 +300,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProjec
                   </div>
                   <div>
                     <div className="text-xl sm:text-2xl font-display font-bold text-emerald-400">FORMATS</div>
-                    <div className="text-[10px] font-mono text-text-muted">SHP, KML, GEOJSON, CAD</div>
+                    <div className="text-[10px] font-mono text-text-muted">SHP, KML, GEOJSON</div>
                   </div>
                   <div>
                     <div className="text-xl sm:text-2xl font-display font-bold text-accent-cyan">3D TERRAIN</div>
@@ -330,20 +330,20 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProjec
               </div>
 
               {/* Visual Interactive 3D Globe Box */}
-              <div className="lg:col-span-5 bg-surface-200/60 rounded-2xl p-6 border border-white/10 space-y-4 flex flex-col justify-between">
-                <div className="flex items-center justify-between text-xs font-mono text-text-muted border-b border-white/10 pb-3">
-                  <span>INTERACTIVE 3D SPATIAL GLOBE</span>
-                  <span className="text-emerald-400 font-bold flex items-center gap-1">
+              <div className="lg:col-span-5 bg-surface-200/60 rounded-2xl p-4 sm:p-6 border border-white/10 space-y-4 flex flex-col justify-between">
+                <div className="flex items-center justify-between gap-2 text-xs font-mono text-text-muted border-b border-white/10 pb-3">
+                  <span className="truncate">3D SPATIAL ENGINE</span>
+                  <span className="text-emerald-400 font-bold flex items-center gap-1 shrink-0 whitespace-nowrap">
                     <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
                     LIVE 3D
                   </span>
                 </div>
                 
-                <div className="relative rounded-xl overflow-hidden min-h-[220px] bg-background/80 border border-white/5">
+                <div className="relative rounded-xl overflow-hidden bg-background/80 border border-white/5">
                   <GisGlobeScene />
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-accent/10 border border-accent/20 text-xs font-mono text-emerald-400">
+                <div className="p-3 sm:p-3.5 rounded-xl bg-accent/10 border border-accent/20 text-xs font-mono text-emerald-400">
                   "Cloud computing with GEE and ArcMap desktop GIS for land cover indexing, wind turbine mapping, and hydrological risk modeling."
                 </div>
               </div>
@@ -355,14 +355,14 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProjec
         {/* PROJECT 04: SHREEJI KRUPA FARSAN (RETAIL E-COMMERCE SOLUTION) */}
         {(activeTab === 'all' || activeTab === 'web') && (
           <div className="relative group">
-            <div className="p-8 sm:p-12 rounded-3xl glass-panel-interactive neon-border-web bg-surface-50/80 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="p-5 sm:p-8 lg:p-12 rounded-3xl glass-panel-interactive neon-border-web bg-surface-50/80 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
               
               <div className="lg:col-span-7 space-y-6">
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                   <span className="px-3.5 py-1 rounded-full bg-surface-200 border border-white/10 text-amber-400 text-xs font-mono font-bold">
                     PROJECT 04 • RETAIL E-COMMERCE PLATFORM
                   </span>
-                  <span className="text-xs font-mono text-amber-400 font-semibold">
+                  <span className="text-xs font-mono text-amber-400 font-semibold shrink-0 whitespace-nowrap">
                     LIVE PRODUCTION
                   </span>
                 </div>
