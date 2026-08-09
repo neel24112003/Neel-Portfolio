@@ -321,7 +321,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProjec
           <div className="p-8 rounded-3xl glass-panel-interactive neon-border-web grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8 space-y-4">
               <span className="px-3.5 py-1 rounded-full bg-surface-200 border border-white/10 text-amber-400 text-xs font-mono font-bold">
-                PROJECT 05 • RETAIL E-COMMERCE PLATFORM
+                PROJECT 04 • RETAIL E-COMMERCE PLATFORM
               </span>
               <h3 className="text-2xl sm:text-3xl font-display font-bold text-white">
                 SHREEJI KRUPA FARSAN E-COMMERCE
