@@ -79,10 +79,24 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
         </div>
 
         {/* Main Statement Banner */}
-        <div className="max-w-4xl mx-auto space-y-3 sm:space-y-4 px-2">
-          <div className="p-4 sm:p-6 rounded-3xl bg-surface-100/70 border border-white/10 backdrop-blur-md shadow-2xl space-y-3 neon-border-cyber">
-            <h2 className="text-base sm:text-2xl lg:text-3xl font-display font-bold text-white leading-snug tracking-tight">
-              Data Analyst <span className="text-accent-cyan">|</span> Full Stack Engineer <span className="text-accent-cyan">|</span> SQL <span className="text-accent-cyan">|</span> Power BI <span className="text-accent-cyan">|</span> Excel <span className="text-accent-cyan">|</span> Business Intelligence <span className="text-accent-cyan">|</span> GIS <span className="text-accent-cyan">|</span> Freelance
+        <div className="max-w-5xl mx-auto px-2">
+          <div className="p-6 sm:p-8 rounded-3xl bg-surface-100/80 border border-accent-cyan/30 backdrop-blur-xl shadow-2xl neon-border-cyber text-center">
+            <h2 className="text-lg sm:text-2xl lg:text-3xl font-display font-bold text-white leading-relaxed sm:leading-loose tracking-wide">
+              <span className="inline-block">Data Analyst</span>
+              <span className="mx-2 sm:mx-3.5 text-accent-cyan font-light select-none opacity-90">|</span>
+              <span className="inline-block">Full Stack Engineer</span>
+              <span className="mx-2 sm:mx-3.5 text-accent-cyan font-light select-none opacity-90">|</span>
+              <span className="inline-block">SQL</span>
+              <span className="mx-2 sm:mx-3.5 text-accent-cyan font-light select-none opacity-90">|</span>
+              <span className="inline-block">Power BI</span>
+              <span className="mx-2 sm:mx-3.5 text-accent-cyan font-light select-none opacity-90">|</span>
+              <span className="inline-block">Excel</span>
+              <span className="mx-2 sm:mx-3.5 text-accent-cyan font-light select-none opacity-90">|</span>
+              <span className="inline-block">Business Intelligence</span>
+              <span className="mx-2 sm:mx-3.5 text-accent-cyan font-light select-none opacity-90">|</span>
+              <span className="inline-block">GIS</span>
+              <span className="mx-2 sm:mx-3.5 text-accent-cyan font-light select-none opacity-90">|</span>
+              <span className="inline-block">Freelance</span>
             </h2>
           </div>
         </div>
