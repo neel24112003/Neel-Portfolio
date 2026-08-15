@@ -84,9 +84,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
             <h2 className="text-base sm:text-2xl lg:text-3xl font-display font-bold text-white leading-snug tracking-tight">
               Data Analyst <span className="text-accent-cyan">|</span> Full Stack Engineer <span className="text-accent-cyan">|</span> SQL <span className="text-accent-cyan">|</span> Power BI <span className="text-accent-cyan">|</span> Excel <span className="text-accent-cyan">|</span> Business Intelligence <span className="text-accent-cyan">|</span> GIS <span className="text-accent-cyan">|</span> Freelance
             </h2>
-            <p className="text-xs sm:text-sm text-emerald-400 font-mono font-semibold tracking-wide uppercase">
-              Building Web Platforms • Data Analytics Pipelines • Business Intelligence & GIS Spatial Solutions
-            </p>
           </div>
         </div>
 
