@@ -97,8 +97,8 @@ export const InteractiveResumeSection: React.FC<InteractiveResumeModalProps> = (
                     </span>
                   </div>
 
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-xl font-sans">
-                    Building Scalable Web Platforms, Cloud Infrastructure, Data Analytics Pipelines & GIS Systems.
+                  <p className="text-xs sm:text-sm text-slate-200 font-mono font-semibold leading-relaxed max-w-2xl">
+                    Data Analyst | Full Stack Engineer | SQL | Power BI | Excel | Business Intelligence | GIS | Freelance
                   </p>
                 </div>
               </div>

@@ -1,19 +1,22 @@
 import React from 'react';
 import { HeroScene } from '../3d/HeroScene';
 import { HeroComputerIde } from '../components/HeroComputerIde';
-import { ArrowRight, FileText, Sparkles, Send, Globe2, Code, Terminal, Brain, BarChart3 } from 'lucide-react';
+import { ArrowRight, FileText, Sparkles, Send, Globe2, Code, Terminal, Brain, BarChart3, Layers, Database, Activity, FileSpreadsheet, LineChart } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 interface HeroSectionProps {
   onOpenResume: () => void;
 }
 
-const DOMAIN_BADGES = [
-  { label: 'WEB DEVELOPMENT', icon: Code, color: 'border-sky-500/40 text-sky-300 bg-sky-500/10' },
-  { label: 'DATA ANALYTICS', icon: BarChart3, color: 'border-emerald-500/40 text-emerald-300 bg-emerald-500/10' },
-  { label: 'GIS', icon: Globe2, color: 'border-teal-500/40 text-teal-300 bg-teal-500/10' },
-  { label: 'PYTHON AUTOMATION', icon: Terminal, color: 'border-indigo-500/40 text-indigo-300 bg-indigo-500/10' },
-  { label: 'AI SYSTEMS', icon: Brain, color: 'border-violet-500/40 text-violet-300 bg-violet-500/10' },
+const SPECIALIZATION_BADGES = [
+  { label: 'Data Analyst', icon: BarChart3, color: 'border-emerald-500/50 text-emerald-300 bg-emerald-500/10 shadow-[0_0_12px_rgba(16,185,129,0.25)]' },
+  { label: 'Full Stack Engineer', icon: Layers, color: 'border-sky-500/50 text-sky-300 bg-sky-500/10 shadow-[0_0_12px_rgba(56,189,248,0.25)]' },
+  { label: 'SQL', icon: Database, color: 'border-indigo-500/50 text-indigo-300 bg-indigo-500/10 shadow-[0_0_12px_rgba(99,102,241,0.25)]' },
+  { label: 'Power BI', icon: Activity, color: 'border-amber-500/50 text-amber-300 bg-amber-500/10 shadow-[0_0_12px_rgba(245,158,11,0.25)]' },
+  { label: 'Excel', icon: FileSpreadsheet, color: 'border-green-500/50 text-green-300 bg-green-500/10 shadow-[0_0_12px_rgba(34,197,94,0.25)]' },
+  { label: 'Business Intelligence', icon: LineChart, color: 'border-purple-500/50 text-purple-300 bg-purple-500/10 shadow-[0_0_12px_rgba(168,85,247,0.25)]' },
+  { label: 'GIS', icon: Globe2, color: 'border-cyan-500/50 text-cyan-300 bg-cyan-500/10 shadow-[0_0_12px_rgba(6,182,212,0.25)]' },
+  { label: 'Freelance', icon: Sparkles, color: 'border-pink-500/50 text-pink-300 bg-pink-500/10 shadow-[0_0_12px_rgba(236,72,153,0.25)]' },
 ];
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
@@ -37,18 +40,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
       <div className="absolute inset-0 bg-grid-pattern opacity-30 pointer-events-none z-0" />
 
       {/* Hero Content Container */}
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-2 sm:px-6 lg:px-8 text-center space-y-4 sm:space-y-8 overflow-hidden">
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-2 sm:px-6 lg:px-8 text-center space-y-5 sm:space-y-8 overflow-hidden">
         
-        {/* Animated Domain Pill Badges */}
-        <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 max-w-full mx-auto px-1">
-          {DOMAIN_BADGES.map((badge) => {
+        {/* Animated Specialization Badge Pills with Icons */}
+        <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2.5 max-w-full mx-auto px-1">
+          {SPECIALIZATION_BADGES.map((badge) => {
             const Icon = badge.icon;
             return (
               <span
                 key={badge.label}
-                className={`px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-[9px] sm:text-[11px] font-mono font-medium border flex items-center gap-1 backdrop-blur-md transition-all ${badge.color}`}
+                className={`px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-mono font-bold border flex items-center gap-1.5 backdrop-blur-md transition-all hover:scale-105 ${badge.color}`}
               >
-                <Icon className="w-2.5 h-2.5 sm:w-3 sm:h-3 shrink-0" />
+                <Icon className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
                 <span className="truncate">{badge.label}</span>
               </span>
             );
@@ -75,14 +78,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
           </div>
         </div>
 
-        {/* Main Statement */}
-        <div className="max-w-3xl mx-auto space-y-2 sm:space-y-4 px-1">
-          <h2 className="text-base sm:text-2xl lg:text-3xl font-display font-medium text-white leading-snug break-words">
-            "{PERSONAL_INFO.headline}"
-          </h2>
-          <p className="text-xs sm:text-base text-text-secondary font-sans leading-relaxed max-w-2xl mx-auto break-words">
-            Web Development • Data Analytics • GIS Analysis • Python Automation • AI Systems
-          </p>
+        {/* Main Statement Banner */}
+        <div className="max-w-4xl mx-auto space-y-3 sm:space-y-4 px-2">
+          <div className="p-4 sm:p-6 rounded-3xl bg-surface-100/70 border border-white/10 backdrop-blur-md shadow-2xl space-y-3 neon-border-cyber">
+            <h2 className="text-base sm:text-2xl lg:text-3xl font-display font-bold text-white leading-snug tracking-tight">
+              Data Analyst <span className="text-accent-cyan">|</span> Full Stack Engineer <span className="text-accent-cyan">|</span> SQL <span className="text-accent-cyan">|</span> Power BI <span className="text-accent-cyan">|</span> Excel <span className="text-accent-cyan">|</span> Business Intelligence <span className="text-accent-cyan">|</span> GIS <span className="text-accent-cyan">|</span> Freelance
+            </h2>
+            <p className="text-xs sm:text-sm text-emerald-400 font-mono font-semibold tracking-wide uppercase">
+              Building Web Platforms • Data Analytics Pipelines • Business Intelligence & GIS Spatial Solutions
+            </p>
+          </div>
         </div>
 
         {/* Action CTAs */}
@@ -118,11 +123,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
 
         {/* Scroll Indicator */}
         <div className="pt-2 sm:pt-4 flex flex-col items-center gap-1.5 text-text-muted">
-          <span className="text-[9px] sm:text-[10px] font-mono uppercase tracking-widest">SCROLL TO EXPLORE</span>
-          <div className="w-4 h-7 sm:w-5 sm:h-8 rounded-full border border-white/20 flex items-start justify-center p-1">
+          <span className="text-[10px] font-mono tracking-widest uppercase">SCROLL TO EXPLORE</span>
+          <div className="w-5 h-8 rounded-full border-2 border-white/20 flex items-start justify-center p-1">
             <div className="w-1 h-2 rounded-full bg-accent-cyan animate-bounce" />
           </div>
         </div>
+
       </div>
     </section>
   );
