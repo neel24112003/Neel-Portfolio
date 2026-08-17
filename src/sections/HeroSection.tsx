@@ -78,24 +78,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
           </div>
         </div>
 
-        {/* Sleek Short Statement & Quick Stats (Without Heavy Box) */}
-        <div className="max-w-3xl mx-auto space-y-3 sm:space-y-4 px-2 pt-1">
-          <p className="text-base sm:text-xl lg:text-2xl font-display font-semibold text-slate-200 tracking-wide leading-relaxed">
-            Building <span className="text-gradient-cyan font-bold">Web Platforms</span>, <span className="text-emerald-400 font-bold">Data Analytics</span> & <span className="text-accent-violet font-bold">Cloud-GIS Systems</span>.
-          </p>
-
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs font-mono text-text-secondary">
-            <span className="flex items-center gap-1.5 text-emerald-400 font-semibold">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-              AVAILABLE FOR FREELANCE & ROLES
-            </span>
-            <span className="hidden sm:inline text-white/20">•</span>
-            <span className="text-slate-300">4+ LIVE PLATFORMS</span>
-            <span className="hidden sm:inline text-white/20">•</span>
-            <span className="text-slate-300">SURAT, GUJARAT</span>
-          </div>
-        </div>
-
         {/* Action CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-4 pt-1 sm:pt-2 px-2 max-w-md mx-auto sm:max-w-none">
           <button
