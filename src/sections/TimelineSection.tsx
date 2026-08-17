@@ -113,14 +113,14 @@ export const TimelineSection: React.FC = () => {
           <div className="flex flex-wrap items-center gap-3">
             
             {/* Filter Pills */}
-            <div className="flex flex-wrap gap-1.5 bg-surface-50/80 p-1.5 rounded-2xl border border-white/10">
+            <div className="flex flex-wrap gap-1.5 bg-surface-100/90 p-1.5 rounded-2xl border border-accent-cyan/40 shadow-[0_0_15px_rgba(56,189,248,0.15)] hover:border-accent-cyan/70 transition-all">
               {(['all', 'web', 'gis', 'python'] as const).map((filter) => (
                 <button
                   key={filter}
                   onClick={() => setActiveFilter(filter)}
                   className={`px-3.5 py-1.5 rounded-xl text-xs font-mono font-semibold uppercase transition-all ${
                     activeFilter === filter
-                      ? 'bg-accent text-white shadow-glow-sm'
+                      ? 'bg-accent text-white shadow-[0_0_12px_rgba(56,189,248,0.4)] border border-accent-cyan/60'
                       : 'text-text-secondary hover:text-white'
                   }`}
                 >
@@ -132,7 +132,7 @@ export const TimelineSection: React.FC = () => {
             {/* Expand / Collapse All Toggle Button */}
             <button
               onClick={toggleExpandAll}
-              className="px-3.5 py-2 rounded-2xl bg-surface-100/90 hover:bg-surface-200 border border-white/15 text-xs font-mono text-white flex items-center gap-2 transition-all shadow-sm"
+              className="px-3.5 py-2 rounded-2xl bg-surface-100/90 hover:bg-surface-200 border border-emerald-500/40 text-xs font-mono text-white flex items-center gap-2 transition-all shadow-[0_0_15px_rgba(16,185,129,0.15)] hover:border-emerald-400"
               title={allExpanded ? "Collapse All Cards" : "Expand All Cards"}
             >
               {allExpanded ? <Minimize2 className="w-3.5 h-3.5 text-accent-cyan" /> : <Maximize2 className="w-3.5 h-3.5 text-emerald-400" />}
