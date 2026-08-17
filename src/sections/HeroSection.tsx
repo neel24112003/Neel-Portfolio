@@ -78,15 +78,21 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
           </div>
         </div>
 
-        {/* Main Statement Banner */}
-        <div className="max-w-5xl mx-auto px-2">
-          <div className="p-6 sm:p-8 rounded-3xl bg-surface-100/80 border border-accent-cyan/30 backdrop-blur-xl shadow-2xl neon-border-cyber text-center space-y-3">
-            <h2 className="text-xl sm:text-3xl lg:text-4xl font-display font-extrabold text-white leading-snug sm:leading-relaxed tracking-tight">
-              Architecting <span className="text-gradient-cyan">Full-Stack Web Platforms</span>, <span className="text-emerald-400">Data Analytics Pipelines</span> & <span className="text-accent-violet">GIS Spatial Systems</span>.
-            </h2>
-            <p className="text-xs sm:text-sm font-mono text-slate-300 font-semibold tracking-wide uppercase">
-              Cloud Computing • Business Intelligence • Interactive Dashboards • End-to-End Engineering
-            </p>
+        {/* Sleek Short Statement & Quick Stats (Without Heavy Box) */}
+        <div className="max-w-3xl mx-auto space-y-3 sm:space-y-4 px-2 pt-1">
+          <p className="text-base sm:text-xl lg:text-2xl font-display font-semibold text-slate-200 tracking-wide leading-relaxed">
+            Building <span className="text-gradient-cyan font-bold">Web Platforms</span>, <span className="text-emerald-400 font-bold">Data Analytics</span> & <span className="text-accent-violet font-bold">Cloud-GIS Systems</span>.
+          </p>
+
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs font-mono text-text-secondary">
+            <span className="flex items-center gap-1.5 text-emerald-400 font-semibold">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+              AVAILABLE FOR FREELANCE & ROLES
+            </span>
+            <span className="hidden sm:inline text-white/20">•</span>
+            <span className="text-slate-300">4+ LIVE PLATFORMS</span>
+            <span className="hidden sm:inline text-white/20">•</span>
+            <span className="text-slate-300">SURAT, GUJARAT</span>
           </div>
         </div>
 
