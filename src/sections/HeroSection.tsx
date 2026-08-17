@@ -80,24 +80,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
 
         {/* Main Statement Banner */}
         <div className="max-w-5xl mx-auto px-2">
-          <div className="p-6 sm:p-8 rounded-3xl bg-surface-100/80 border border-accent-cyan/30 backdrop-blur-xl shadow-2xl neon-border-cyber text-center">
-            <h2 className="text-lg sm:text-2xl lg:text-3xl font-display font-bold text-white leading-relaxed sm:leading-loose tracking-wide">
-              <span className="inline-block">Data Analyst</span>
-              <span className="mx-2 sm:mx-3.5 text-accent-cyan font-light select-none opacity-90">|</span>
-              <span className="inline-block">Full Stack Engineer</span>
-              <span className="mx-2 sm:mx-3.5 text-accent-cyan font-light select-none opacity-90">|</span>
-              <span className="inline-block">SQL</span>
-              <span className="mx-2 sm:mx-3.5 text-accent-cyan font-light select-none opacity-90">|</span>
-              <span className="inline-block">Power BI</span>
-              <span className="mx-2 sm:mx-3.5 text-accent-cyan font-light select-none opacity-90">|</span>
-              <span className="inline-block">Excel</span>
-              <span className="mx-2 sm:mx-3.5 text-accent-cyan font-light select-none opacity-90">|</span>
-              <span className="inline-block">Business Intelligence</span>
-              <span className="mx-2 sm:mx-3.5 text-accent-cyan font-light select-none opacity-90">|</span>
-              <span className="inline-block">GIS</span>
-              <span className="mx-2 sm:mx-3.5 text-accent-cyan font-light select-none opacity-90">|</span>
-              <span className="inline-block">Freelance</span>
+          <div className="p-6 sm:p-8 rounded-3xl bg-surface-100/80 border border-accent-cyan/30 backdrop-blur-xl shadow-2xl neon-border-cyber text-center space-y-3">
+            <h2 className="text-xl sm:text-3xl lg:text-4xl font-display font-extrabold text-white leading-snug sm:leading-relaxed tracking-tight">
+              Architecting <span className="text-gradient-cyan">Full-Stack Web Platforms</span>, <span className="text-emerald-400">Data Analytics Pipelines</span> & <span className="text-accent-violet">GIS Spatial Systems</span>.
             </h2>
+            <p className="text-xs sm:text-sm font-mono text-slate-300 font-semibold tracking-wide uppercase">
+              Cloud Computing • Business Intelligence • Interactive Dashboards • End-to-End Engineering
+            </p>
           </div>
         </div>
 

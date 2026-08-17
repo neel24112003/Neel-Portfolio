@@ -402,9 +402,19 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProjec
 
                 {/* Actions */}
                 <div className="flex flex-wrap items-center gap-3 pt-2">
+                  <a
+                    href="https://shreeji-krupa-farsan.vercel.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-black font-mono text-xs font-bold flex items-center gap-2 shadow-glow-sm transition-all active:scale-95"
+                  >
+                    <ExternalLink className="w-4 h-4 text-black" />
+                    VIEW WEBSITE
+                  </a>
+
                   <button
                     onClick={() => onSelectProject(getProject('shreeji-krupa'))}
-                    className="px-5 py-2.5 rounded-xl bg-accent hover:bg-accent/90 text-white font-mono text-xs font-bold flex items-center gap-2 shadow-glow-sm transition-all"
+                    className="px-5 py-2.5 rounded-xl bg-surface-100 hover:bg-surface-200 border border-white/15 text-white font-mono text-xs font-bold flex items-center gap-2 shadow-glow-sm transition-all"
                   >
                     <Sparkles className="w-4 h-4 text-amber-400" />
                     FULL CASE STUDY

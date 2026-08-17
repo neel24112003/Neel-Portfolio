@@ -232,6 +232,7 @@ export const PROJECTS: ProjectItem[] = [
     subtitle: "Retail E-Commerce & Inventory Management",
     description: "Custom web development solution for retail food operations featuring interactive product ordering, live price calculations, stock management, and PDF receipt rendering.",
     type: "ecommerce",
+    website: "https://shreeji-krupa-farsan.vercel.app",
     technologies: ["PHP", "MySQL", "JavaScript", "HTML5", "CSS3", "PDF Engine"],
     features: [
       "Interactive Product Catalog & Category Navigation",
