@@ -9,7 +9,7 @@ interface ProjectsSectionProps {
 }
 
 export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProject }) => {
-  const [activeTab, setActiveTab] = useState<'all' | 'web' | 'gis'>('all');
+  const [activeTab, setActiveTab] = useState<'all' | 'healthcare' | 'ecommerce' | 'gis'>('all');
 
   const getProject = (id: string) => PROJECTS.find(p => p.id === id) || PROJECTS[0];
 
@@ -33,7 +33,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProjec
 
           {/* Tab Filters with Theme Glowing Border */}
           <div className="flex flex-wrap gap-2 bg-surface-100/90 p-1.5 rounded-2xl border border-accent-cyan/40 shadow-[0_0_15px_rgba(56,189,248,0.15)] hover:border-accent-cyan/70 transition-all">
-            {(['all', 'web', 'gis'] as const).map((tab) => (
+            {(['all', 'healthcare', 'ecommerce', 'gis'] as const).map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
@@ -43,14 +43,20 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProjec
                     : 'text-text-secondary hover:text-white'
                 }`}
               >
-                {tab === 'all' ? 'ALL PROJECTS' : tab === 'web' ? 'WEB & HEALTHCARE' : 'GIS ENGINE'}
+                {tab === 'all'
+                  ? 'ALL PROJECTS'
+                  : tab === 'healthcare'
+                  ? 'HEALTHCARE WEB'
+                  : tab === 'ecommerce'
+                  ? 'E-COMMERCE APPS'
+                  : 'GIS ENGINE'}
               </button>
             ))}
           </div>
         </div>
 
         {/* PROJECT 01: RISHABH EYE HOSPITAL & LASER CENTER (FEATURED RECENT WEB APP) */}
-        {(activeTab === 'all' || activeTab === 'web') && (
+        {(activeTab === 'all' || activeTab === 'healthcare') && (
           <div className="relative group">
             <div className="p-5 sm:p-8 lg:p-12 rounded-3xl glass-panel-interactive neon-border-web bg-gradient-to-br from-surface-100/90 via-surface-50/80 to-surface-100/90 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
               
@@ -160,7 +166,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProjec
         )}
 
         {/* PROJECT 02: SARAL HEALTH CARE */}
-        {(activeTab === 'all' || activeTab === 'web') && (
+        {(activeTab === 'all' || activeTab === 'healthcare') && (
           <div className="relative group">
             <div className="p-5 sm:p-8 lg:p-12 rounded-3xl glass-panel-interactive neon-border-web bg-gradient-to-br from-surface-100/90 via-surface-50/80 to-surface-100/90 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
               
@@ -270,7 +276,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProjec
         )}
 
         {/* PROJECT 03: SAHITYA SANGAM */}
-        {(activeTab === 'all' || activeTab === 'web') && (
+        {(activeTab === 'all' || activeTab === 'ecommerce') && (
           <div className="relative group">
             <div className="p-5 sm:p-8 lg:p-12 rounded-3xl glass-panel-interactive neon-border-web bg-surface-50/80 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
               
@@ -462,7 +468,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProjec
         )}
 
         {/* PROJECT 05: SHREEJI KRUPA FARSAN (RETAIL E-COMMERCE SOLUTION) */}
-        {(activeTab === 'all' || activeTab === 'web') && (
+        {(activeTab === 'all' || activeTab === 'ecommerce') && (
           <div className="relative group">
             <div className="p-5 sm:p-8 lg:p-12 rounded-3xl glass-panel-interactive neon-border-web bg-surface-50/80 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
               
