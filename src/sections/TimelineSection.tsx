@@ -166,7 +166,7 @@ export const TimelineSection: React.FC = () => {
             <Activity className="w-5 h-5 text-emerald-400 shrink-0" />
             <div>
               <div className="text-base font-display font-bold text-emerald-400 leading-tight">ACTIVE ROLE</div>
-              <div className="text-[10px] font-mono text-text-muted">SARAL HEALTH CARE</div>
+              <div className="text-[10px] font-mono text-text-muted">FREELANCE PROJECTS</div>
             </div>
           </div>
           <div className="p-3.5 rounded-2xl bg-surface-100/60 neon-border-gis flex items-center gap-3">
