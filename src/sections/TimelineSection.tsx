@@ -6,13 +6,16 @@ import {
   Sparkles, ExternalLink, Maximize2, Minimize2, Award
 } from 'lucide-react';
 
-const COMPANY_META: Record<string, { icon: React.ElementType; color: string; tag: string; link?: string; linkText?: string; neonClass: string }> = {
-  "Rishabh Eye Hospital & Laser Center": { 
+const COMPANY_META: Record<string, { icon: React.ElementType; color: string; tag: string; link?: string; linkText?: string; links?: { name: string; url: string }[]; neonClass: string }> = {
+  "Freelance Projects": { 
     icon: Activity, 
-    color: "from-cyan-400 to-blue-600", 
-    tag: "HEALTHCARE WEB PLATFORM",
-    link: "https://rishabh-eye-hospital.vercel.app",
-    linkText: "VISIT WEBSITE",
+    color: "from-emerald-500 to-cyan-500", 
+    tag: "FREELANCE WEB DEVELOPER PLATFORMS",
+    links: [
+      { name: "Rishabh Eye Hospital", url: "https://rishabh-eye-hospital.vercel.app" },
+      { name: "Saral Health Care", url: "https://saral-health-care.vercel.app" },
+      { name: "Sahitya Sangam", url: "https://sahityasangam.net/" }
+    ],
     neonClass: "neon-border-web"
   },
   "Saral Health Care": { 
@@ -64,7 +67,7 @@ const COMPANY_META: Record<string, { icon: React.ElementType; color: string; tag
 };
 
 export const TimelineSection: React.FC = () => {
-  const [expandedIds, setExpandedIds] = useState<string[]>(['exp-rishabh']); // Rishabh Eye Hospital open by default
+  const [expandedIds, setExpandedIds] = useState<string[]>(['exp-freelance']); // Freelance Projects open by default
   const [activeFilter, setActiveFilter] = useState<'all' | 'web' | 'gis' | 'python'>('all');
 
   const toggleExpand = (id: string) => {
@@ -75,7 +78,7 @@ export const TimelineSection: React.FC = () => {
 
   const filteredExperiences = EXPERIENCES.filter((exp) => {
     if (activeFilter === 'all') return true;
-    if (activeFilter === 'web') return exp.company.includes('Rishabh') || exp.company === 'Saral Health Care' || exp.company === 'Sahitya Sangam' || exp.company === 'Shreeji Krupa Farsan';
+    if (activeFilter === 'web') return exp.company === 'Freelance Projects' || exp.company === 'Saral Health Care' || exp.company === 'Sahitya Sangam' || exp.company === 'Shreeji Krupa Farsan';
     if (activeFilter === 'gis') return exp.company === 'JIO' || exp.company === 'Spectrarc Solution';
     if (activeFilter === 'python') return exp.company === 'Yogya Capital';
     return true;
@@ -273,8 +276,30 @@ export const TimelineSection: React.FC = () => {
                     {isExpanded && (
                       <div className="mt-6 pt-6 border-t border-white/10 space-y-6 animate-in fade-in slide-in-from-top-3 duration-300">
                         
-                        {/* Direct Live Website / Action Button if available */}
-                        {meta.link && (
+                        {/* Direct Live Website / Action Buttons if available */}
+                        {meta.links ? (
+                          <div className="flex flex-wrap items-center justify-between gap-3 p-3.5 rounded-2xl bg-accent/10 border border-accent/20">
+                            <div className="text-xs font-mono text-accent-cyan font-semibold flex items-center gap-2">
+                              <Sparkles className="w-4 h-4 text-emerald-400" />
+                              <span>LIVE PRODUCTION PLATFORMS</span>
+                            </div>
+                            <div className="flex flex-wrap gap-2">
+                              {meta.links.map((l) => (
+                                <a
+                                  key={l.name}
+                                  href={l.url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  onClick={(e) => e.stopPropagation()}
+                                  className="px-3 py-1.5 rounded-xl bg-accent hover:bg-accent/90 text-white font-mono text-xs font-bold flex items-center gap-1.5 shadow-glow-sm transition-all"
+                                >
+                                  <ExternalLink className="w-3.5 h-3.5" />
+                                  {l.name}
+                                </a>
+                              ))}
+                            </div>
+                          </div>
+                        ) : meta.link ? (
                           <div className="flex items-center justify-between p-3.5 rounded-2xl bg-accent/10 border border-accent/20">
                             <div className="text-xs font-mono text-accent-cyan font-semibold flex items-center gap-2">
                               <Sparkles className="w-4 h-4 text-emerald-400" />
@@ -291,7 +316,7 @@ export const TimelineSection: React.FC = () => {
                               {meta.linkText || "VISIT WEBSITE"}
                             </a>
                           </div>
-                        )}
+                        ) : null}
 
                         {/* Key Accomplishments */}
                         <div className="space-y-3">

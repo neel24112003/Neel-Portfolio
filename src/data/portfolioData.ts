@@ -91,26 +91,16 @@ export const SKILL_CATEGORIES = [
 
 export const EXPERIENCES: ExperienceItem[] = [
   {
-    id: "exp-rishabh",
-    period: "Aug 2026 – Present",
-    company: "Rishabh Eye Hospital & Laser Center",
-    role: "Full Stack Web Developer",
-    description: [
-      "Developed a responsive healthcare web platform using React.js, Tailwind CSS, and Node.js to streamline ophthalmology services and clinic consultations.",
-      "Engineered an intuitive online appointment scheduling module, patient inquiry form, and dedicated sections for advanced eye care and laser treatment services."
-    ],
-    skills: ["React.js", "Tailwind CSS", "Node.js", "JavaScript", "HTML5/CSS3", "Vercel", "Healthcare Web App"]
-  },
-  {
     id: "exp-freelance",
     period: "Jul 2025 – Present",
     company: "Freelance Projects",
     role: "Freelance Web Developer",
     description: [
+      "Rishabh Eye Hospital & Laser Center Project: Developed a responsive healthcare web platform (rishabh-eye-hospital.vercel.app) using React.js, Tailwind CSS, and Node.js to streamline ophthalmology services, online appointment scheduling, patient inquiry forms, and clinic consultations.",
       "Saral Health Care Project: Architected and deployed an ongoing digital healthcare application (saral-health-care.vercel.app) featuring a live vitals monitoring simulation dashboard (ECG, SpO2, HR, BP), doctor appointment booking engine, and AI health assistant chatbot widget.",
-      "Sahitya Sangam Project: Led web development and application integration for a major publishing and bookstore platform, architecting catalog systems housing 1800+ books across 30+ distinct categories, multi-checkbox filtering, cart functionality, and automated PDF invoice generation."
+      "Sahitya Sangam Project: Led web development and application integration for a major publishing and bookstore platform (sahityasangam.net), architecting catalog systems housing 1800+ books across 30+ distinct categories, multi-checkbox filtering, cart functionality, and automated PDF invoice generation."
     ],
-    skills: ["JavaScript", "HTML5/CSS3", "PHP", "MySQL", "Flutter", "AI Chatbot", "Vercel", "E-commerce UI"]
+    skills: ["React.js", "Tailwind CSS", "Node.js", "JavaScript", "HTML5/CSS3", "PHP", "MySQL", "Flutter", "AI Chatbot", "Vercel"]
   },
   {
     id: "exp-5",
