@@ -368,3 +368,72 @@ export const BEYOND_CODE_DATA = {
     "Canva", "Lightroom", "CapCut", "Picsart", "InShot", "KineMaster"
   ]
 };
+
+export const BEYOND_CODE_CATEGORIES = [
+  {
+    id: "llm_research",
+    title: "LLMs & Generative AI Research Suite",
+    category: "01. AI & PROMPT ENGINEERING",
+    icon: "Brain",
+    color: "#a855f7",
+    badgeColor: "bg-purple-500/10 border-purple-400/40 text-purple-200 shadow-[0_0_10px_rgba(168,85,247,0.2)]",
+    cardClass: "border border-purple-500/40 bg-surface-50/80 shadow-[0_0_25px_rgba(168,85,247,0.15)] hover:border-purple-400",
+    description: "Proficient in leveraging cutting-edge Large Language Models for automated technical research, complex problem solving, code optimization, and prompt engineering.",
+    tools: ["ChatGPT", "Claude", "Google Gemini", "Perplexity AI", "DeepSeek AI"],
+    highlights: [
+      "Multi-LLM Prompt Engineering & Benchmark Evaluation",
+      "Automated Technical Research & Documentation Synthesis",
+      "AI-Assisted Code Optimization & Query Formulation"
+    ]
+  },
+  {
+    id: "synthetic_media",
+    title: "Synthetic Media & Creative AI Engines",
+    category: "02. SYNTHETIC AI GENERATION",
+    icon: "Sparkles",
+    color: "#38bdf8",
+    badgeColor: "bg-sky-500/10 border-sky-400/40 text-sky-200 shadow-[0_0_10px_rgba(56,189,248,0.2)]",
+    cardClass: "border border-sky-400/40 bg-surface-50/80 shadow-[0_0_25px_rgba(56,189,248,0.15)] hover:border-sky-300",
+    description: "Utilizing generative AI tools for high-fidelity synthetic voice cloning, photorealistic image creation, and visual asset generation.",
+    tools: ["ElevenLabs", "Leonardo AI", "Google Pomelli", "Google Stitch"],
+    highlights: [
+      "AI Voice Synthesis & High-Fidelity Voice Cloning (ElevenLabs)",
+      "Photorealistic AI Image Generation & Concept Art (Leonardo AI)",
+      "Creative Asset Pipelines & AI Visual Workflows"
+    ]
+  },
+  {
+    id: "talent_ops",
+    title: "Talent Operations & HR Logistics",
+    category: "03. HUMAN CAPITAL & RECRUITMENT",
+    icon: "Users",
+    color: "#ec4899",
+    badgeColor: "bg-pink-500/10 border-pink-400/40 text-pink-200 shadow-[0_0_10px_rgba(236,72,153,0.2)]",
+    cardClass: "border border-pink-500/40 bg-surface-50/80 shadow-[0_0_25px_rgba(236,72,153,0.15)] hover:border-pink-400",
+    companyTag: "Guide Placement — Job Consultant (Jul 2025 – Jun 2026)",
+    description: "Practical operational experience managing end-to-end technical recruitment pipelines, candidate screening, attendance systems, and corporate hiring logistics.",
+    tools: ["Foundit (Monster)", "TimesJobs", "ZK Techno", "PagarBook"],
+    responsibilities: [
+      "Resume Screening & Qualification Verification against Skill Matrix",
+      "Candidate Shortlisting, Interview Scheduling & Placement Agreements",
+      "Biometric Attendance Systems (ZK Techno) & Payroll Logistics (PagarBook)",
+      "Recruitment Portal Sourcing & Candidate Database Management"
+    ]
+  },
+  {
+    id: "creative_design",
+    title: "Digital Media & Visual Design Suite",
+    category: "04. GRAPHIC & VIDEO PRODUCTION",
+    icon: "Palette",
+    color: "#10b981",
+    badgeColor: "bg-emerald-500/10 border-emerald-400/40 text-emerald-200 shadow-[0_0_10px_rgba(16,185,129,0.2)]",
+    cardClass: "border border-emerald-400/40 bg-surface-50/80 shadow-[0_0_25px_rgba(16,185,129,0.15)] hover:border-emerald-300",
+    description: "Designing promotional graphics, photo color grading, and multi-track mobile/desktop video post-production for digital visual communication.",
+    tools: ["Canva", "Lightroom", "CapCut", "Picsart", "InShot", "KineMaster"],
+    highlights: [
+      "Promotional Asset & Graphic Banner Design (Canva & Picsart)",
+      "Photo Color Grading & Image Enhancement (Lightroom)",
+      "Multi-Track Video Post-Production & Editing (CapCut, InShot, KineMaster)"
+    ]
+  }
+];
