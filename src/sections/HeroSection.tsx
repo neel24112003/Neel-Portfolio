@@ -1,7 +1,7 @@
 import React from 'react';
 import { HeroScene } from '../3d/HeroScene';
 import { HeroComputerIde } from '../components/HeroComputerIde';
-import { ArrowRight, FileText, Sparkles, Send, Globe2, Code, Terminal, Brain, BarChart3, Layers, Database, Activity, FileSpreadsheet, LineChart } from 'lucide-react';
+import { ArrowRight, FileText, Sparkles, Send, Globe2, Code, Terminal, Brain, BarChart3, Layers, Server, Cpu } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 interface HeroSectionProps {
@@ -9,12 +9,12 @@ interface HeroSectionProps {
 }
 
 const SPECIALIZATION_BADGES = [
-  { label: 'Data Analyst', icon: BarChart3, color: 'border-emerald-500/50 text-emerald-300 bg-emerald-500/10 shadow-[0_0_12px_rgba(16,185,129,0.25)]' },
+  { label: 'Software Engineer', icon: Code, color: 'border-indigo-500/50 text-indigo-300 bg-indigo-500/10 shadow-[0_0_12px_rgba(99,102,241,0.25)]' },
   { label: 'Full Stack Developer', icon: Layers, color: 'border-sky-500/50 text-sky-300 bg-sky-500/10 shadow-[0_0_12px_rgba(56,189,248,0.25)]' },
-  { label: 'SQL', icon: Database, color: 'border-indigo-500/50 text-indigo-300 bg-indigo-500/10 shadow-[0_0_12px_rgba(99,102,241,0.25)]' },
-  { label: 'Power BI', icon: Activity, color: 'border-amber-500/50 text-amber-300 bg-amber-500/10 shadow-[0_0_12px_rgba(245,158,11,0.25)]' },
-  { label: 'Excel', icon: FileSpreadsheet, color: 'border-green-500/50 text-green-300 bg-green-500/10 shadow-[0_0_12px_rgba(34,197,94,0.25)]' },
-  { label: 'Business Intelligence', icon: LineChart, color: 'border-purple-500/50 text-purple-300 bg-purple-500/10 shadow-[0_0_12px_rgba(168,85,247,0.25)]' },
+  { label: 'Data Analyst', icon: BarChart3, color: 'border-emerald-500/50 text-emerald-300 bg-emerald-500/10 shadow-[0_0_12px_rgba(16,185,129,0.25)]' },
+  { label: 'Python Automation', icon: Terminal, color: 'border-amber-500/50 text-amber-300 bg-amber-500/10 shadow-[0_0_12px_rgba(245,158,11,0.25)]' },
+  { label: 'Prompt Engineering', icon: Brain, color: 'border-purple-500/50 text-purple-300 bg-purple-500/10 shadow-[0_0_12px_rgba(168,85,247,0.25)]' },
+  { label: 'Cloud Computing', icon: Server, color: 'border-blue-500/50 text-blue-300 bg-blue-500/10 shadow-[0_0_12px_rgba(59,130,246,0.25)]' },
   { label: 'GIS', icon: Globe2, color: 'border-cyan-500/50 text-cyan-300 bg-cyan-500/10 shadow-[0_0_12px_rgba(6,182,212,0.25)]' },
   { label: 'Freelance', icon: Sparkles, color: 'border-pink-500/50 text-pink-300 bg-pink-500/10 shadow-[0_0_12px_rgba(236,72,153,0.25)]' },
 ];
