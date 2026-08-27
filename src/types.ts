@@ -37,6 +37,7 @@ export interface CertificationItem {
   issuer: string;
   skills: string[];
   badgeColor: string;
+  certificateImage?: string;
 }
 
 export interface EducationItem {

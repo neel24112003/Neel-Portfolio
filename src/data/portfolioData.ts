@@ -293,28 +293,32 @@ export const CERTIFICATIONS: CertificationItem[] = [
     title: "Introduction to Machine Learning",
     issuer: "IIT Madras (NPTEL)",
     skills: ["Machine Learning", "Supervised Learning", "Classification", "Algorithms"],
-    badgeColor: "#6366f1"
+    badgeColor: "#6366f1",
+    certificateImage: "/certificates/nptel-machine-learning.png"
   },
   {
     id: "cert-2",
     title: "Foundations of Prompt Engineering",
     issuer: "AWS (Amazon Web Services)",
     skills: ["Prompt Engineering", "Large Language Models", "AI Optimization", "Generative AI"],
-    badgeColor: "#8b5cf6"
+    badgeColor: "#8b5cf6",
+    certificateImage: "/certificates/aws-prompt-engineering.png"
   },
   {
     id: "cert-3",
     title: "Digital Forensics Essentials",
     issuer: "Code Red (EC-Council)",
     skills: ["Digital Forensics", "Data Integrity", "Cyber Security", "Investigation"],
-    badgeColor: "#38bdf8"
+    badgeColor: "#38bdf8",
+    certificateImage: "/certificates/ec-council-digital-forensics.png"
   },
   {
     id: "cert-4",
     title: "ESG Virtual Experience Program",
     issuer: "TCS (Tata Consultancy Services)",
     skills: ["Environmental Social Governance", "Data Analytics", "Corporate Reporting"],
-    badgeColor: "#10b981"
+    badgeColor: "#10b981",
+    certificateImage: "/certificates/tcs-esg-program.png"
   }
 ];
 
