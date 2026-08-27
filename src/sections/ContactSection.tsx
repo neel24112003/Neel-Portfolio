@@ -105,12 +105,12 @@ export const ContactSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
           
           {/* Left Contact Information Cards */}
-          <div className="lg:col-span-5 space-y-6">
+          <div className="lg:col-span-5 flex flex-col justify-between space-y-6">
             
-            <div className="p-8 rounded-3xl glass-panel border border-white/10 space-y-6">
+            <div className="p-8 rounded-3xl glass-panel border border-white/10 space-y-6 flex-1 flex flex-col justify-between">
               <h3 className="text-xl font-display font-bold text-white">
                 Direct Channels
               </h3>
@@ -209,22 +209,22 @@ export const ContactSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Live Email Dispatch Note */}
-            <div className="p-5 rounded-2xl bg-emerald-950/30 neon-border-gis text-xs font-mono text-emerald-300 leading-relaxed space-y-1">
+            {/* Live Email & WhatsApp Dispatch Note */}
+            <div className="p-5 rounded-2xl bg-emerald-950/30 neon-border-gis text-xs font-mono text-emerald-300 leading-relaxed space-y-1.5 border border-emerald-500/30 shadow-[0_0_15px_rgba(16,185,129,0.15)]">
               <span className="font-bold flex items-center gap-1.5 text-emerald-400">
-                <CheckCircle2 className="w-4 h-4" />
-                REAL-TIME GMAIL SMTP INTEGRATION ACTIVE:
+                <CheckCircle2 className="w-4 h-4 shrink-0 text-emerald-400" />
+                REAL-TIME DISPATCH INTEGRATION ACTIVE:
               </span>
-              <p className="text-text-secondary">
-                Messages submitted via this form are dispatched directly to <strong className="text-white">neelnp2411@gmail.com</strong> in real-time.
+              <p className="text-text-secondary leading-normal">
+                Messages submitted via this form are dispatched directly to <strong className="text-white">neelnp2411@gmail.com</strong> and WhatsApp <strong className="text-white">+91 9601911100</strong> in real-time.
               </p>
             </div>
 
           </div>
 
           {/* Right Contact Form */}
-          <div className="lg:col-span-7">
-            <form onSubmit={handleSubmit} className="p-8 sm:p-10 rounded-3xl glass-panel border border-white/15 space-y-6">
+          <div className="lg:col-span-7 flex flex-col h-full">
+            <form onSubmit={handleSubmit} className="p-8 sm:p-10 rounded-3xl glass-panel border border-white/15 space-y-6 flex-1 flex flex-col justify-between">
               <h3 className="text-2xl font-display font-bold text-white">
                 Send Direct Message
               </h3>
