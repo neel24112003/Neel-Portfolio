@@ -3,7 +3,7 @@ import { EXPERIENCES } from '../data/portfolioData';
 import { 
   Briefcase, ChevronRight, Building2, CheckCircle2, 
   Activity, BookOpen, Users, Globe2, Terminal, ShoppingCart, 
-  Sparkles, ExternalLink, Maximize2, Minimize2, Award
+  Sparkles, ExternalLink, Maximize2, Minimize2, Award, Eye, X 
 } from 'lucide-react';
 
 const COMPANY_META: Record<string, { icon: React.ElementType; color: string; tag: string; link?: string; linkText?: string; links?: { name: string; url: string }[]; neonClass: string }> = {
@@ -69,6 +69,7 @@ const COMPANY_META: Record<string, { icon: React.ElementType; color: string; tag
 export const TimelineSection: React.FC = () => {
   const [expandedIds, setExpandedIds] = useState<string[]>(['exp-freelance']); // Freelance Projects open by default
   const [activeFilter, setActiveFilter] = useState<'all' | 'web' | 'gis' | 'python'>('all');
+  const [selectedExpCert, setSelectedExpCert] = useState<{ company: string; role: string; image: string } | null>(null);
 
   const toggleExpand = (id: string) => {
     setExpandedIds(prev => 
@@ -353,6 +354,30 @@ export const TimelineSection: React.FC = () => {
                           </div>
                         </div>
 
+                        {/* Certificate Image View Button if available */}
+                        {exp.certificateImage && (
+                          <div className="pt-3 border-t border-white/10 flex flex-wrap items-center justify-between gap-3 p-3.5 rounded-2xl bg-emerald-950/30 border border-emerald-500/40">
+                            <div className="text-xs font-mono text-emerald-400 font-semibold flex items-center gap-2">
+                              <Award className="w-4 h-4 text-emerald-400 shrink-0" />
+                              <span>OFFICIAL WORK CREDENTIAL</span>
+                            </div>
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                setSelectedExpCert({
+                                  company: exp.company,
+                                  role: exp.role,
+                                  image: exp.certificateImage!
+                                });
+                              }}
+                              className="px-4 py-2 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 border border-emerald-400/80 text-emerald-300 font-mono text-xs font-bold flex items-center gap-2 shadow-[0_0_12px_rgba(16,185,129,0.3)] transition-all hover:scale-105 shrink-0"
+                            >
+                              <Eye className="w-4 h-4 text-emerald-400" />
+                              {exp.company === 'Guide Placement' ? 'VIEW RELIEVING & EXPERIENCE CERTIFICATE' : 'VIEW EXPERIENCE LETTER'}
+                            </button>
+                          </div>
+                        )}
+
                       </div>
                     )}
 
@@ -366,6 +391,48 @@ export const TimelineSection: React.FC = () => {
         </div>
 
       </div>
+
+      {/* Experience Certificate Lightbox Modal */}
+      {selectedExpCert && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md animate-fadeIn"
+          onClick={() => setSelectedExpCert(null)}
+        >
+          <div
+            className="relative max-w-4xl w-full bg-surface-100/95 border border-emerald-500/60 rounded-3xl p-5 sm:p-6 shadow-[0_0_35px_rgba(16,185,129,0.35)] space-y-4 max-h-[90vh] flex flex-col justify-between"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="flex items-center justify-between border-b border-white/10 pb-3">
+              <div>
+                <h3 className="text-lg sm:text-xl font-display font-bold text-white">
+                  {selectedExpCert.company}
+                </h3>
+                <p className="text-xs font-mono text-emerald-400 font-semibold mt-0.5">
+                  OFFICIAL EXPERIENCE & RELIEVING CERTIFICATE ({selectedExpCert.role})
+                </p>
+              </div>
+
+              <button
+                onClick={() => setSelectedExpCert(null)}
+                className="px-3 py-1.5 rounded-xl bg-surface-200 hover:bg-surface-300 text-text-muted hover:text-white border border-white/10 transition-all flex items-center gap-1.5 text-xs font-mono font-bold"
+              >
+                <X className="w-4 h-4 text-rose-400" />
+                CLOSE
+              </button>
+            </div>
+
+            {/* Modal Certificate Image */}
+            <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-black/60 flex items-center justify-center p-2 min-h-[300px]">
+              <img
+                src={selectedExpCert.image}
+                alt={`${selectedExpCert.company} Experience Certificate`}
+                className="w-full h-auto max-h-[68vh] object-contain rounded-xl"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

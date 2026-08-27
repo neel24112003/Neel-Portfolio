@@ -114,7 +114,8 @@ export const EXPERIENCES: ExperienceItem[] = [
       "Managing interview scheduling, candidate databases, hiring trackers, and placement agreements.",
       "Directing cross-functional communication between employers and applicants to streamline operational hiring pipelines."
     ],
-    skills: ["Resume Screening", "Candidate Shortlisting", "Interview Trackers", "Foundit", "TimesJobs", "Agreements"]
+    skills: ["Resume Screening", "Candidate Shortlisting", "Interview Trackers", "Foundit", "TimesJobs", "Agreements"],
+    certificateImage: "/experience/guide-placement-certificate.jpg"
   },
   {
     id: "exp-4",
@@ -126,7 +127,8 @@ export const EXPERIENCES: ExperienceItem[] = [
       "Performed spatial buffering, clipping, spatial joins, topology validation, and CAD to GIS data conversions.",
       "Processed satellite imagery, land cover layers, and vector datasets for large-scale geographic planning."
     ],
-    skills: ["ArcMap", "Google Earth Engine", "Google Earth Pro", "Shapefile", "Spatial Joins", "Topology Checks"]
+    skills: ["ArcMap", "Google Earth Engine", "Google Earth Pro", "Shapefile", "Spatial Joins", "Topology Checks"],
+    certificateImage: "/experience/reliance-jio-certificate.jpg"
   },
   {
     id: "exp-3",
@@ -138,7 +140,8 @@ export const EXPERIENCES: ExperienceItem[] = [
       "Developed web scraping models with BeautifulSoup and created automated PDF text extraction tools outputting structured JSON.",
       "Utilized Jupyter Notebooks for data transformation, cleaning, exploratory data analysis, and reporting."
     ],
-    skills: ["Python", "BeautifulSoup", "JSON Parsing", "Data Analytics", "Jupyter Notebook"]
+    skills: ["Python", "BeautifulSoup", "JSON Parsing", "Data Analytics", "Jupyter Notebook"],
+    certificateImage: "/experience/yogya-capital-certificate.jpg"
   },
   {
     id: "exp-2",
@@ -150,7 +153,8 @@ export const EXPERIENCES: ExperienceItem[] = [
       "Conducted Landsat/Sentinel satellite data processing, Land Use / Land Cover (LULC) mapping, and spatial feature segmentation.",
       "Created vector shapefiles, KML layers, GeoJSON datasets, and technical geospatial documentations."
     ],
-    skills: ["GIS Analysis", "Landsat", "Sentinel", "GeoJSON", "KML", "Remote Sensing"]
+    skills: ["GIS Analysis", "Landsat", "Sentinel", "GeoJSON", "KML", "Remote Sensing"],
+    certificateImage: "/experience/spectrarc-solution-certificate.jpg"
   }
 ];
 

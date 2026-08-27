@@ -12,6 +12,7 @@ export interface ExperienceItem {
   role: string;
   description: string[];
   skills: string[];
+  certificateImage?: string;
 }
 
 export interface ProjectItem {
