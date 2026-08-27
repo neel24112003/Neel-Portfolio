@@ -97,6 +97,20 @@ export const AboutSection: React.FC = () => {
                   <span className="text-text-muted shrink-0">LANGUAGES</span>
                   <span className="text-emerald-400 font-semibold text-left sm:text-right">English • Hindi • Gujarati</span>
                 </div>
+
+                <div className="p-3 sm:p-3.5 rounded-xl bg-surface-100/60 neon-border-web flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-3">
+                  <span className="text-text-muted shrink-0">EMAIL</span>
+                  <a href={`mailto:${PERSONAL_INFO.email}`} className="text-sky-300 font-semibold text-left sm:text-right hover:text-accent-cyan transition-colors truncate">
+                    {PERSONAL_INFO.email}
+                  </a>
+                </div>
+
+                <div className="p-3 sm:p-3.5 rounded-xl bg-surface-100/60 neon-border-python flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-3">
+                  <span className="text-text-muted shrink-0">PHONE / WHATSAPP</span>
+                  <a href={`tel:${PERSONAL_INFO.phone.replace(/\s+/g, '')}`} className="text-amber-300 font-semibold text-left sm:text-right hover:text-amber-400 transition-colors">
+                    {PERSONAL_INFO.phone}
+                  </a>
+                </div>
               </div>
             </div>
 
