@@ -3,8 +3,8 @@ import { ExperienceItem, ProjectItem, CertificationItem, EducationItem } from '.
 export const PERSONAL_INFO = {
   name: "NEEL PATEL",
   title: "Computer Science Engineer — Specialization in Cloud Computing",
-  headline: "Data Analyst | Full Stack Engineer | SQL | Power BI | Excel | Business Intelligence | GIS | Freelance",
-  tagline: "Data Analyst | Full Stack Engineer | SQL | Power BI | Excel | Business Intelligence | GIS | Freelance",
+  headline: "Data Analyst | Full Stack Developer | SQL | Power BI | Excel | Business Intelligence | GIS | Freelance",
+  tagline: "Data Analyst | Full Stack Developer | SQL | Power BI | Excel | Business Intelligence | GIS | Freelance",
   phone: "+91 9601911100",
   email: "neelnp2411@gmail.com",
   location: "Surat, Gujarat, India",

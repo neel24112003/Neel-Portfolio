@@ -10,7 +10,7 @@ interface HeroSectionProps {
 
 const SPECIALIZATION_BADGES = [
   { label: 'Data Analyst', icon: BarChart3, color: 'border-emerald-500/50 text-emerald-300 bg-emerald-500/10 shadow-[0_0_12px_rgba(16,185,129,0.25)]' },
-  { label: 'Full Stack Engineer', icon: Layers, color: 'border-sky-500/50 text-sky-300 bg-sky-500/10 shadow-[0_0_12px_rgba(56,189,248,0.25)]' },
+  { label: 'Full Stack Developer', icon: Layers, color: 'border-sky-500/50 text-sky-300 bg-sky-500/10 shadow-[0_0_12px_rgba(56,189,248,0.25)]' },
   { label: 'SQL', icon: Database, color: 'border-indigo-500/50 text-indigo-300 bg-indigo-500/10 shadow-[0_0_12px_rgba(99,102,241,0.25)]' },
   { label: 'Power BI', icon: Activity, color: 'border-amber-500/50 text-amber-300 bg-amber-500/10 shadow-[0_0_12px_rgba(245,158,11,0.25)]' },
   { label: 'Excel', icon: FileSpreadsheet, color: 'border-green-500/50 text-green-300 bg-green-500/10 shadow-[0_0_12px_rgba(34,197,94,0.25)]' },
