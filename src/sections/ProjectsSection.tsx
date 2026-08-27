@@ -9,7 +9,7 @@ interface ProjectsSectionProps {
 }
 
 export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProject }) => {
-  const [activeTab, setActiveTab] = useState<'all' | 'web' | 'gis' | 'pipeline'>('all');
+  const [activeTab, setActiveTab] = useState<'all' | 'web' | 'gis'>('all');
 
   const getProject = (id: string) => PROJECTS.find(p => p.id === id) || PROJECTS[0];
 
@@ -33,7 +33,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProjec
 
           {/* Tab Filters with Theme Glowing Border */}
           <div className="flex flex-wrap gap-2 bg-surface-100/90 p-1.5 rounded-2xl border border-accent-cyan/40 shadow-[0_0_15px_rgba(56,189,248,0.15)] hover:border-accent-cyan/70 transition-all">
-            {(['all', 'web', 'gis', 'pipeline'] as const).map((tab) => (
+            {(['all', 'web', 'gis'] as const).map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
@@ -43,7 +43,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProjec
                     : 'text-text-secondary hover:text-white'
                 }`}
               >
-                {tab === 'all' ? 'ALL PROJECTS' : tab === 'web' ? 'WEB & HEALTHCARE' : tab === 'gis' ? 'GIS ENGINE' : 'DATA PIPELINE'}
+                {tab === 'all' ? 'ALL PROJECTS' : tab === 'web' ? 'WEB & HEALTHCARE' : 'GIS ENGINE'}
               </button>
             ))}
           </div>
