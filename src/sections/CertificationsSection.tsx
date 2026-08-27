@@ -82,7 +82,7 @@ export const CertificationsSection: React.FC = () => {
 
               {/* View Certificate Button */}
               {cert.certificateImage && (
-                <div className="pt-3 border-t border-white/10 flex items-center justify-end">
+                <div className="pt-3 border-t border-white/10 flex items-center justify-center">
                   <button
                     onClick={() => setSelectedCert(cert)}
                     className="px-4 py-2 rounded-xl bg-surface-100/90 hover:bg-surface-200 border text-xs font-mono font-bold flex items-center gap-2 transition-all shadow-glow-sm hover:scale-105"
