@@ -155,7 +155,7 @@ export const InteractiveResumeSection: React.FC<InteractiveResumeModalProps> = (
                 EXECUTIVE SUMMARY
               </h3>
               <p className="text-xs sm:text-sm text-slate-200 font-sans leading-relaxed">
-                Computer Science Engineer with a specialized focus in Cloud Computing, full-stack web engineering, data analytics, GIS spatial modeling, and Python automation. Demonstrated expertise in developing production healthcare web applications (Rishabh Eye Hospital, Saral Health Care), building enterprise e-commerce platforms (Sahitya Sangam), executing geospatial data workflows, and engineering automated cloud pipelines.
+                {PERSONAL_INFO.summary}
               </p>
             </div>
 

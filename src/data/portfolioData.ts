@@ -11,7 +11,7 @@ export const PERSONAL_INFO = {
   linkedin: "https://www.linkedin.com/in/neel-patel-8834b936b",
   github: "https://github.com/neel24112003",
   languages: ["English", "Hindi", "Gujarati"],
-  summary: "Computer Science Engineer (Specialization in Cloud Computing) with hands-on experience as a Data Analyst, Full Stack Engineer, SQL Developer, Power BI & Excel Specialist, Business Intelligence Practitioner, GIS Spatial Analyst, and Freelance Web Developer."
+  summary: "AI-native Full Stack Developer and B.Tech CSE (Cloud Computing) graduate with a builder mindset, leveraging advanced prompt engineering and rapid prototyping to build scalable, production-ready systems. Proven track record across modern web frameworks (React.js, Node.js, PHP/MySQL), Python automation, and geospatial (GIS) pipelines. Experienced in shipping real-world e-commerce and healthcare platforms, automating complex data workflows, and orchestrating modern LLMs/developer tools to turn product ideas into high-performance software with extreme speed and precision."
 };
 
 export const CORE_PULSE_KEYWORDS = [
