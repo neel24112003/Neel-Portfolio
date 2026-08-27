@@ -373,7 +373,7 @@ export const TimelineSection: React.FC = () => {
                               className="px-4 py-2 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 border border-emerald-400/80 text-emerald-300 font-mono text-xs font-bold flex items-center gap-2 shadow-[0_0_12px_rgba(16,185,129,0.3)] transition-all hover:scale-105 shrink-0"
                             >
                               <Eye className="w-4 h-4 text-emerald-400" />
-                              {exp.company === 'Guide Placement' ? 'VIEW RELIEVING & EXPERIENCE CERTIFICATE' : 'VIEW EXPERIENCE LETTER'}
+                              VIEW EXPERIENCE LETTER
                             </button>
                           </div>
                         )}
