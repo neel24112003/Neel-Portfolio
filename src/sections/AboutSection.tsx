@@ -1,6 +1,6 @@
 import React from 'react';
 import { PERSONAL_INFO, CORE_PULSE_KEYWORDS } from '../data/portfolioData';
-import { ShieldCheck, MapPin, GraduationCap, Sparkles } from 'lucide-react';
+import { User, MapPin, GraduationCap, Sparkles } from 'lucide-react';
 
 export const AboutSection: React.FC = () => {
   return (
@@ -67,14 +67,14 @@ export const AboutSection: React.FC = () => {
 
           </div>
 
-          {/* Right Highlights & Engineering Profile Card (5 cols) */}
+          {/* Right Highlights & Personal Details Card (5 cols) */}
           <div className="lg:col-span-5 flex flex-col justify-between space-y-6">
             
-            {/* Quick Fact / Engineering Profile Card */}
+            {/* Quick Fact / Personal Details Card */}
             <div className="p-6 sm:p-8 rounded-3xl glass-panel neon-border-gis space-y-6 flex-1 flex flex-col justify-between">
               <h3 className="text-lg font-display font-bold text-white flex items-center gap-2">
-                <ShieldCheck className="w-5 h-5 text-emerald-400" />
-                ENGINEERING PROFILE
+                <User className="w-5 h-5 text-emerald-400" />
+                PERSONAL DETAILS
               </h3>
 
               <div className="space-y-3 sm:space-y-4 text-xs font-mono">
@@ -84,8 +84,18 @@ export const AboutSection: React.FC = () => {
                 </div>
 
                 <div className="p-3 sm:p-3.5 rounded-xl bg-surface-100/60 neon-border-web flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-3">
+                  <span className="text-text-muted shrink-0">FATHER'S NAME</span>
+                  <span className="text-accent-cyan font-semibold text-left sm:text-right">NAYAN PATEL</span>
+                </div>
+
+                <div className="p-3 sm:p-3.5 rounded-xl bg-surface-100/60 neon-border-python flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-3">
+                  <span className="text-text-muted shrink-0">MOTHER'S NAME</span>
+                  <span className="text-amber-300 font-semibold text-left sm:text-right">NEETA PATEL</span>
+                </div>
+
+                <div className="p-3 sm:p-3.5 rounded-xl bg-surface-100/60 neon-border-cyber flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-3">
                   <span className="text-text-muted shrink-0">DEGREE</span>
-                  <span className="text-accent-cyan font-semibold text-left sm:text-right">B.Tech in CSE</span>
+                  <span className="text-sky-300 font-semibold text-left sm:text-right">B.Tech in CSE</span>
                 </div>
 
                 <div className="p-3 sm:p-3.5 rounded-xl bg-surface-100/60 neon-border-gis flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-3">
@@ -96,20 +106,6 @@ export const AboutSection: React.FC = () => {
                 <div className="p-3 sm:p-3.5 rounded-xl bg-surface-100/60 neon-border-ai flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-3">
                   <span className="text-text-muted shrink-0">LANGUAGES</span>
                   <span className="text-emerald-400 font-semibold text-left sm:text-right">English • Hindi • Gujarati</span>
-                </div>
-
-                <div className="p-3 sm:p-3.5 rounded-xl bg-surface-100/60 neon-border-web flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-3">
-                  <span className="text-text-muted shrink-0">EMAIL</span>
-                  <a href={`mailto:${PERSONAL_INFO.email}`} className="text-sky-300 font-semibold text-left sm:text-right hover:text-accent-cyan transition-colors truncate">
-                    {PERSONAL_INFO.email}
-                  </a>
-                </div>
-
-                <div className="p-3 sm:p-3.5 rounded-xl bg-surface-100/60 neon-border-python flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-3">
-                  <span className="text-text-muted shrink-0">PHONE / WHATSAPP</span>
-                  <a href={`tel:${PERSONAL_INFO.phone.replace(/\s+/g, '')}`} className="text-amber-300 font-semibold text-left sm:text-right hover:text-amber-400 transition-colors">
-                    {PERSONAL_INFO.phone}
-                  </a>
                 </div>
               </div>
             </div>

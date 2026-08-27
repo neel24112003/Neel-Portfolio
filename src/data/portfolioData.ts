@@ -2,6 +2,8 @@ import { ExperienceItem, ProjectItem, CertificationItem, EducationItem } from '.
 
 export const PERSONAL_INFO = {
   name: "NEEL PATEL",
+  fatherName: "NAYAN PATEL",
+  motherName: "NEETA PATEL",
   title: "Computer Science Engineer — Specialization in Cloud Computing",
   headline: "Software Engineer | Full Stack Developer | Data Analyst | Python Automation | Prompt Engineering | Cloud Computing | GIS | Freelance",
   tagline: "Software Engineer | Full Stack Developer | Data Analyst | Python Automation | Prompt Engineering | Cloud Computing | GIS | Freelance",
