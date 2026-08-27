@@ -257,7 +257,7 @@ export const TimelineSection: React.FC = () => {
                         </h3>
                         <div className="flex items-center gap-2 text-accent-cyan font-mono text-xs sm:text-sm font-semibold mt-1">
                           <Building2 className="w-4 h-4" />
-                          <span>@ {exp.company}</span>
+                          <span>{exp.company}</span>
                         </div>
                       </div>
 

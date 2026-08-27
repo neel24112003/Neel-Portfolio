@@ -262,7 +262,7 @@ export const InteractiveResumeSection: React.FC<InteractiveResumeModalProps> = (
                         <div className="flex flex-wrap items-start justify-between gap-1.5 border-b border-white/10 pb-2.5">
                           <div>
                             <div className="text-sm sm:text-base font-display font-bold text-white">{exp.role}</div>
-                            <div className="text-xs sm:text-sm font-mono text-accent-cyan font-bold">@ {exp.company}</div>
+                            <div className="text-xs sm:text-sm font-mono text-accent-cyan font-bold">{exp.company}</div>
                           </div>
                           <span className="px-3 py-1 rounded-md bg-surface-200 text-xs font-mono text-emerald-400 font-bold border border-emerald-500/50 shadow-glow-sm">
                             {exp.period}
