@@ -294,7 +294,7 @@ export const CERTIFICATIONS: CertificationItem[] = [
     issuer: "IIT Madras (NPTEL)",
     skills: ["Machine Learning", "Supervised Learning", "Classification", "Algorithms"],
     badgeColor: "#6366f1",
-    certificateImage: "/certificates/nptel-machine-learning.png"
+    certificateImage: "/certificates/nptel-machine-learning.jpg"
   },
   {
     id: "cert-2",
@@ -302,7 +302,7 @@ export const CERTIFICATIONS: CertificationItem[] = [
     issuer: "AWS (Amazon Web Services)",
     skills: ["Prompt Engineering", "Large Language Models", "AI Optimization", "Generative AI"],
     badgeColor: "#8b5cf6",
-    certificateImage: "/certificates/aws-prompt-engineering.png"
+    certificateImage: "/certificates/aws-prompt-engineering.jpg"
   },
   {
     id: "cert-3",
@@ -310,7 +310,7 @@ export const CERTIFICATIONS: CertificationItem[] = [
     issuer: "Code Red (EC-Council)",
     skills: ["Digital Forensics", "Data Integrity", "Cyber Security", "Investigation"],
     badgeColor: "#38bdf8",
-    certificateImage: "/certificates/ec-council-digital-forensics.png"
+    certificateImage: "/certificates/ec-council-digital-forensics.jpg"
   },
   {
     id: "cert-4",
@@ -318,7 +318,7 @@ export const CERTIFICATIONS: CertificationItem[] = [
     issuer: "TCS (Tata Consultancy Services)",
     skills: ["Environmental Social Governance", "Data Analytics", "Corporate Reporting"],
     badgeColor: "#10b981",
-    certificateImage: "/certificates/tcs-esg-program.png"
+    certificateImage: "/certificates/tcs-esg-program.jpg"
   }
 ];
 
