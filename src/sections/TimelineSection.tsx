@@ -345,7 +345,7 @@ export const TimelineSection: React.FC = () => {
                             {exp.skills.map((skill) => (
                               <span
                                 key={skill}
-                                className="px-3 py-1 rounded-lg bg-surface-200 border border-white/10 text-xs font-mono text-white shadow-sm"
+                                className="px-3 py-1 rounded-xl bg-surface-100/90 border border-accent-cyan/40 text-xs font-mono font-bold text-accent-cyan shadow-[0_0_10px_rgba(56,189,248,0.2)] hover:border-accent-cyan transition-all"
                               >
                                 {skill}
                               </span>

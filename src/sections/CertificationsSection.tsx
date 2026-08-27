@@ -61,7 +61,14 @@ export const CertificationsSection: React.FC = () => {
                 {cert.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-2.5 py-1 rounded-lg bg-surface-100 border border-white/10 text-[11px] font-mono text-text-secondary"
+                    className="px-3 py-1 rounded-xl text-xs font-mono font-bold transition-all shadow-glow-sm hover:scale-105"
+                    style={{
+                      backgroundColor: `${cert.badgeColor}18`,
+                      borderColor: `${cert.badgeColor}60`,
+                      color: cert.badgeColor === '#6366f1' ? '#a5b4fc' : cert.badgeColor === '#8b5cf6' ? '#c084fc' : cert.badgeColor === '#38bdf8' ? '#38bdf8' : '#34d399',
+                      borderWidth: '1px',
+                      boxShadow: `0 0 12px ${cert.badgeColor}35`,
+                    }}
                   >
                     {skill}
                   </span>
