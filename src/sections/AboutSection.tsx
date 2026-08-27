@@ -30,7 +30,7 @@ export const AboutSection: React.FC = () => {
             {/* Introduction Statement Box */}
             <div className="p-6 sm:p-8 rounded-3xl glass-panel neon-border-web space-y-4 flex-1 flex flex-col justify-between">
               <p className="text-base sm:text-lg text-text-primary leading-relaxed font-sans">
-                "{PERSONAL_INFO.summary}"
+                {PERSONAL_INFO.summary}
               </p>
 
               <div className="pt-4 border-t border-white/10 flex flex-wrap gap-4 text-xs font-mono text-text-secondary">
