@@ -1,31 +1,35 @@
 import React from 'react';
 import { PERSONAL_INFO, CORE_PULSE_KEYWORDS } from '../data/portfolioData';
-import { ShieldCheck, Cpu, Globe, Code2, Sparkles, MapPin, GraduationCap } from 'lucide-react';
+import { ShieldCheck, MapPin, GraduationCap, Sparkles } from 'lucide-react';
 
 export const AboutSection: React.FC = () => {
   return (
     <section id="about" className="py-24 relative z-10 bg-background/50 border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         
-        {/* Section Header */}
-        <div className="flex items-center gap-3 mb-12">
-          <span className="w-8 h-[2px] bg-accent-cyan" />
-          <span className="text-xs font-mono font-bold text-accent-cyan tracking-widest uppercase">
-            01. ABOUT NEEL PATEL
-          </span>
+        {/* Section Header & Main Title */}
+        <div className="space-y-3">
+          <div className="flex items-center gap-3">
+            <span className="w-8 h-[2px] bg-accent-cyan" />
+            <span className="text-xs font-mono font-bold text-accent-cyan tracking-widest uppercase">
+              01. ABOUT NEEL PATEL
+            </span>
+          </div>
+
+          <h2 className="text-3xl sm:text-5xl font-display font-bold text-white leading-tight max-w-4xl">
+            Engineering solutions at the intersection of <span className="text-gradient-cyan">Web, Spatial Data & Automation.</span>
+          </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        {/* 2-Column Balanced Alignment Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
           
-          {/* Left Main About Content */}
-          <div className="lg:col-span-7 space-y-8">
-            <h2 className="text-3xl sm:text-4xl font-display font-bold text-white leading-tight">
-              Engineering solutions at the intersection of <span className="text-gradient-cyan">Web, Spatial Data & Automation.</span>
-            </h2>
-
-            {/* Core Statement Box */}
-            <div className="p-6 rounded-2xl glass-panel neon-border-web space-y-4">
-              <p className="text-base text-text-primary leading-relaxed">
+          {/* Left Main About Content (7 cols) */}
+          <div className="lg:col-span-7 flex flex-col justify-between space-y-6">
+            
+            {/* Introduction Statement Box */}
+            <div className="p-6 sm:p-8 rounded-3xl glass-panel neon-border-web space-y-4 flex-1 flex flex-col justify-between">
+              <p className="text-base sm:text-lg text-text-primary leading-relaxed font-sans">
                 "{PERSONAL_INFO.summary}"
               </p>
 
@@ -41,16 +45,16 @@ export const AboutSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Animated Interactive Keywords Grid */}
-            <div className="space-y-3">
+            {/* Core Technical Focus Domains Box */}
+            <div className="p-6 sm:p-7 rounded-3xl glass-panel neon-border-cyber space-y-4">
               <h4 className="text-xs font-mono font-bold text-text-muted uppercase tracking-wider">
                 CORE TECHNICAL FOCUS DOMAINS
               </h4>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-2.5">
                 {CORE_PULSE_KEYWORDS.map((kw, i) => (
                   <div
                     key={kw}
-                    className={`px-4 py-2.5 rounded-xl glass-panel-interactive text-xs font-mono font-semibold text-white flex items-center gap-2 group shadow-glow-sm ${
+                    className={`px-3.5 py-2 rounded-xl glass-panel-interactive text-xs font-mono font-semibold text-white flex items-center gap-2 group shadow-glow-sm ${
                       i % 4 === 0 ? 'neon-border-web' : i % 4 === 1 ? 'neon-border-gis' : i % 4 === 2 ? 'neon-border-python' : 'neon-border-ai'
                     }`}
                   >
@@ -60,13 +64,14 @@ export const AboutSection: React.FC = () => {
                 ))}
               </div>
             </div>
+
           </div>
 
-          {/* Right Highlights & Language Capabilities Card */}
-          <div className="lg:col-span-5 space-y-6">
+          {/* Right Highlights & Engineering Profile Card (5 cols) */}
+          <div className="lg:col-span-5 flex flex-col justify-between space-y-6">
             
-            {/* Quick Fact Matrix Card */}
-            <div className="p-6 rounded-2xl glass-panel neon-border-gis space-y-6">
+            {/* Quick Fact / Engineering Profile Card */}
+            <div className="p-6 sm:p-8 rounded-3xl glass-panel neon-border-gis space-y-6 flex-1 flex flex-col justify-between">
               <h3 className="text-lg font-display font-bold text-white flex items-center gap-2">
                 <ShieldCheck className="w-5 h-5 text-emerald-400" />
                 ENGINEERING PROFILE
@@ -95,18 +100,19 @@ export const AboutSection: React.FC = () => {
               </div>
             </div>
 
-            {/* AI-Assisted Philosophy Box */}
-            <div className="p-6 rounded-2xl bg-surface-100/90 neon-border-ai space-y-3">
+            {/* Modern Workflow Advantage Box */}
+            <div className="p-6 sm:p-7 rounded-3xl bg-surface-100/90 neon-border-ai space-y-3">
               <div className="flex items-center gap-2 text-accent font-mono text-xs font-bold">
                 <Sparkles className="w-4 h-4 text-accent-cyan" />
                 MODERN WORKFLOW ADVANTAGE
               </div>
-              <p className="text-xs text-text-secondary leading-relaxed">
+              <p className="text-xs text-text-secondary leading-relaxed font-sans">
                 Utilizes AI-assisted software development tools (Microsoft Copilot, GitHub Copilot, Prompt Engineering) to accelerate coding, optimize algorithms, and streamline debugging workflows.
               </p>
             </div>
 
           </div>
+
         </div>
       </div>
     </section>
