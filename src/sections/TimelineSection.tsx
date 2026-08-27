@@ -7,6 +7,14 @@ import {
 } from 'lucide-react';
 
 const COMPANY_META: Record<string, { icon: React.ElementType; color: string; tag: string; link?: string; linkText?: string; neonClass: string }> = {
+  "Rishabh Eye Hospital & Laser Center": { 
+    icon: Activity, 
+    color: "from-cyan-400 to-blue-600", 
+    tag: "HEALTHCARE WEB PLATFORM",
+    link: "https://rishabh-eye-hospital.vercel.app",
+    linkText: "VISIT WEBSITE",
+    neonClass: "neon-border-web"
+  },
   "Saral Health Care": { 
     icon: Activity, 
     color: "from-emerald-500 to-cyan-500", 
@@ -56,7 +64,7 @@ const COMPANY_META: Record<string, { icon: React.ElementType; color: string; tag
 };
 
 export const TimelineSection: React.FC = () => {
-  const [expandedIds, setExpandedIds] = useState<string[]>(['exp-7']); // Saral Health Care open by default
+  const [expandedIds, setExpandedIds] = useState<string[]>(['exp-rishabh']); // Rishabh Eye Hospital open by default
   const [activeFilter, setActiveFilter] = useState<'all' | 'web' | 'gis' | 'python'>('all');
 
   const toggleExpand = (id: string) => {
@@ -67,7 +75,7 @@ export const TimelineSection: React.FC = () => {
 
   const filteredExperiences = EXPERIENCES.filter((exp) => {
     if (activeFilter === 'all') return true;
-    if (activeFilter === 'web') return exp.company === 'Saral Health Care' || exp.company === 'Sahitya Sangam' || exp.company === 'Shreeji Krupa Farsan';
+    if (activeFilter === 'web') return exp.company.includes('Rishabh') || exp.company === 'Saral Health Care' || exp.company === 'Sahitya Sangam' || exp.company === 'Shreeji Krupa Farsan';
     if (activeFilter === 'gis') return exp.company === 'JIO' || exp.company === 'Spectrarc Solution';
     if (activeFilter === 'python') return exp.company === 'Yogya Capital';
     return true;

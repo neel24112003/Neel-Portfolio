@@ -49,7 +49,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProjec
           </div>
         </div>
 
-        {/* PROJECT 01: SARAL HEALTH CARE (FEATURED ONGOING HERO CARD) */}
+        {/* PROJECT 01: RISHABH EYE HOSPITAL & LASER CENTER (FEATURED RECENT WEB APP) */}
         {(activeTab === 'all' || activeTab === 'web') && (
           <div className="relative group">
             <div className="p-5 sm:p-8 lg:p-12 rounded-3xl glass-panel-interactive neon-border-web bg-gradient-to-br from-surface-100/90 via-surface-50/80 to-surface-100/90 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
@@ -57,7 +57,117 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProjec
               <div className="lg:col-span-7 space-y-6">
                 <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                   <span className="px-3.5 py-1 rounded-full bg-accent/20 border border-accent/40 text-accent-cyan text-xs font-mono font-bold">
-                    PROJECT 01 • HEALTHCARE TECH & LIVE DATA DASHBOARD
+                    PROJECT 01 • OPHTHALMOLOGY HEALTHCARE WEB APP
+                  </span>
+                  <span className="px-3 py-0.5 rounded-full bg-cyan-500/20 border border-cyan-500/40 text-cyan-400 text-xs font-mono font-bold flex items-center gap-1.5 animate-pulse shrink-0 whitespace-nowrap">
+                    <span className="w-2 h-2 rounded-full bg-cyan-400" />
+                    AUG 2026 – PRESENT
+                  </span>
+                </div>
+
+                <h3 className="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight">
+                  RISHABH EYE HOSPITAL & LASER CENTER
+                </h3>
+
+                <p className="text-sm sm:text-base text-text-secondary leading-relaxed font-sans">
+                  Developed a responsive healthcare web platform using <strong className="text-white">React.js, Tailwind CSS, and Node.js</strong> to streamline ophthalmology services and clinic consultations. Engineered an intuitive online appointment scheduling module, patient inquiry form, and dedicated sections for advanced eye care and laser treatment services.
+                </p>
+
+                {/* Metrics Highlights Box */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 p-3.5 sm:p-4 rounded-2xl bg-cyan-950/30 border border-cyan-400/40 shadow-[0_0_15px_rgba(6,182,212,0.15)]">
+                  <div className="flex flex-row sm:flex-col justify-between sm:justify-start items-center sm:items-start">
+                    <div className="text-sm sm:text-xl font-display font-bold text-cyan-400 flex items-center gap-1">
+                      <Calendar className="w-4 h-4" /> APPOINTMENTS
+                    </div>
+                    <div className="text-[10px] font-mono text-text-muted">ONLINE SCHEDULING</div>
+                  </div>
+                  <div className="flex flex-row sm:flex-col justify-between sm:justify-start items-center sm:items-start">
+                    <div className="text-sm sm:text-xl font-display font-bold text-emerald-400 flex items-center gap-1">
+                      <Sparkles className="w-4 h-4" /> LASER CARE
+                    </div>
+                    <div className="text-[10px] font-mono text-text-muted">OPHTHALMOLOGY</div>
+                  </div>
+                  <div className="flex flex-row sm:flex-col justify-between sm:justify-start items-center sm:items-start">
+                    <div className="text-sm sm:text-xl font-display font-bold text-white flex items-center gap-1">
+                      <Activity className="w-4 h-4" /> CONSULTATIONS
+                    </div>
+                    <div className="text-[10px] font-mono text-text-muted">INQUIRY ENGINE</div>
+                  </div>
+                </div>
+
+                {/* Tech Stack Glowing Pills */}
+                <div className="flex flex-wrap gap-2">
+                  {['React.js', 'Tailwind CSS', 'Node.js', 'JavaScript', 'HTML5', 'CSS3', 'Vercel'].map((t) => (
+                    <span key={t} className="px-3 py-1 rounded-lg bg-cyan-500/10 border border-cyan-400/40 text-cyan-200 text-xs font-mono shadow-[0_0_8px_rgba(6,182,212,0.15)] hover:border-cyan-300 transition-all">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Actions */}
+                <div className="flex flex-wrap items-center gap-3 pt-2">
+                  <a
+                    href="https://rishabh-eye-hospital.vercel.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-5 py-2.5 rounded-xl bg-accent hover:bg-accent/90 text-white font-mono text-xs font-bold flex items-center gap-2 shadow-[0_0_15px_rgba(56,189,248,0.4)] border border-accent-cyan/60 transition-all"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    VISIT WEBSITE
+                  </a>
+                  <button
+                    onClick={() => onSelectProject(getProject('rishabh-eye-hospital'))}
+                    className="px-5 py-2.5 rounded-xl bg-surface-100 hover:bg-surface-200 border border-accent-cyan/50 text-white font-mono text-xs font-bold flex items-center gap-2 shadow-[0_0_12px_rgba(56,189,248,0.2)] hover:border-accent-cyan transition-all"
+                  >
+                    <Sparkles className="w-4 h-4 text-accent-cyan" />
+                    FULL CASE STUDY
+                  </button>
+                </div>
+              </div>
+
+              {/* Visual Mockup Box */}
+              <div className="lg:col-span-5 bg-surface-200/80 rounded-2xl p-4 sm:p-6 border border-cyan-400/40 shadow-[0_0_20px_rgba(6,182,212,0.15)] space-y-4 flex flex-col justify-between">
+                <div className="flex items-center justify-between gap-2 text-xs font-mono text-text-muted border-b border-cyan-400/20 pb-3">
+                  <span className="truncate">CLINIC PLATFORM PREVIEW</span>
+                  <span className="text-cyan-400 font-bold flex items-center gap-1 shrink-0 whitespace-nowrap">
+                    <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
+                    LIVE PRODUCTION
+                  </span>
+                </div>
+                
+                <div className="space-y-3 font-mono text-xs">
+                  <div className="p-3 rounded-xl bg-surface-100/90 border border-cyan-400/30 hover:border-cyan-400/60 transition-all flex items-center justify-between">
+                    <span className="text-text-secondary">APPOINTMENT MODULE</span>
+                    <span className="text-emerald-400">Online Scheduling</span>
+                  </div>
+                  <div className="p-3 rounded-xl bg-surface-100/90 border border-cyan-400/30 hover:border-cyan-400/60 transition-all flex items-center justify-between">
+                    <span className="text-text-secondary">PATIENT INQUIRIES</span>
+                    <span className="text-accent-cyan">Consultation Form</span>
+                  </div>
+                  <div className="p-3 rounded-xl bg-surface-100/90 border border-cyan-400/30 hover:border-cyan-400/60 transition-all flex items-center justify-between">
+                    <span className="text-text-secondary">LASER EYE CARE</span>
+                    <span className="text-white">Ophthalmology Portal</span>
+                  </div>
+                </div>
+
+                <div className="p-4 rounded-xl bg-cyan-500/10 border border-cyan-400/30 text-xs font-mono text-cyan-300">
+                  "Responsive healthcare web platform built with React.js & Tailwind CSS to streamline clinic consultation and eye surgery service inquiries."
+                </div>
+              </div>
+
+            </div>
+          </div>
+        )}
+
+        {/* PROJECT 02: SARAL HEALTH CARE */}
+        {(activeTab === 'all' || activeTab === 'web') && (
+          <div className="relative group">
+            <div className="p-5 sm:p-8 lg:p-12 rounded-3xl glass-panel-interactive neon-border-web bg-gradient-to-br from-surface-100/90 via-surface-50/80 to-surface-100/90 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
+              
+              <div className="lg:col-span-7 space-y-6">
+                <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+                  <span className="px-3.5 py-1 rounded-full bg-accent/20 border border-accent/40 text-accent-cyan text-xs font-mono font-bold">
+                    PROJECT 02 • HEALTHCARE TECH & LIVE DATA DASHBOARD
                   </span>
                   <span className="px-3 py-0.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 text-xs font-mono font-bold flex items-center gap-1.5 animate-pulse shrink-0 whitespace-nowrap">
                     <span className="w-2 h-2 rounded-full bg-emerald-400" />
@@ -159,7 +269,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProjec
           </div>
         )}
 
-        {/* PROJECT 02: SAHITYA SANGAM */}
+        {/* PROJECT 03: SAHITYA SANGAM */}
         {(activeTab === 'all' || activeTab === 'web') && (
           <div className="relative group">
             <div className="p-5 sm:p-8 lg:p-12 rounded-3xl glass-panel-interactive neon-border-web bg-surface-50/80 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
@@ -167,7 +277,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProjec
               <div className="lg:col-span-7 space-y-6">
                 <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                   <span className="px-3.5 py-1 rounded-full bg-surface-200 border border-emerald-500/40 text-emerald-400 text-xs font-mono font-bold">
-                    PROJECT 02 • FLAGSHIP E-COMMERCE & MOBILE APP
+                    PROJECT 03 • FLAGSHIP E-COMMERCE & MOBILE APP
                   </span>
                   <span className="text-xs font-mono text-emerald-400 font-semibold shrink-0 whitespace-nowrap">
                     LIVE PRODUCTION
@@ -268,7 +378,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProjec
           </div>
         )}
 
-        {/* PROJECT 03: GIS & GEOSPATIAL ANALYSIS (WITH INTERACTIVE 3D GLOBE) */}
+        {/* PROJECT 04: GIS & GEOSPATIAL ANALYSIS (WITH INTERACTIVE 3D GLOBE) */}
         {(activeTab === 'all' || activeTab === 'gis') && (
           <div className="relative group">
             <div className="p-5 sm:p-8 lg:p-12 rounded-3xl glass-panel-interactive neon-border-gis bg-surface-50/80 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
@@ -276,7 +386,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProjec
               <div className="lg:col-span-7 space-y-6">
                 <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                   <span className="px-3.5 py-1 rounded-full bg-surface-200 border border-teal-500/40 text-teal-300 text-xs font-mono font-bold">
-                    PROJECT 03 • GEOSPATIAL ENGINE & SATELLITE ANALYSIS
+                    PROJECT 04 • GEOSPATIAL ENGINE & SATELLITE ANALYSIS
                   </span>
                   <span className="text-xs font-mono text-teal-400 font-semibold shrink-0 whitespace-nowrap">
                     REMOTE SENSING & 3D GLOBE
@@ -351,7 +461,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProjec
           </div>
         )}
 
-        {/* PROJECT 04: SHREEJI KRUPA FARSAN (RETAIL E-COMMERCE SOLUTION) */}
+        {/* PROJECT 05: SHREEJI KRUPA FARSAN (RETAIL E-COMMERCE SOLUTION) */}
         {(activeTab === 'all' || activeTab === 'web') && (
           <div className="relative group">
             <div className="p-5 sm:p-8 lg:p-12 rounded-3xl glass-panel-interactive neon-border-web bg-surface-50/80 grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
@@ -359,7 +469,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProjec
               <div className="lg:col-span-7 space-y-6">
                 <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                   <span className="px-3.5 py-1 rounded-full bg-surface-200 border border-amber-500/40 text-amber-400 text-xs font-mono font-bold">
-                    PROJECT 04 • RETAIL E-COMMERCE PLATFORM
+                    PROJECT 05 • RETAIL E-COMMERCE PLATFORM
                   </span>
                   <span className="text-xs font-mono text-amber-400 font-semibold shrink-0 whitespace-nowrap">
                     LIVE PRODUCTION

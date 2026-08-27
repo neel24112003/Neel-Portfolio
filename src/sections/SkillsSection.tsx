@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
 import { SKILL_CATEGORIES } from '../data/portfolioData';
-import { Cpu, Code2, Globe2, Terminal, Brain, Wrench, Briefcase, Palette, BarChart3 } from 'lucide-react';
+import { Cpu, Code2, Globe2, Terminal, Brain, Wrench, Briefcase, Palette, BarChart3, Database, Server } from 'lucide-react';
 
 export const SkillsSection: React.FC = () => {
-  const [selectedCategoryId, setSelectedCategoryId] = useState<string>('web');
+  const [selectedCategoryId, setSelectedCategoryId] = useState<string>('programming');
 
   const selectedCategory = SKILL_CATEGORIES.find(c => c.id === selectedCategoryId) || SKILL_CATEGORIES[0];
 
   const getCategoryIcon = (id: string) => {
     switch (id) {
-      case 'web': return Globe2;
-      case 'analytics': return BarChart3;
-      case 'gis': return Cpu;
-      case 'python': return Terminal;
-      case 'ai': return Brain;
       case 'programming': return Code2;
-      case 'operations': return Briefcase;
-      case 'creative': return Palette;
+      case 'web': return Globe2;
+      case 'backend': return Server;
+      case 'database': return Database;
+      case 'automation': return Terminal;
+      case 'gis': return Cpu;
+      case 'tools': return Wrench;
+      case 'ai_creative': return Brain;
       default: return Wrench;
     }
   };

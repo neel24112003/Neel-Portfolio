@@ -27,64 +27,80 @@ export const CORE_PULSE_KEYWORDS = [
 
 export const SKILL_CATEGORIES = [
   {
-    id: "web",
-    name: "Web & Mobile",
-    color: "#38bdf8",
-    description: "Full-stack web architecture, healthcare platforms, e-commerce applications, and cross-platform apps.",
-    skills: ["HTML5", "CSS3", "JavaScript", "PHP", "Flutter", "MySQL", "Vercel"]
+    id: "programming",
+    name: "Core Programming Languages",
+    color: "#f59e0b",
+    description: "Foundational and multi-paradigm programming languages.",
+    skills: ["Python", "JavaScript", "TypeScript", "PHP", "Java", "C", "Dart"]
   },
   {
-    id: "analytics",
-    name: "Data Analytics & BI",
+    id: "web",
+    name: "Frontend Development",
+    color: "#38bdf8",
+    description: "Modern component-driven web frameworks, styling engines, and dynamic UI animations.",
+    skills: ["HTML5", "CSS3", "React.js", "Tailwind CSS", "Three.js", "Framer Motion"]
+  },
+  {
+    id: "backend",
+    name: "Backend Systems & APIs",
+    color: "#6366f1",
+    description: "Server-side architectures, REST APIs, real-time web protocols, and email services.",
+    skills: ["Node.js", "Express.js", "PHP", "REST APIs", "CORS", "WebSocket", "Nodemailer", "dotenv"]
+  },
+  {
+    id: "database",
+    name: "Databases & Data Analytics",
     color: "#22c55e",
-    description: "Exploratory Data Analysis (EDA), interactive dashboarding, data visualization, and business intelligence.",
-    skills: ["Data Analytics", "Power BI", "Exploratory Data Analysis (EDA)", "SQL / MySQL", "Pandas & NumPy", "Data Visualization", "Excel / Spreadsheets"]
+    description: "Relational database systems, data modeling, BI dashboards, and data analytics.",
+    skills: ["PostgreSQL", "MySQL", "Data Analytics", "Power BI", "Excel / Spreadsheets"]
+  },
+  {
+    id: "automation",
+    name: "Python Automation & Scraping",
+    color: "#a855f7",
+    description: "Automated web scraping, PDF data extraction, JSON pipelines, and scripting.",
+    skills: ["Python Automation", "PDF Data Extraction", "Web Scraping", "BeautifulSoup"]
   },
   {
     id: "gis",
     name: "GIS & Spatial Analysis",
     color: "#10b981",
-    description: "Geospatial data analysis, remote sensing, satellite imagery processing, and 3D terrain visualization.",
-    skills: ["ArcMap", "Google Earth Engine", "Google Earth Pro", "Shapefile / KML / GeoJSON", "Landsat / Sentinel Data", "CAD Conversion"]
+    description: "Geospatial data modeling, remote sensing, satellite imagery processing, and spatial GIS suites.",
+    skills: ["ArcMap", "ArcGIS Pro", "Google Earth Engine", "Google Earth Pro"]
   },
   {
-    id: "python",
-    name: "Python & Automation",
-    color: "#6366f1",
-    description: "Automated data extraction pipelines, web scraping, data processing, and scripting.",
-    skills: ["Python", "BeautifulSoup", "Jupyter Notebook", "JSON Pipelines", "Data Processing"]
-  },
-  {
-    id: "ai",
-    name: "AI & Modern Tools",
-    color: "#8b5cf6",
-    description: "AI-assisted software development, prompt engineering, and intelligent developer workflows.",
-    skills: ["Microsoft Copilot", "GitHub Copilot", "Prompt Engineering", "Power BI"]
-  },
-  {
-    id: "programming",
-    name: "Core Languages",
-    color: "#f59e0b",
-    description: "Foundational programming languages and database query languages.",
-    skills: ["Python", "JavaScript", "SQL", "C", "Java", "PHP", "MySQL", "HTML", "CSS"]
-  },
-  {
-    id: "operations",
-    name: "Operations & Business",
-    color: "#ec4899",
-    description: "Recruitment operations, hiring coordination, candidate tracking, and business tools.",
-    skills: ["Foundit", "TimesJobs", "ZK Techno", "PagarBook"]
-  },
-  {
-    id: "creative",
-    name: "Creative & Media",
+    id: "tools",
+    name: "Developer Tools & Platforms",
     color: "#06b6d4",
-    description: "Digital media editing, graphic asset design, and visual communication.",
-    skills: ["Canva", "Lightroom", "CapCut", "PicsArt", "InShot", "KineMaster"]
+    description: "Version control systems, rapid bundlers, deployment environments, and platforms.",
+    skills: ["Git", "GitHub", "Vite", "Vercel", "Replit"]
+  },
+  {
+    id: "ai_creative",
+    name: "LLMs, Creative & Operations",
+    color: "#ec4899",
+    description: "AI research models, synthetic generation engines, HR/recruitment platforms, and digital media tools.",
+    skills: [
+      "ChatGPT", "Claude", "Google Gemini", "Perplexity AI", "DeepSeek AI", 
+      "ElevenLabs", "Leonardo", "Google Pomelli", "Google Stitch", 
+      "ZK Techno", "PagarBook", "Foundit", "Times Jobs", 
+      "Canva", "Lightroom", "CapCut", "Picsart", "InShot", "KineMaster"
+    ]
   }
 ];
 
 export const EXPERIENCES: ExperienceItem[] = [
+  {
+    id: "exp-rishabh",
+    period: "Aug 2026 – Present",
+    company: "Rishabh Eye Hospital & Laser Center",
+    role: "Full Stack Web Developer",
+    description: [
+      "Developed a responsive healthcare web platform using React.js, Tailwind CSS, and Node.js to streamline ophthalmology services and clinic consultations.",
+      "Engineered an intuitive online appointment scheduling module, patient inquiry form, and dedicated sections for advanced eye care and laser treatment services."
+    ],
+    skills: ["React.js", "Tailwind CSS", "Node.js", "JavaScript", "HTML5/CSS3", "Vercel", "Healthcare Web App"]
+  },
   {
     id: "exp-freelance",
     period: "Jul 2025 – Present",
@@ -147,6 +163,32 @@ export const EXPERIENCES: ExperienceItem[] = [
 ];
 
 export const PROJECTS: ProjectItem[] = [
+  {
+    id: "rishabh-eye-hospital",
+    title: "RISHABH EYE HOSPITAL & LASER CENTER",
+    category: "Web Application / Healthcare Platform / Ophthalmology Services",
+    subtitle: "Responsive Healthcare Web Platform & Ophthalmology Portal",
+    description: "Developed a responsive healthcare web platform using React.js, Tailwind CSS, and Node.js to streamline ophthalmology services and clinic consultations. Engineered an intuitive online appointment scheduling module, patient inquiry form, and dedicated sections for advanced eye care and laser treatment services.",
+    type: "web",
+    technologies: ["React.js", "Tailwind CSS", "Node.js", "JavaScript", "HTML5", "CSS3", "Vercel"],
+    features: [
+      "Responsive Ophthalmology Web Platform & Service Showcase",
+      "Intuitive Online Appointment Scheduling Module",
+      "Patient Inquiry Form & Fast Clinic Consultations",
+      "Dedicated Sections for Advanced Eye Care & Laser Treatments",
+      "Clean Modern React.js & Tailwind CSS Component Architecture",
+      "Node.js Backend & Fast Vercel Deployment"
+    ],
+    website: "https://rishabh-eye-hospital.vercel.app",
+    problem: "Eye care centers require a modern, fast, and accessible web interface for patients to explore specialized laser treatment options, submit inquiries, and schedule consultation appointments without friction.",
+    approach: "Architected a responsive healthcare platform using React.js and Tailwind CSS backed by Node.js service endpoints, customized appointment booking forms, and interactive laser eye care showcases.",
+    outcome: "Successfully launched live on Vercel (Aug 2026 – Present) serving clinic patients.",
+    metrics: [
+      { label: "Timeline", value: "Aug 2026 – Present" },
+      { label: "Tech Stack", value: "React.js & Tailwind CSS" },
+      { label: "Live App", value: "Vercel Deployed" }
+    ]
+  },
   {
     id: "saral-health-care",
     title: "SARAL HEALTH CARE",
@@ -310,7 +352,7 @@ export const BEYOND_CODE_DATA = {
   role: "Job Consultant",
   period: "Jul 2025 – Jun 2026",
   headline: "Talent Operations, Recruitment & Hiring Logistics",
-  description: "Leveraging technical problem-solving to drive human capital acquisition, candidate evaluation, and operational recruitment pipelines.",
+  description: "Leveraging technical problem-solving to drive human capital acquisition, candidate evaluation, operational recruitment pipelines, and AI research tools.",
   responsibilities: [
     "Resume Screening & Qualification Verification",
     "Candidate Shortlisting against Skill Matrix",
@@ -319,5 +361,10 @@ export const BEYOND_CODE_DATA = {
     "Hiring Coordination & Placement Documentation",
     "Candidate Database Maintenance & Recruitment Analytics"
   ],
-  toolsUsed: ["Foundit", "TimesJobs", "ZK Techno", "PagarBook", "Interview Trackers", "Agreements"]
+  toolsUsed: [
+    "ChatGPT", "Claude", "Google Gemini", "Perplexity AI", "DeepSeek AI", 
+    "ElevenLabs", "Leonardo", "Google Pomelli", "Google Stitch", 
+    "ZK Techno", "PagarBook", "Foundit", "Times Jobs", 
+    "Canva", "Lightroom", "CapCut", "Picsart", "InShot", "KineMaster"
+  ]
 };
