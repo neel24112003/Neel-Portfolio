@@ -131,9 +131,6 @@ export const ContactSection: React.FC = () => {
                       </a>
                     </div>
                   </div>
-                  <button onClick={handleCopyEmail} className="p-2 text-text-muted hover:text-white" title="Copy Email">
-                    {copiedEmail ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
-                  </button>
                 </div>
 
                 {/* Phone Card */}
