@@ -5,7 +5,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ success: false, error: 'Method Not Allowed' });
   }
 
-  const { name, email, message } = req.body || {};
+  const { name, email, phone, message } = req.body || {};
 
   if (!name || !email || !message) {
     return res.status(400).json({ success: false, error: 'Name, email, and message are required.' });
@@ -37,6 +37,7 @@ export default async function handler(req, res) {
         <div style="background-color: #111522; padding: 20px; border-radius: 8px; margin: 20px 0; border: 1px solid #1e293b;">
           <p style="margin: 8px 0;"><strong style="color: #38bdf8;">Sender Name:</strong> ${name}</p>
           <p style="margin: 8px 0;"><strong style="color: #38bdf8;">Sender Email:</strong> <a href="mailto:${email}" style="color: #818cf8;">${email}</a></p>
+          <p style="margin: 8px 0;"><strong style="color: #38bdf8;">Sender Mobile / WhatsApp:</strong> ${phone || 'Not provided'}</p>
           <p style="margin: 8px 0;"><strong style="color: #38bdf8;">Received At:</strong> ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}</p>
         </div>
 

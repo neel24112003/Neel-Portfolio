@@ -6,17 +6,18 @@ export const ContactSection: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     message: '',
   });
 
-  const [errors, setErrors] = useState<{ name?: string; email?: string; message?: string }>({});
+  const [errors, setErrors] = useState<{ name?: string; email?: string; phone?: string; message?: string }>({});
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
   const [apiError, setApiError] = useState<string | null>(null);
   const [copiedEmail, setCopiedEmail] = useState<boolean>(false);
 
   const validate = () => {
-    const errs: { name?: string; email?: string; message?: string } = {};
+    const errs: { name?: string; email?: string; phone?: string; message?: string } = {};
 
     if (!formData.name.trim()) errs.name = 'Name is required';
     if (!formData.email.trim()) {
@@ -24,6 +25,7 @@ export const ContactSection: React.FC = () => {
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       errs.email = 'Please enter a valid email address';
     }
+    if (!formData.phone.trim()) errs.phone = 'Mobile number is required';
     if (!formData.message.trim()) errs.message = 'Message cannot be empty';
 
     setErrors(errs);
@@ -32,7 +34,7 @@ export const ContactSection: React.FC = () => {
 
   const handleSuccess = () => {
     setIsSubmitted(true);
-    setFormData({ name: '', email: '', message: '' });
+    setFormData({ name: '', email: '', phone: '', message: '' });
     setErrors({});
     
     // Auto-hide success banner after 3 seconds (3000ms)
@@ -286,6 +288,28 @@ export const ContactSection: React.FC = () => {
                   <p className="text-xs font-mono text-red-400 flex items-center gap-1">
                     <AlertCircle className="w-3.5 h-3.5" />
                     {errors.email}
+                  </p>
+                )}
+              </div>
+
+              {/* Mobile Number Field */}
+              <div className="space-y-2">
+                <label className="text-xs font-mono font-bold text-text-secondary uppercase">
+                  YOUR MOBILE NUMBER *
+                </label>
+                <input
+                  type="tel"
+                  value={formData.phone}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  placeholder="e.g. +91 9876543210"
+                  className={`w-full px-4 py-3 rounded-xl bg-surface-100 border text-sm text-white font-sans outline-none transition-all ${
+                    errors.phone ? 'border-red-500 focus:border-red-500' : 'border-white/10 focus:border-accent'
+                  }`}
+                />
+                {errors.phone && (
+                  <p className="text-xs font-mono text-red-400 flex items-center gap-1">
+                    <AlertCircle className="w-3.5 h-3.5" />
+                    {errors.phone}
                   </p>
                 )}
               </div>
