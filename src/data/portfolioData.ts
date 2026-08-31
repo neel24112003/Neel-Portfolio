@@ -57,6 +57,20 @@ export const SKILL_CATEGORIES = [
     skills: ["PostgreSQL", "MySQL", "Data Analytics", "Power BI", "Excel / Spreadsheets"]
   },
   {
+    id: "cloud_devops",
+    name: "Cloud & DevOps",
+    color: "#00b4d8",
+    description: "AWS cloud infrastructure, serverless compute, IAM security, and cloud data warehousing.",
+    skills: ["AWS S3", "AWS EC2", "AWS IAM", "AWS Lambda", "AWS Redshift", "AWS Glue", "AWS Athena", "AWS EMR", "AWS Kinesis"]
+  },
+  {
+    id: "data_engineering",
+    name: "Data Engineering",
+    color: "#8b5cf6",
+    description: "Scalable data lake architecture, production ETL pipelines, event-driven serverless systems, and columnar Parquet format.",
+    skills: ["Data Lake Architecture", "ETL Pipelines", "Serverless Event-Driven Architecture", "Parquet"]
+  },
+  {
     id: "automation",
     name: "Python Automation & Scraping",
     color: "#a855f7",

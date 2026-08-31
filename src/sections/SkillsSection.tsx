@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { SKILL_CATEGORIES } from '../data/portfolioData';
-import { Cpu, Code2, Globe2, Terminal, Brain, Wrench, Briefcase, Palette, BarChart3, Database, Server } from 'lucide-react';
+import { Cpu, Code2, Globe2, Terminal, Brain, Wrench, Briefcase, Palette, BarChart3, Database, Server, Cloud, Layers } from 'lucide-react';
 
 export const SkillsSection: React.FC = () => {
   const [selectedCategoryId, setSelectedCategoryId] = useState<string>('programming');
@@ -13,6 +13,8 @@ export const SkillsSection: React.FC = () => {
       case 'web': return Globe2;
       case 'backend': return Server;
       case 'database': return Database;
+      case 'cloud_devops': return Cloud;
+      case 'data_engineering': return Layers;
       case 'automation': return Terminal;
       case 'gis': return Cpu;
       case 'tools': return Wrench;
@@ -21,8 +23,8 @@ export const SkillsSection: React.FC = () => {
     }
   };
 
-  const leftCategories = SKILL_CATEGORIES.slice(0, 4);
-  const rightCategories = SKILL_CATEGORIES.slice(4, 8);
+  const leftCategories = SKILL_CATEGORIES.slice(0, 5);
+  const rightCategories = SKILL_CATEGORIES.slice(5, 10);
 
   return (
     <section id="skills" className="py-20 sm:py-24 relative z-10 bg-background border-t border-white/5">
@@ -48,14 +50,14 @@ export const SkillsSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
           
           {/* Left Interactive Symmetrical Radar Visualization */}
-          <div className="lg:col-span-7 bg-surface-50/80 rounded-3xl p-4 sm:p-6 border-2 border-accent/40 relative overflow-hidden flex flex-col sm:flex-row items-center justify-between min-h-[460px] sm:min-h-[500px] neon-border-cyber shadow-2xl gap-4">
+          <div className="lg:col-span-7 bg-surface-50/80 rounded-3xl p-4 sm:p-6 border-2 border-accent/40 relative overflow-hidden flex flex-col sm:flex-row items-center justify-between min-h-[500px] sm:min-h-[560px] neon-border-cyber shadow-2xl gap-4">
             
             {/* Background SVG Laser Beam Connecting Lines (Desktop) */}
             <svg className="hidden sm:block absolute inset-0 w-full h-full pointer-events-none z-0">
-              {/* Left 4 Connecting Lines */}
+              {/* Left 5 Connecting Lines */}
               {leftCategories.map((cat, idx) => {
                 const isSelected = cat.id === selectedCategoryId;
-                const y2Pos = 12.5 + idx * 25; // 12.5%, 37.5%, 62.5%, 87.5%
+                const y2Pos = 10 + idx * 20; // 10%, 30%, 50%, 70%, 90%
                 return (
                   <line
                     key={cat.id}
@@ -72,10 +74,10 @@ export const SkillsSection: React.FC = () => {
                 );
               })}
 
-              {/* Right 4 Connecting Lines */}
+              {/* Right 5 Connecting Lines */}
               {rightCategories.map((cat, idx) => {
                 const isSelected = cat.id === selectedCategoryId;
-                const y2Pos = 12.5 + idx * 25; // 12.5%, 37.5%, 62.5%, 87.5%
+                const y2Pos = 10 + idx * 20; // 10%, 30%, 50%, 70%, 90%
                 return (
                   <line
                     key={cat.id}
